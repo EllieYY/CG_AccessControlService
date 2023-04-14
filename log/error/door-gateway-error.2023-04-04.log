@@ -1,0 +1,164 @@
+2023-04-04 15:27:54 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:28:25 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:28:56 ERROR business-6-1 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:29:28 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:29:59 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:30:31 ERROR business-6-8 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:31:02 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:31:34 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:32:05 ERROR business-6-3 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:32:37 ERROR business-6-5 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:33:08 ERROR business-6-8 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:33:40 ERROR business-6-9 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:34:11 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:34:43 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:35:14 ERROR business-6-3 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:35:46 ERROR business-6-5 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:36:17 ERROR business-6-8 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:39:57 ERROR http-nio-9257-exec-1 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.StringIndexOutOfBoundsException: begin 8, end 16, length 12] with root cause
+java.lang.StringIndexOutOfBoundsException: begin 8, end 16, length 12
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:3319)
+	at java.base/java.lang.String.substring(String.java:1874)
+	at com.wimetro.acs.model.device.DeviceShadow.toDeviceWebInfo(DeviceShadow.java:28)
+	at com.wimetro.acs.service.DeviceManageService.lambda$deviceSearch$0(DeviceManageService.java:84)
+	at java.base/java.util.stream.ReduceOps$4ReducingSink.accept(ReduceOps.java:220)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:589)
+	at com.wimetro.acs.service.DeviceManageService.deviceSearch(DeviceManageService.java:83)
+	at com.wimetro.acs.controller.DeviceManageController.allStatusCommand(DeviceManageController.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-04-04 15:39:58 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:40:30 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:41:01 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:41:33 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:42:05 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:42:37 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:43:08 ERROR business-6-1 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 15:44:43 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.68:10000 -> [异常]原因：no found type
+2023-04-04 16:09:21 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:22:31 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:22:48 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
+java.lang.AssertionError: no found type
+	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:64)
+	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:49)
+	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:148)
+	at com.wimetro.acs.protocol.message.Message.decode(Message.java:134)
+	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:44)
+	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:24)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioMessageChannel$NioMessageUnsafe.read(AbstractNioMessageChannel.java:93)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-04-04 16:22:51 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
+java.lang.AssertionError: no found type
+	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:64)
+	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:49)
+	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:148)
+	at com.wimetro.acs.protocol.message.Message.decode(Message.java:134)
+	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:44)
+	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:24)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioMessageChannel$NioMessageUnsafe.read(AbstractNioMessageChannel.java:93)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-04-04 16:23:03 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:23:34 ERROR business-6-1 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:24:06 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:25:41 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:26:12 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:26:43 ERROR business-6-1 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:27:15 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:27:46 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:27:48 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.29:8101 => [30303030303030303030303030303030ffffffff00008a1101fe0000000003014aa98d]
+2023-04-04 16:27:51 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.29:8101 => [30303030303030303030303030303030ffffffff00008a1101fe0000000003014aa98d]
+2023-04-04 16:28:18 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:28:50 ERROR business-6-8 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:29:21 ERROR business-6-5 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:29:53 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:30:24 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:30:56 ERROR business-6-1 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:31:27 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:32:00 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:32:31 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:33:03 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:33:34 ERROR business-6-1 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:34:06 ERROR business-6-8 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-04 16:34:37 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type: com.wimetro.acs.protocol.message.OperationType$$Lambda$1393/0x00000008008e7840@7e1bf792
+2023-04-04 16:35:09 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type: com.wimetro.acs.protocol.message.OperationType$$Lambda$1393/0x00000008008e7840@290dc818
+2023-04-04 16:35:40 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type: com.wimetro.acs.protocol.message.OperationType$$Lambda$1393/0x00000008008e7840@b22644c

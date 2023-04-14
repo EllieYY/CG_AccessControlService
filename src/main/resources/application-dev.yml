@@ -1,0 +1,15 @@
+server:
+  port: 9251
+
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:sqlserver://113.57.214.58:14339;databaseName=ykt2_dev
+    username: sa
+    password: iafc@2022
+  activemq:
+    in-memory: true
+    broker-url: tcp://192.168.2.236:61616
+    user: admin
+    password: zhdt@2022

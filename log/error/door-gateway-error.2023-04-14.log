@@ -1,0 +1,249 @@
+2023-04-14 10:30:01 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0001746c01fe0000000002d2af5f]
+2023-04-14 10:30:04 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0001746c01fe0000000002d2af5f]
+2023-04-14 11:02:06 ERROR http-nio-9251-exec-2 c.w.a.s.DeviceManageService {}
+java.util.concurrent.TimeoutException: null
+	at io.netty.util.concurrent.DefaultPromise.get(DefaultPromise.java:358)
+	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:290)
+	at com.wimetro.acs.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
+	at com.wimetro.acs.controller.DeviceManageController.deviceAdd(DeviceManageController.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-04-14 11:03:07 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000ef3c01fe000000000220ee36]
+2023-04-14 11:03:21 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000ef3c01fe000000000220ee36]
+2023-04-14 11:09:28 ERROR http-nio-9251-exec-1 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:259)
+	at com.wimetro.acs.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
+	at com.wimetro.acs.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-04-14 11:10:35 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:259)
+	at com.wimetro.acs.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
+	at com.wimetro.acs.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-04-14 11:12:20 ERROR http-nio-9251-exec-2 c.w.a.s.DeviceManageService {}
+java.util.concurrent.TimeoutException: null
+	at io.netty.util.concurrent.DefaultPromise.get(DefaultPromise.java:358)
+	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:290)
+	at com.wimetro.acs.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
+	at com.wimetro.acs.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-04-14 11:13:33 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000a33301fe00000000029a89f6]
+2023-04-14 14:09:19 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000ee7d01fe000000000301702e08]
+2023-04-14 14:09:22 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000ee7d01fe000000000301702e08]
+2023-04-14 14:09:33 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000f66e01fe0000000002d66ea5]
+2023-04-14 14:09:36 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000f66e01fe0000000002d66ea5]
+2023-04-14 14:09:44 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0001638601fe000000000301593375]
+2023-04-14 14:09:47 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0001638601fe000000000301593375]
+2023-04-14 14:09:56 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000c76601fe0000000003015a8d13]
+2023-04-14 14:09:59 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000c76601fe0000000003015a8d13]
+2023-04-14 14:10:06 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00010e7b01fe000000000249ac7c]
+2023-04-14 14:10:09 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00010e7b01fe000000000249ac7c]
+2023-04-14 14:10:15 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000f45001fe00000000028c2cf9]
+2023-04-14 14:10:18 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000f45001fe00000000028c2cf9]
+2023-04-14 14:10:26 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000dfbf01fe0000000003013a8b62]
+2023-04-14 14:10:29 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000dfbf01fe0000000003013a8b62]
+2023-04-14 14:10:35 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff000101b901fe0000000002233f1a]
+2023-04-14 14:10:38 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff000101b901fe0000000002233f1a]
+2023-04-14 14:10:45 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00008e2f01fe0000000002aa0c70]
+2023-04-14 14:10:48 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00008e2f01fe0000000002aa0c70]
+2023-04-14 14:10:55 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000a89901fe0000000002ae7662]
+2023-04-14 14:10:58 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000a89901fe0000000002ae7662]
+2023-04-14 14:11:04 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00010e4601fe0000000002032c81]
+2023-04-14 14:11:07 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00010e4601fe0000000002032c81]
+2023-04-14 14:11:16 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000723c01fe00000000021ece97]
+2023-04-14 14:11:19 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000723c01fe00000000021ece97]
+2023-04-14 14:11:26 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00002ea101fe0000000002177b5e]
+2023-04-14 14:11:29 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00002ea101fe0000000002177b5e]
+2023-04-14 14:11:35 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff000045a401fe000000000260a1e7]
+2023-04-14 14:11:39 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff000045a401fe000000000260a1e7]
+2023-04-14 14:11:47 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0001367f0201fe0000000002443c33]
+2023-04-14 14:11:50 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0001367f0201fe0000000002443c33]
+2023-04-14 14:11:56 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00007f022e01fe0000000002cbe85d]
+2023-04-14 14:11:59 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff00007f022e01fe0000000002cbe85d]
+2023-04-14 15:08:22 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000e2c501fe0000000003010053f9]
+2023-04-14 15:08:25 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000e2c501fe0000000003010053f9]
+2023-04-14 15:31:55 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000a35a01fe00000000030162de3c]
+2023-04-14 15:31:58 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000a35a01fe00000000030162de3c]
+2023-04-14 16:03:43 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000034f01fe00000000021b64ce]
+2023-04-14 16:03:46 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000034f01fe00000000021b64ce]
+2023-04-14 16:04:02 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000fd9701fe0000000002d89a03]
+2023-04-14 16:04:06 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000fd9701fe0000000002d89a03]
+2023-04-14 16:06:54 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff000179a701fe000000000301251a5f]
+2023-04-14 16:06:56 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff000179a701fe000000000301251a5f]

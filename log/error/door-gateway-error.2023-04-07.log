@@ -1,0 +1,26 @@
+2023-04-07 15:53:11 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:53:42 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:54:13 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:54:45 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:55:16 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:55:48 ERROR business-6-1 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:56:19 ERROR business-6-9 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:56:51 ERROR business-6-8 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:57:22 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:57:54 ERROR business-6-4 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:58:25 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:58:57 ERROR business-6-8 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 15:59:28 ERROR business-6-1 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:00:00 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:00:31 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:01:03 ERROR business-6-5 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:01:34 ERROR business-6-3 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:02:06 ERROR business-6-8 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:02:37 ERROR business-6-9 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:03:09 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:03:40 ERROR business-6-5 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:04:12 ERROR business-6-10 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：no found type
+2023-04-07 16:47:52 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler [发送目标未注册] - 192.168.2.27
+2023-04-07 16:52:04 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler [发送目标未注册] - 192.168.2.27
+2023-04-07 16:54:22 ERROR business-6-2 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：null
+2023-04-07 16:54:53 ERROR business-6-6 c.w.a.n.h.DeviceTcpHandler /192.168.2.27:10000 -> [异常]原因：null

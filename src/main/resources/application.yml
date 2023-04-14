@@ -1,0 +1,103 @@
+
+
+server:
+  port: 9008
+
+spring:
+  profiles:
+    active: "@profiles.active@"
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://113.57.214.58:14339;databaseName=ykt2_dev
+    username: sa
+    password: iafc@2022
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 10
+      max-active: 50
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 100
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      time-between-eviction-runs-millis: 300000
+      min-evictable-idle-time-millis: 900000
+      filters: stat,wall,slf4j,commonlogging
+      # WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+      web-stat-filter:
+        #是否启用StatFilter默认值false
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+      # StatViewServlet配置，说明请参考Druid Wiki，配置_StatViewServlet配置
+      stat-view-servlet:
+        #是否启用StatViewServlet（监控页面）默认值为false（考虑到安全问题默认并未启动，如需启用建议设置密码或白名单以保障安全）
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: Iafc
+        allow:
+        # Spring监控配置，说明请参考Druid Github Wiki，配置_Druid和Spring关联监控配置
+        # Spring监控AOP切入点，如x.y.z.service.*,配置多个英文逗号分隔
+        aop-patterns: com.wim.acs.*.service.*
+      filter:
+        wall:
+          config:
+            none-base-statement-allow: true
+            multi-statement-allow: true
+        commons-log:
+          enabled: true
+          statement-create-after-log-enabled: false
+          statement-log-enabled: false
+          statement-executable-sql-log-enable: true
+          statement-log-error-enabled: true
+          result-set-log-enabled: false
+
+  activemq:
+    #    in-memory: true
+    broker-url: tcp://192.168.2.236:61616
+    user: admin
+    password: zhdt@2022
+    #    packages:
+    #      trust-all: true
+    pool:
+      enabled: true
+      max-connections: 20
+      idle-timeout: 30000
+    #队列名称
+    queueName:
+      # 访问事件队列
+      accessQueue: accessQueue
+      # 告警事件队列
+      alarmQueue: alarmQueue
+      #日志事件队列
+      logQueue: logQueue
+      #设备状态队列
+      statusQueue: statusQueue
+      #控制器消息队列
+      scpSeqQueue: scpSeqQueue
+      #控制器MAC消息队列
+      scpMacQueue: scpMacQueue
+
+  jms:
+    listener:
+      concurrency: 10
+      max-concurrency: 20
+
+netty:
+  tcpServerPort: 8008
+  tcpDevicePort: 8008
+  udpServerPort: 8101
+  udpDevicePort: 8101
+  webClientIp: 192.168.2.147
+
+
+logging:
+  level:
+    root: INFO
+#    io:
+#      netty: DEBUG
