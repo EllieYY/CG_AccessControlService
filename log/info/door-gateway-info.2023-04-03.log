@@ -4,7 +4,7 @@
 2023-04-03 11:05:01 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 11:05:01 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 11:05:01 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
-2023-04-03 11:05:01 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 11:05:01 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 11:05:02 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 11:05:02 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 11:05:02 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -35,7 +35,7 @@
 2023-04-03 14:00:01 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:00:01 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:00:01 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:00:01 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:00:01 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:00:02 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:00:02 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:00:02 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -79,7 +79,7 @@
 2023-04-03 14:02:06 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:02:06 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:02:06 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:02:07 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:02:07 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:02:07 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:02:07 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:02:07 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -123,7 +123,7 @@
 2023-04-03 14:03:48 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:03:48 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:03:48 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:03:48 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:03:48 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:03:49 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:03:49 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:03:49 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -180,7 +180,7 @@
 2023-04-03 14:06:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:06:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:06:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:06:31 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:06:31 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:06:32 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:06:32 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:06:32 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -220,7 +220,7 @@
 2023-04-03 14:06:57 INFO  http-nio-9257-exec-2 c.w.a.s.DeviceManageService [broadcast] [0] - Message(messageHeader=MessageHeader{streamId=54090, deviceSN='0000000000000000', devicePwd='ffffffff', msgCode=0x01fe00, length=0(0x00)}, messageBody=NetIdentifierOperation(netIdentifier=20481), senderAddress=null, targetAddress=/255.255.255.255:8101)
 2023-04-03 14:06:57 INFO  boss-7-1 c.w.a.p.m.Message    [field] netIdentifier - 5001
 2023-04-03 14:06:57 INFO  boss-7-1 c.w.a.p.m.Message    sort
-2023-04-03 14:06:57 INFO  boss-7-1 c.w.a.p.m.Message    get params, [CmdPropParam(idx=0, defaultVal=0, field=private int com.wimetro.acs.protocol.NetIdentifierOperation.netIdentifier, hexVal=5001)]
+2023-04-03 14:06:57 INFO  boss-7-1 c.w.a.p.m.Message    get params, [CmdPropParam(idx=0, defaultVal=0, field=private int com.wimetro.cg.protocol.NetIdentifierOperation.netIdentifier, hexVal=5001)]
 2023-04-03 14:06:57 INFO  boss-7-1 c.w.a.p.m.Message    5001
 2023-04-03 14:06:57 INFO  boss-7-1 c.w.a.p.m.Message    [encode] => /255.255.255.255:8101 : 7e30303030303030303030303030303030ffffffff0000d34a01fe000000000250016b7e
 2023-04-03 14:06:59 INFO  boss-7-1 c.w.a.p.m.Message    [decode] /192.168.2.68:8101 => MessageHeader{streamId=54090, deviceSN='MC-5924T22104923', devicePwd='ffffffff', msgCode=0x31fe00, length=137(0x89)} - TcpParamOperationResult(mac=0018084220b6, ip=192.168.2.68, mask=255.255.255.0, gateway=192.168.2.254, dns=0.0.0.0, altDns=0.0.0.0, tcpMode=1, tcpPort=8000, udpPort=8101, targetPort=9000, targetIp=192.168.2.29, autoIp=0, domain=0                                                                                                  )
@@ -259,7 +259,7 @@
 2023-04-03 14:08:29 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:08:29 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:08:29 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:08:30 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:08:30 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:08:31 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:08:31 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:08:31 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -291,7 +291,7 @@
 2023-04-03 14:09:50 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:09:50 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:09:50 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:09:51 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:09:51 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:09:51 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:09:51 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:09:51 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -323,7 +323,7 @@
 2023-04-03 14:10:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:10:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:10:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:10:23 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:10:23 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:10:24 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:10:24 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:10:24 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -363,7 +363,7 @@
 2023-04-03 14:12:13 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:12:13 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:12:13 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:12:13 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:12:13 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:12:14 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:12:14 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:12:14 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -403,7 +403,7 @@
 2023-04-03 14:14:19 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:14:19 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:14:20 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:14:20 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:14:20 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:14:20 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:14:20 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:14:20 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -442,7 +442,7 @@
 2023-04-03 14:15:57 INFO  boss-7-1 c.w.a.p.m.Message    [field] autoIp - 01
 2023-04-03 14:15:57 INFO  boss-7-1 c.w.a.p.m.Message    [field] domain - 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006465766963654d7367426f64792e676574446f6d61696e2829
 2023-04-03 14:15:57 INFO  boss-7-1 c.w.a.p.m.Message    sort
-2023-04-03 14:15:57 INFO  boss-7-1 c.w.a.p.m.Message    get params, [CmdPropParam(idx=0, defaultVal=0, field=private java.lang.String com.wimetro.acs.protocol.TcpParamOperation.mac, hexVal=3139322e3136382e322e3239), CmdPropParam(idx=1, defaultVal=0, field=private java.lang.String com.wimetro.acs.protocol.TcpParamOperation.ip, hexVal=c0a8021d), CmdPropParam(idx=2, defaultVal=0, field=private java.lang.String com.wimetro.acs.protocol.TcpParamOperation.mask, hexVal=c0a8021d), CmdPropParam(idx=3, defaultVal=0, field=private java.lang.String com.wimetro.acs.protocol.TcpParamOperation.gateway, hexVal=c0a8021d), CmdPropParam(idx=4, defaultVal=0, field=private java.lang.String com.wimetro.acs.protocol.TcpParamOperation.dns, hexVal=c0a8021d), CmdPropParam(idx=5, defaultVal=0, field=private java.lang.String com.wimetro.acs.protocol.TcpParamOperation.altDns, hexVal=c0a8021d), CmdPropParam(idx=6, defaultVal=0, field=private int com.wimetro.acs.protocol.TcpParamOperation.tcpMode, hexVal=01), CmdPropParam(idx=7, defaultVal=0, field=private int com.wimetro.acs.protocol.TcpParamOperation.tcpPort, hexVal=1f48), CmdPropParam(idx=8, defaultVal=0, field=private int com.wimetro.acs.protocol.TcpParamOperation.udpPort, hexVal=1f91), CmdPropParam(idx=9, defaultVal=0, field=private int com.wimetro.acs.protocol.TcpParamOperation.targetPort, hexVal=1f48), CmdPropParam(idx=10, defaultVal=0, field=private java.lang.String com.wimetro.acs.protocol.TcpParamOperation.targetIp, hexVal=c0a8021d), CmdPropParam(idx=11, defaultVal=0, field=private int com.wimetro.acs.protocol.TcpParamOperation.autoIp, hexVal=01), CmdPropParam(idx=12, defaultVal=0, field=private java.lang.String com.wimetro.acs.protocol.TcpParamOperation.domain, hexVal=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006465766963654d7367426f64792e676574446f6d61696e2829)]
+2023-04-03 14:15:57 INFO  boss-7-1 c.w.a.p.m.Message    get params, [CmdPropParam(idx=0, defaultVal=0, field=private java.lang.String com.wimetro.cg.protocol.TcpParamOperation.mac, hexVal=3139322e3136382e322e3239), CmdPropParam(idx=1, defaultVal=0, field=private java.lang.String com.wimetro.cg.protocol.TcpParamOperation.ip, hexVal=c0a8021d), CmdPropParam(idx=2, defaultVal=0, field=private java.lang.String com.wimetro.cg.protocol.TcpParamOperation.mask, hexVal=c0a8021d), CmdPropParam(idx=3, defaultVal=0, field=private java.lang.String com.wimetro.cg.protocol.TcpParamOperation.gateway, hexVal=c0a8021d), CmdPropParam(idx=4, defaultVal=0, field=private java.lang.String com.wimetro.cg.protocol.TcpParamOperation.dns, hexVal=c0a8021d), CmdPropParam(idx=5, defaultVal=0, field=private java.lang.String com.wimetro.cg.protocol.TcpParamOperation.altDns, hexVal=c0a8021d), CmdPropParam(idx=6, defaultVal=0, field=private int com.wimetro.cg.protocol.TcpParamOperation.tcpMode, hexVal=01), CmdPropParam(idx=7, defaultVal=0, field=private int com.wimetro.cg.protocol.TcpParamOperation.tcpPort, hexVal=1f48), CmdPropParam(idx=8, defaultVal=0, field=private int com.wimetro.cg.protocol.TcpParamOperation.udpPort, hexVal=1f91), CmdPropParam(idx=9, defaultVal=0, field=private int com.wimetro.cg.protocol.TcpParamOperation.targetPort, hexVal=1f48), CmdPropParam(idx=10, defaultVal=0, field=private java.lang.String com.wimetro.cg.protocol.TcpParamOperation.targetIp, hexVal=c0a8021d), CmdPropParam(idx=11, defaultVal=0, field=private int com.wimetro.cg.protocol.TcpParamOperation.autoIp, hexVal=01), CmdPropParam(idx=12, defaultVal=0, field=private java.lang.String com.wimetro.cg.protocol.TcpParamOperation.domain, hexVal=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006465766963654d7367426f64792e676574446f6d61696e2829)]
 2023-04-03 14:15:57 INFO  boss-7-1 c.w.a.p.m.Message    3139322e3136382e322e3239c0a8021dc0a8021dc0a8021dc0a8021dc0a8021d011f481f911f48c0a8021d0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006465766963654d7367426f64792e676574446f6d61696e2829
 2023-04-03 14:15:57 INFO  boss-7-1 c.w.a.p.m.Message    [encode] => null : 7e30303030303030303030303030303030ffffffff0001852d0106010000008f3139322e3136382e322e3239c0a8021dc0a8021dc0a8021dc0a8021dc0a8021d011f481f911f48c0a8021d0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006465766963654d7367426f64792e676574446f6d61696e28298e7e
 2023-04-03 14:17:54 INFO  main c.w.a.GatewayApplication Starting GatewayApplication using Java 11.0.10 on DESKTOP-SPKKHPB with PID 63244 (D:\11_CG\00_code\CG_AccessControlService\target\classes started by ansen in D:\11_CG\00_code\CG_AccessControlService)
@@ -451,7 +451,7 @@
 2023-04-03 14:17:56 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:17:56 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:17:56 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:17:56 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:17:56 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:17:57 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:17:57 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:17:57 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -492,7 +492,7 @@
 2023-04-03 14:19:09 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 14:19:09 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 14:19:09 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 63 ms. Found 0 Redis repository interfaces.
-2023-04-03 14:19:09 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 14:19:09 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 14:19:10 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 14:19:10 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 14:19:10 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -562,7 +562,7 @@
 2023-04-03 15:14:35 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 15:14:35 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 15:14:35 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
-2023-04-03 15:14:35 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 15:14:35 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 15:14:36 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 15:14:36 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 15:14:36 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -637,7 +637,7 @@
 2023-04-03 15:27:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 15:27:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 15:27:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-2023-04-03 15:27:23 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 15:27:23 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 15:27:23 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 15:27:23 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 15:27:23 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -712,7 +712,7 @@
 2023-04-03 16:30:18 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-03 16:30:18 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-03 16:30:18 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-2023-04-03 16:30:18 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-03 16:30:18 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-03 16:30:19 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-04-03 16:30:19 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-04-03 16:30:19 INFO  main o.a.c.c.StandardService Starting service [Tomcat]

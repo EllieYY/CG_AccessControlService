@@ -1,7 +1,7 @@
 2023-03-30 10:26:47 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
-java.lang.ClassCastException: class com.wimetro.acs.protocol.NetIdentifierOperationResult cannot be cast to class com.wimetro.acs.protocol.message.OperationResult (com.wimetro.acs.protocol.NetIdentifierOperationResult and com.wimetro.acs.protocol.message.OperationResult are in unnamed module of loader 'app')
-	at com.wimetro.acs.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:54)
-	at com.wimetro.acs.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:26)
+java.lang.ClassCastException: class com.wimetro.cg.protocol.NetIdentifierOperationResult cannot be cast to class com.wimetro.cg.protocol.message.OperationResult (com.wimetro.cg.protocol.NetIdentifierOperationResult and com.wimetro.cg.protocol.message.OperationResult are in unnamed module of loader 'app')
+	at com.wimetro.cg.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:54)
+	at com.wimetro.cg.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:26)
 	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -26,8 +26,8 @@ java.lang.ClassCastException: class com.wimetro.acs.protocol.NetIdentifierOperat
 2023-03-30 10:30:40 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [无法解析报文] - [74657374303030313132333435363738ffffffff00007d7f020101fe00000000027f02c662]
 2023-03-30 10:44:59 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.NullPointerException: null
-	at com.wimetro.acs.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:66)
-	at com.wimetro.acs.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:26)
+	at com.wimetro.cg.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:66)
+	at com.wimetro.cg.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:26)
 	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -51,8 +51,8 @@ java.lang.NullPointerException: null
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-30 10:47:39 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.NullPointerException: null
-	at com.wimetro.acs.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:66)
-	at com.wimetro.acs.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:26)
+	at com.wimetro.cg.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:66)
+	at com.wimetro.cg.netty.handler.DeviceUdpHandler.channelRead0(DeviceUdpHandler.java:26)
 	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -132,7 +132,7 @@ The dependencies of some of the beans in the application context form a cycle:
 ┌─────┐
 |  deviceManageService defined in file [D:\11_CG\00_code\CG_AccessControlService\target\classes\com\wimetro\acs\service\DeviceManageService.class]
 ↑     ↓
-|  nettyUdpServer (field com.wimetro.acs.service.DeviceManageService com.wimetro.acs.netty.runner.NettyUdpServer.deviceManageService)
+|  nettyUdpServer (field com.wimetro.cg.service.DeviceManageService com.wimetro.cg.netty.runner.NettyUdpServer.deviceManageService)
 └─────┘
 
 
@@ -142,13 +142,13 @@ Relying upon circular references is discouraged and they are prohibited by defau
 
 2023-03-30 15:36:33 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.AssertionError: no found type
-	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:57)
-	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:42)
-	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:147)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:133)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:48)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:23)
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:57)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:42)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:147)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:133)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:48)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:23)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -168,13 +168,13 @@ java.lang.AssertionError: no found type
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-30 15:37:50 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.AssertionError: no found type
-	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:57)
-	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:42)
-	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:147)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:133)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:48)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:23)
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:57)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:42)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:147)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:133)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:48)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:23)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)

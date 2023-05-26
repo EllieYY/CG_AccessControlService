@@ -4,7 +4,7 @@
 2023-04-12 14:40:20 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-12 14:40:20 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-12 14:40:21 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 53 ms. Found 0 Redis repository interfaces.
-2023-04-12 14:40:21 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-12 14:40:21 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-12 14:40:22 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9251 (http)
 2023-04-12 14:40:22 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9251"]
 2023-04-12 14:40:22 INFO  main o.a.c.c.StandardService Starting service [Tomcat]

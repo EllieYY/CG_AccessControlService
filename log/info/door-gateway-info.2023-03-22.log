@@ -4,7 +4,7 @@
 2023-03-22 09:28:22 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 09:28:22 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 09:28:22 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
-2023-03-22 09:28:22 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 09:28:22 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 09:28:23 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 09:28:23 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 09:28:23 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -27,7 +27,7 @@
 2023-03-22 09:37:51 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 09:37:51 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 09:37:51 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
-2023-03-22 09:37:51 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 09:37:51 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 09:37:52 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 09:37:52 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 09:37:52 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -46,7 +46,7 @@
 2023-03-22 09:37:57 INFO  main c.w.a.n.r.NettyUdpServer  UdpServer 使用nio模式
 2023-03-22 09:37:57 WARN  boss-4-1 i.n.c.ChannelInitializer Failed to initialize a channel. Closing: [id: 0xdb332b5c]
 java.lang.ClassCastException: class io.netty.channel.socket.nio.NioDatagramChannel cannot be cast to class io.netty.channel.socket.nio.NioSocketChannel (io.netty.channel.socket.nio.NioDatagramChannel and io.netty.channel.socket.nio.NioSocketChannel are in unnamed module of loader 'app')
-	at com.wimetro.acs.netty.runner.NettyUdpServer$1.initChannel(NettyUdpServer.java:113)
+	at com.wimetro.cg.netty.runner.NettyUdpServer$1.initChannel(NettyUdpServer.java:113)
 	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
 	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
 	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
@@ -90,7 +90,7 @@ java.nio.channels.ClosedChannelException: null
 2023-03-22 09:38:49 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 09:38:49 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 09:38:49 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
-2023-03-22 09:38:49 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 09:38:49 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 09:38:50 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 09:38:50 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 09:38:50 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -115,7 +115,7 @@ java.nio.channels.ClosedChannelException: null
 2023-03-22 11:26:19 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 11:26:19 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 11:26:19 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-2023-03-22 11:26:19 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 11:26:19 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 11:26:20 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 11:26:20 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 11:26:20 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -139,14 +139,14 @@ java.lang.IllegalStateException: group not set
 	at io.netty.bootstrap.Bootstrap.validate(Bootstrap.java:46)
 	at io.netty.bootstrap.AbstractBootstrap.bind(AbstractBootstrap.java:267)
 	at io.netty.bootstrap.AbstractBootstrap.bind(AbstractBootstrap.java:246)
-	at com.wimetro.acs.netty.runner.NettyUdpServer.start(NettyUdpServer.java:109)
-	at com.wimetro.acs.netty.runner.NettyUdpServer.run(NettyUdpServer.java:135)
+	at com.wimetro.cg.netty.runner.NettyUdpServer.start(NettyUdpServer.java:109)
+	at com.wimetro.cg.netty.runner.NettyUdpServer.run(NettyUdpServer.java:135)
 	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760)
 	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at com.wimetro.acs.GatewayApplication.main(GatewayApplication.java:17)
+	at com.wimetro.cg.GatewayApplication.main(GatewayApplication.java:17)
 2023-03-22 11:26:26 INFO  main c.w.a.n.r.NettyUdpServer group not set
 2023-03-22 11:27:48 INFO  main c.w.a.GatewayApplication Starting GatewayApplication using Java 11.0.10 on DESKTOP-SPKKHPB with PID 36676 (D:\11_CG\00_code\CG_AccessControlService\target\classes started by ansen in D:\11_CG\00_code\CG_AccessControlService)
 2023-03-22 11:27:48 INFO  main c.w.a.GatewayApplication The following profiles are active: dev
@@ -154,7 +154,7 @@ java.lang.IllegalStateException: group not set
 2023-03-22 11:27:50 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 11:27:50 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 11:27:50 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-2023-03-22 11:27:50 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 11:27:50 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 11:27:52 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 11:27:52 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 11:27:52 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -179,7 +179,7 @@ java.lang.IllegalStateException: group not set
 2023-03-22 14:18:26 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 14:18:26 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 14:18:27 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
-2023-03-22 14:18:27 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 14:18:27 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 14:18:27 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 14:18:27 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 14:18:27 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -206,7 +206,7 @@ java.lang.IllegalStateException: group not set
 2023-03-22 14:43:09 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 14:43:09 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 14:43:09 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2023-03-22 14:43:09 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 14:43:09 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 14:43:09 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 14:43:09 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 14:43:09 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -234,7 +234,7 @@ java.lang.IllegalStateException: group not set
 2023-03-22 14:46:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 14:46:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 14:46:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
-2023-03-22 14:46:32 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 14:46:32 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 14:46:32 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 14:46:32 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 14:46:32 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -292,7 +292,7 @@ io.netty.util.IllegalReferenceCountException: refCnt: 0, decrement: 1
 2023-03-22 14:47:28 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 14:47:28 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 14:47:28 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
-2023-03-22 14:47:29 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 14:47:29 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 14:47:29 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 14:47:29 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 14:47:29 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -350,7 +350,7 @@ io.netty.util.IllegalReferenceCountException: refCnt: 0, decrement: 1
 2023-03-22 14:49:11 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 14:49:11 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 14:49:11 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
-2023-03-22 14:49:11 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 14:49:11 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 14:49:11 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 14:49:11 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 14:49:11 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -379,7 +379,7 @@ io.netty.util.IllegalReferenceCountException: refCnt: 0, decrement: 1
 2023-03-22 15:01:08 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 15:01:08 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 15:01:08 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
-2023-03-22 15:01:08 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 15:01:08 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 15:01:08 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 15:01:08 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 15:01:08 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -419,7 +419,7 @@ io.netty.util.IllegalReferenceCountException: refCnt: 0, decrement: 1
 2023-03-22 15:07:06 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 15:07:06 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 15:07:06 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
-2023-03-22 15:07:06 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 15:07:06 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 15:07:07 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 15:07:07 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 15:07:07 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -452,13 +452,13 @@ io.netty.util.IllegalReferenceCountException: refCnt: 0, decrement: 1
 2023-03-22 15:37:09 INFO  boss-7-1 c.w.a.p.m.Message    [decode]msgCode=01fe00
 2023-03-22 15:37:09 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.AssertionError: no found type
-	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:55)
-	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:40)
-	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:160)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:146)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:55)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:40)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:160)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:146)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -482,13 +482,13 @@ java.lang.AssertionError: no found type
 2023-03-22 15:37:12 INFO  boss-7-1 c.w.a.p.m.Message    [decode]msgCode=01fe00
 2023-03-22 15:37:12 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.AssertionError: no found type
-	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:55)
-	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:40)
-	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:160)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:146)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:55)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:40)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:160)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:146)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -512,13 +512,13 @@ java.lang.AssertionError: no found type
 2023-03-22 15:37:15 INFO  boss-7-1 c.w.a.p.m.Message    [decode]msgCode=01fe00
 2023-03-22 15:37:15 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.AssertionError: no found type
-	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:55)
-	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:40)
-	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:160)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:146)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:55)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:40)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:160)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:146)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -542,13 +542,13 @@ java.lang.AssertionError: no found type
 2023-03-22 15:37:18 INFO  boss-7-1 c.w.a.p.m.Message    [decode]msgCode=01fe00
 2023-03-22 15:37:18 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.AssertionError: no found type
-	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:55)
-	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:40)
-	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:160)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:146)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:55)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:40)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:160)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:146)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -572,13 +572,13 @@ java.lang.AssertionError: no found type
 2023-03-22 15:37:21 INFO  boss-7-1 c.w.a.p.m.Message    [decode]msgCode=01fe00
 2023-03-22 15:37:21 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.AssertionError: no found type
-	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:55)
-	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:40)
-	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:160)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:146)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:55)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:40)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:160)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:146)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -602,13 +602,13 @@ java.lang.AssertionError: no found type
 2023-03-22 15:37:25 INFO  boss-7-1 c.w.a.p.m.Message    [decode]msgCode=01fe00
 2023-03-22 15:37:25 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
 java.lang.AssertionError: no found type
-	at com.wimetro.acs.protocol.message.OperationType.getOperationType(OperationType.java:55)
-	at com.wimetro.acs.protocol.message.OperationType.fromOpCode(OperationType.java:40)
-	at com.wimetro.acs.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:160)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:146)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:55)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:40)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:160)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:146)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -632,7 +632,7 @@ java.lang.AssertionError: no found type
 2023-03-22 16:16:55 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 16:16:55 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 16:16:55 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2023-03-22 16:16:55 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 16:16:55 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 16:16:56 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 16:16:56 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 16:16:56 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -659,7 +659,7 @@ java.lang.AssertionError: no found type
 2023-03-22 16:17:38 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 16:17:38 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 16:17:38 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2023-03-22 16:17:38 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 16:17:38 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 16:17:38 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 16:17:38 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 16:17:38 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -686,7 +686,7 @@ java.lang.AssertionError: no found type
 2023-03-22 17:00:04 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-22 17:00:04 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-22 17:00:04 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
-2023-03-22 17:00:04 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-22 17:00:04 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-22 17:00:05 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-22 17:00:05 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-22 17:00:05 INFO  main o.a.c.c.StandardService Starting service [Tomcat]

@@ -4,7 +4,7 @@
 2023-04-13 15:56:58 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-13 15:56:58 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-13 15:56:58 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-2023-04-13 15:56:58 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-13 15:56:58 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-13 15:56:59 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9251 (http)
 2023-04-13 15:56:59 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9251"]
 2023-04-13 15:56:59 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -79,9 +79,9 @@
 2023-04-13 15:59:00 ERROR http-nio-9251-exec-2 c.w.a.s.DeviceManageService {}
 java.util.concurrent.TimeoutException: null
 	at io.netty.util.concurrent.DefaultPromise.get(DefaultPromise.java:358)
-	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:323)
-	at com.wimetro.acs.service.DeviceManageService.getPortInfo(DeviceManageService.java:138)
-	at com.wimetro.acs.controller.DeviceManageController.getPortInfo(DeviceManageController.java:79)
+	at com.wimetro.cg.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:323)
+	at com.wimetro.cg.service.DeviceManageService.getPortInfo(DeviceManageService.java:138)
+	at com.wimetro.cg.controller.DeviceManageController.getPortInfo(DeviceManageController.java:79)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -142,7 +142,7 @@ java.util.concurrent.TimeoutException: null
 2023-04-13 16:02:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-13 16:02:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-13 16:02:31 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-2023-04-13 16:02:31 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-13 16:02:31 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-13 16:02:32 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9251 (http)
 2023-04-13 16:02:32 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9251"]
 2023-04-13 16:02:32 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -204,7 +204,7 @@ java.util.concurrent.TimeoutException: null
 2023-04-13 16:22:08 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-13 16:22:08 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-13 16:22:08 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-2023-04-13 16:22:08 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-13 16:22:08 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-13 16:22:09 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9251 (http)
 2023-04-13 16:22:09 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9251"]
 2023-04-13 16:22:09 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -267,7 +267,7 @@ java.util.concurrent.TimeoutException: null
 2023-04-13 16:25:25 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-13 16:25:25 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-13 16:25:25 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-2023-04-13 16:25:25 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-13 16:25:25 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-13 16:25:25 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9251 (http)
 2023-04-13 16:25:25 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9251"]
 2023-04-13 16:25:25 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -343,10 +343,10 @@ java.util.concurrent.TimeoutException: null
 2023-04-13 16:26:24 INFO  worker-5-1 c.w.a.p.m.Message    [encode] => /192.168.2.28:10000 - 7e4d432d35393234543232313034353233ffffffff000064c1030b000000000100a87e
 2023-04-13 16:26:24 INFO  worker-5-1 c.w.a.n.c.TcpProtocolDecoder [device报文]000064c14d432d35393234543232313034353233ffffffff21010000000000bb
 2023-04-13 16:26:24 INFO  worker-5-1 c.w.a.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=25793, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x210100, length=0(0x00)} - OkMessage()
-2023-04-13 16:26:24 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.wimetro.acs.protocol.common.OkMessage cannot be cast to class com.wimetro.acs.protocol.port.ForcedInfo (com.wimetro.acs.protocol.common.OkMessage and com.wimetro.acs.protocol.port.ForcedInfo are in unnamed module of loader 'app')] with root cause
-java.lang.ClassCastException: class com.wimetro.acs.protocol.common.OkMessage cannot be cast to class com.wimetro.acs.protocol.port.ForcedInfo (com.wimetro.acs.protocol.common.OkMessage and com.wimetro.acs.protocol.port.ForcedInfo are in unnamed module of loader 'app')
-	at com.wimetro.acs.service.DeviceManageService.getPortInfo(DeviceManageService.java:158)
-	at com.wimetro.acs.controller.DeviceManageController.getPortInfo(DeviceManageController.java:81)
+2023-04-13 16:26:24 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.wimetro.cg.protocol.common.OkMessage cannot be cast to class com.wimetro.cg.protocol.port.ForcedInfo (com.wimetro.cg.protocol.common.OkMessage and com.wimetro.cg.protocol.port.ForcedInfo are in unnamed module of loader 'app')] with root cause
+java.lang.ClassCastException: class com.wimetro.cg.protocol.common.OkMessage cannot be cast to class com.wimetro.cg.protocol.port.ForcedInfo (com.wimetro.cg.protocol.common.OkMessage and com.wimetro.cg.protocol.port.ForcedInfo are in unnamed module of loader 'app')
+	at com.wimetro.cg.service.DeviceManageService.getPortInfo(DeviceManageService.java:158)
+	at com.wimetro.cg.controller.DeviceManageController.getPortInfo(DeviceManageController.java:81)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -400,7 +400,7 @@ java.lang.ClassCastException: class com.wimetro.acs.protocol.common.OkMessage ca
 2023-04-13 16:37:26 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-04-13 16:37:26 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-04-13 16:37:26 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-2023-04-13 16:37:26 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-04-13 16:37:26 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-04-13 16:37:27 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9251 (http)
 2023-04-13 16:37:27 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9251"]
 2023-04-13 16:37:27 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -463,10 +463,10 @@ java.lang.ClassCastException: class com.wimetro.acs.protocol.common.OkMessage ca
 2023-04-13 16:38:11 INFO  worker-5-1 c.w.a.p.m.Message    [encode] => /192.168.2.28:10000 - 7e4d432d35393234543232313034353233ffffffff0000dc1f010e00000000007f02017e
 2023-04-13 16:38:11 INFO  worker-5-1 c.w.a.n.c.TcpProtocolDecoder [device报文]0000dc1f4d432d35393234543232313034353233ffffffff2103000000000093
 2023-04-13 16:38:11 INFO  worker-5-1 c.w.a.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=56351, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x210300, length=0(0x00)} - CheckErrorMessage()
-2023-04-13 16:38:11 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.wimetro.acs.protocol.common.CheckErrorMessage cannot be cast to class com.wimetro.acs.protocol.port.PortInfo (com.wimetro.acs.protocol.common.CheckErrorMessage and com.wimetro.acs.protocol.port.PortInfo are in unnamed module of loader 'app')] with root cause
-java.lang.ClassCastException: class com.wimetro.acs.protocol.common.CheckErrorMessage cannot be cast to class com.wimetro.acs.protocol.port.PortInfo (com.wimetro.acs.protocol.common.CheckErrorMessage and com.wimetro.acs.protocol.port.PortInfo are in unnamed module of loader 'app')
-	at com.wimetro.acs.service.DeviceManageService.getPortInfo(DeviceManageService.java:138)
-	at com.wimetro.acs.controller.DeviceManageController.getPortInfo(DeviceManageController.java:81)
+2023-04-13 16:38:11 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.wimetro.cg.protocol.common.CheckErrorMessage cannot be cast to class com.wimetro.cg.protocol.port.PortInfo (com.wimetro.cg.protocol.common.CheckErrorMessage and com.wimetro.cg.protocol.port.PortInfo are in unnamed module of loader 'app')] with root cause
+java.lang.ClassCastException: class com.wimetro.cg.protocol.common.CheckErrorMessage cannot be cast to class com.wimetro.cg.protocol.port.PortInfo (com.wimetro.cg.protocol.common.CheckErrorMessage and com.wimetro.cg.protocol.port.PortInfo are in unnamed module of loader 'app')
+	at com.wimetro.cg.service.DeviceManageService.getPortInfo(DeviceManageService.java:138)
+	at com.wimetro.cg.controller.DeviceManageController.getPortInfo(DeviceManageController.java:81)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

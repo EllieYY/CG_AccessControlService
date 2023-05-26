@@ -1,14 +1,14 @@
 2023-03-23 15:41:47 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -21,16 +21,16 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-23 15:41:48 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -43,16 +43,16 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-23 15:41:49 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -65,16 +65,16 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-23 15:41:50 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -87,16 +87,16 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-23 15:41:51 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -134,14 +134,14 @@ Caused by: java.lang.NullPointerException: null
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.ensureObj(UnsafeFieldAccessorImpl.java:57)
 	at java.base/jdk.internal.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:75)
 	at java.base/java.lang.reflect.Field.set(Field.java:780)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:177)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:130)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:177)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:130)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	... 16 common frames omitted
 2023-03-23 16:13:38 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
-io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can not set int field com.wimetro.acs.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
+io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can not set int field com.wimetro.cg.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:98)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -159,19 +159,19 @@ io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro.acs.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
+Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro.cg.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:167)
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:171)
 	at java.base/jdk.internal.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:98)
 	at java.base/java.lang.reflect.Field.set(Field.java:780)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:177)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:130)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:177)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:130)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	... 16 common frames omitted
 2023-03-23 16:16:01 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
-io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can not set int field com.wimetro.acs.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
+io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can not set int field com.wimetro.cg.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:98)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -189,15 +189,15 @@ io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro.acs.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
+Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro.cg.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:167)
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:171)
 	at java.base/jdk.internal.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:98)
 	at java.base/java.lang.reflect.Field.set(Field.java:780)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:177)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:130)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:177)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:130)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	... 16 common frames omitted
 2023-03-23 16:18:17 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [无法解析报文] - [000000ff4d432d35393234543232313034393233ffffffff01fe00000000027578ed]

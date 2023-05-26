@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wimetro.cg.db.mapper.DCgcgEmployeeDoorMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wimetro.cg.db.entity.DCgcgEmployeeDoor">
+        <id column="auto_id" property="autoId" />
+        <result column="employee_no" property="employeeNo" />
+        <result column="card_no" property="cardNo" />
+        <result column="dept_id" property="deptId" />
+        <result column="employee_group_id" property="employeeGroupId" />
+        <result column="schedules_group_id" property="schedulesGroupId" />
+        <result column="controller_id" property="controllerId" />
+        <result column="door_no" property="doorNo" />
+        <result column="in_out_flag" property="inOutFlag" />
+        <result column="special_permssion" property="specialPermssion" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="device_sn" property="deviceSn" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        auto_id, employee_no, card_no, dept_id, employee_group_id, schedules_group_id, controller_id, door_no, in_out_flag, special_permssion, create_by, create_time, update_by, update_time, device_sn
+    </sql>
+
+    <resultMap id="ScpScheduleGroupList" type="com.wimetro.cg.model.card.ScpTimeSetInfo">
+        <result column="device_sn" property="sn" />
+        <collection property="timeSetList" ofType="java.lang.Integer">
+            <result column="schedules_group_id" />
+        </collection>
+    </resultMap>
+
+    <select id="selectSchedulesGroupIdByDeviceSn" resultMap="ScpScheduleGroupList">
+        select
+            device_sn,
+            schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = #{deviceSn,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

@@ -5,9 +5,9 @@
 2023-04-13 15:59:00 ERROR http-nio-9251-exec-2 c.w.a.s.DeviceManageService {}
 java.util.concurrent.TimeoutException: null
 	at io.netty.util.concurrent.DefaultPromise.get(DefaultPromise.java:358)
-	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:323)
-	at com.wimetro.acs.service.DeviceManageService.getPortInfo(DeviceManageService.java:138)
-	at com.wimetro.acs.controller.DeviceManageController.getPortInfo(DeviceManageController.java:79)
+	at com.wimetro.cg.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:323)
+	at com.wimetro.cg.service.DeviceManageService.getPortInfo(DeviceManageService.java:138)
+	at com.wimetro.cg.controller.DeviceManageController.getPortInfo(DeviceManageController.java:79)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -53,10 +53,10 @@ java.util.concurrent.TimeoutException: null
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2023-04-13 16:26:24 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.wimetro.acs.protocol.common.OkMessage cannot be cast to class com.wimetro.acs.protocol.port.ForcedInfo (com.wimetro.acs.protocol.common.OkMessage and com.wimetro.acs.protocol.port.ForcedInfo are in unnamed module of loader 'app')] with root cause
-java.lang.ClassCastException: class com.wimetro.acs.protocol.common.OkMessage cannot be cast to class com.wimetro.acs.protocol.port.ForcedInfo (com.wimetro.acs.protocol.common.OkMessage and com.wimetro.acs.protocol.port.ForcedInfo are in unnamed module of loader 'app')
-	at com.wimetro.acs.service.DeviceManageService.getPortInfo(DeviceManageService.java:158)
-	at com.wimetro.acs.controller.DeviceManageController.getPortInfo(DeviceManageController.java:81)
+2023-04-13 16:26:24 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.wimetro.cg.protocol.common.OkMessage cannot be cast to class com.wimetro.cg.protocol.port.ForcedInfo (com.wimetro.cg.protocol.common.OkMessage and com.wimetro.cg.protocol.port.ForcedInfo are in unnamed module of loader 'app')] with root cause
+java.lang.ClassCastException: class com.wimetro.cg.protocol.common.OkMessage cannot be cast to class com.wimetro.cg.protocol.port.ForcedInfo (com.wimetro.cg.protocol.common.OkMessage and com.wimetro.cg.protocol.port.ForcedInfo are in unnamed module of loader 'app')
+	at com.wimetro.cg.service.DeviceManageService.getPortInfo(DeviceManageService.java:158)
+	at com.wimetro.cg.controller.DeviceManageController.getPortInfo(DeviceManageController.java:81)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -102,10 +102,10 @@ java.lang.ClassCastException: class com.wimetro.acs.protocol.common.OkMessage ca
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2023-04-13 16:38:11 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.wimetro.acs.protocol.common.CheckErrorMessage cannot be cast to class com.wimetro.acs.protocol.port.PortInfo (com.wimetro.acs.protocol.common.CheckErrorMessage and com.wimetro.acs.protocol.port.PortInfo are in unnamed module of loader 'app')] with root cause
-java.lang.ClassCastException: class com.wimetro.acs.protocol.common.CheckErrorMessage cannot be cast to class com.wimetro.acs.protocol.port.PortInfo (com.wimetro.acs.protocol.common.CheckErrorMessage and com.wimetro.acs.protocol.port.PortInfo are in unnamed module of loader 'app')
-	at com.wimetro.acs.service.DeviceManageService.getPortInfo(DeviceManageService.java:138)
-	at com.wimetro.acs.controller.DeviceManageController.getPortInfo(DeviceManageController.java:81)
+2023-04-13 16:38:11 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.wimetro.cg.protocol.common.CheckErrorMessage cannot be cast to class com.wimetro.cg.protocol.port.PortInfo (com.wimetro.cg.protocol.common.CheckErrorMessage and com.wimetro.cg.protocol.port.PortInfo are in unnamed module of loader 'app')] with root cause
+java.lang.ClassCastException: class com.wimetro.cg.protocol.common.CheckErrorMessage cannot be cast to class com.wimetro.cg.protocol.port.PortInfo (com.wimetro.cg.protocol.common.CheckErrorMessage and com.wimetro.cg.protocol.port.PortInfo are in unnamed module of loader 'app')
+	at com.wimetro.cg.service.DeviceManageService.getPortInfo(DeviceManageService.java:138)
+	at com.wimetro.cg.controller.DeviceManageController.getPortInfo(DeviceManageController.java:81)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

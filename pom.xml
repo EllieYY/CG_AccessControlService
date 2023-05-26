@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.wimetro</groupId>
-    <artifactId>acs</artifactId>
+    <artifactId>cg</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>C_AccessControlService</name>
     <description>Project for Access Control Device C/G </description>
@@ -186,7 +186,7 @@
                 <executions>
                     <execution>
                         <configuration>
-                            <mainClass>com.wimetro.acs.GatewayApplication</mainClass>
+                            <mainClass>com.wimetro.cg.GatewayApplication</mainClass>
                         </configuration>
                         <goals>
                             <goal>repackage</goal>

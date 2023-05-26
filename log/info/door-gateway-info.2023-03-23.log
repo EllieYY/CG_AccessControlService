@@ -4,7 +4,7 @@
 2023-03-23 15:39:27 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 15:39:27 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 15:39:27 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
-2023-03-23 15:39:27 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 15:39:27 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 15:39:28 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 15:39:28 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 15:39:28 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -30,16 +30,16 @@
 2023-03-23 15:41:46 INFO  http-nio-9257-exec-1 o.s.w.s.DispatcherServlet Completed initialization in 3 ms
 2023-03-23 15:41:47 INFO  http-nio-9257-exec-1 c.w.a.n.r.NettyUdpServer [broadcast] [0] - Message(messageHeader=MessageHeader{streamId=255, deviceSN='MC-5924T22104923', devicePwd='FFFFFFFF', msgCode=0x01fe00, length=2(0x02)}, messageBody=DeviceSearchParam(netIdentifier=30072), targetAddress=/255.255.255.255:8108)
 2023-03-23 15:41:47 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -53,16 +53,16 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-23 15:41:48 INFO  http-nio-9257-exec-1 c.w.a.n.r.NettyUdpServer [broadcast] [1] - Message(messageHeader=MessageHeader{streamId=255, deviceSN='MC-5924T22104923', devicePwd='FFFFFFFF', msgCode=0x01fe00, length=2(0x02)}, messageBody=DeviceSearchParam(netIdentifier=30072), targetAddress=/255.255.255.255:8108)
 2023-03-23 15:41:48 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -76,16 +76,16 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-23 15:41:49 INFO  http-nio-9257-exec-1 c.w.a.n.r.NettyUdpServer [broadcast] [2] - Message(messageHeader=MessageHeader{streamId=255, deviceSN='MC-5924T22104923', devicePwd='FFFFFFFF', msgCode=0x01fe00, length=2(0x02)}, messageBody=DeviceSearchParam(netIdentifier=30072), targetAddress=/255.255.255.255:8108)
 2023-03-23 15:41:49 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -99,16 +99,16 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-23 15:41:50 INFO  http-nio-9257-exec-1 c.w.a.n.r.NettyUdpServer [broadcast] [3] - Message(messageHeader=MessageHeader{streamId=255, deviceSN='MC-5924T22104923', devicePwd='FFFFFFFF', msgCode=0x01fe00, length=2(0x02)}, messageBody=DeviceSearchParam(netIdentifier=30072), targetAddress=/255.255.255.255:8108)
 2023-03-23 15:41:50 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -122,16 +122,16 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-03-23 15:41:51 INFO  http-nio-9257-exec-1 c.w.a.n.r.NettyUdpServer [broadcast] [4] - Message(messageHeader=MessageHeader{streamId=255, deviceSN='MC-5924T22104923', devicePwd='FFFFFFFF', msgCode=0x01fe00, length=2(0x02)}, messageBody=DeviceSearchParam(netIdentifier=30072), targetAddress=/255.255.255.255:8108)
 2023-03-23 15:41:51 ERROR boss-7-1 c.w.a.p.m.Message    属性netIdentifier访问异常，消息编码失败
-java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message cannot access a member of class com.wimetro.acs.protocol.NetIdentifierOperationResult with modifiers "private"
+java.lang.IllegalAccessException: class com.wimetro.cg.protocol.message.Message cannot access a member of class com.wimetro.cg.protocol.NetIdentifierOperationResult with modifiers "private"
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
 	at java.base/java.lang.reflect.Field.checkAccess(Field.java:1075)
 	at java.base/java.lang.reflect.Field.get(Field.java:416)
-	at com.wimetro.acs.protocol.message.Message.getSortedParams(Message.java:240)
-	at com.wimetro.acs.protocol.message.Message.encodeMsgBody(Message.java:79)
-	at com.wimetro.acs.protocol.message.Message.encode(Message.java:51)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
-	at com.wimetro.acs.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
+	at com.wimetro.cg.protocol.message.Message.getSortedParams(Message.java:240)
+	at com.wimetro.cg.protocol.message.Message.encodeMsgBody(Message.java:79)
+	at com.wimetro.cg.protocol.message.Message.encode(Message.java:51)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:27)
+	at com.wimetro.cg.netty.codec.UdpDeviceEncoder.encode(UdpDeviceEncoder.java:21)
 	at io.netty.handler.codec.MessageToMessageEncoder.write(MessageToMessageEncoder.java:89)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
@@ -149,7 +149,7 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 2023-03-23 15:43:28 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 15:43:28 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 15:43:28 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
-2023-03-23 15:43:28 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 15:43:28 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 15:43:29 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 15:43:29 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 15:43:29 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -199,7 +199,7 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 2023-03-23 15:56:17 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 15:56:17 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 15:56:17 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
-2023-03-23 15:56:17 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 15:56:17 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 15:56:18 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 15:56:18 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 15:56:18 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -233,7 +233,7 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 2023-03-23 15:57:59 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 15:57:59 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 15:57:59 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2023-03-23 15:57:59 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 15:57:59 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 15:58:00 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 15:58:00 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 15:58:00 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -267,7 +267,7 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 2023-03-23 15:59:35 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 15:59:35 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 15:59:35 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-2023-03-23 15:59:36 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 15:59:36 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 15:59:36 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 15:59:36 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 15:59:36 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -308,7 +308,7 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 2023-03-23 16:04:22 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 16:04:22 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 16:04:22 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-2023-03-23 16:04:22 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 16:04:22 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 16:04:23 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 16:04:23 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 16:04:23 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -348,7 +348,7 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 2023-03-23 16:06:43 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 16:06:43 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 16:06:43 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
-2023-03-23 16:06:43 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 16:06:43 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 16:06:44 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 16:06:44 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 16:06:44 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -392,7 +392,7 @@ java.lang.IllegalAccessException: class com.wimetro.acs.protocol.message.Message
 2023-03-23 16:10:26 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 16:10:26 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 16:10:26 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2023-03-23 16:10:26 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 16:10:26 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 16:10:27 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 16:10:27 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 16:10:27 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -474,10 +474,10 @@ Caused by: java.lang.NullPointerException: null
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.ensureObj(UnsafeFieldAccessorImpl.java:57)
 	at java.base/jdk.internal.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:75)
 	at java.base/java.lang.reflect.Field.set(Field.java:780)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:177)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:130)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:177)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:130)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	... 16 common frames omitted
 2023-03-23 16:13:26 INFO  main c.w.a.GatewayApplication Starting GatewayApplication using Java 11.0.10 on DESKTOP-SPKKHPB with PID 31748 (D:\11_CG\00_code\CG_AccessControlService\target\classes started by ansen in D:\11_CG\00_code\CG_AccessControlService)
@@ -486,7 +486,7 @@ Caused by: java.lang.NullPointerException: null
 2023-03-23 16:13:27 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 16:13:27 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 16:13:27 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
-2023-03-23 16:13:27 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 16:13:27 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 16:13:28 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 16:13:28 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 16:13:28 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -512,7 +512,7 @@ Caused by: java.lang.NullPointerException: null
 2023-03-23 16:13:38 INFO  boss-7-1 c.w.a.p.m.Message    [decode] 转码 - [4d432d35393234543232313034393233ffffffff000000ff01fe0000000002757865]
 2023-03-23 16:13:38 INFO  boss-7-1 c.w.a.p.m.Message    [decode]msgCode=01fe00
 2023-03-23 16:13:38 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
-io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can not set int field com.wimetro.acs.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
+io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can not set int field com.wimetro.cg.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:98)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -530,15 +530,15 @@ io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro.acs.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
+Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro.cg.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:167)
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:171)
 	at java.base/jdk.internal.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:98)
 	at java.base/java.lang.reflect.Field.set(Field.java:780)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:177)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:130)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:177)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:130)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	... 16 common frames omitted
 2023-03-23 16:14:38 INFO  background-preinit o.h.v.i.util.Version HV000001: Hibernate Validator 6.2.0.Final
@@ -547,7 +547,7 @@ Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro
 2023-03-23 16:14:40 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 16:14:40 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 16:14:40 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2023-03-23 16:14:40 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 16:14:40 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 16:14:40 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 16:14:40 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 16:14:40 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -573,7 +573,7 @@ Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro
 2023-03-23 16:14:49 INFO  boss-7-1 c.w.a.p.m.Message    [decode] 转码 - [4d432d35393234543232313034393233ffffffff000000ff01fe0000000002757865]
 2023-03-23 16:14:58 INFO  boss-7-1 c.w.a.p.m.Message    [decode]msgCode=01fe00
 2023-03-23 16:16:01 ERROR boss-7-1 c.w.a.n.h.DeviceUdpHandler 出现异常
-io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can not set int field com.wimetro.acs.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
+io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can not set int field com.wimetro.cg.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:98)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
@@ -591,15 +591,15 @@ io.netty.handler.codec.DecoderException: java.lang.IllegalArgumentException: Can
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro.acs.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
+Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro.cg.protocol.NetIdentifierOperationResult.netIdentifier to java.lang.String
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:167)
 	at java.base/jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:171)
 	at java.base/jdk.internal.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:98)
 	at java.base/java.lang.reflect.Field.set(Field.java:780)
-	at com.wimetro.acs.protocol.message.Message.decodeMsgBody(Message.java:177)
-	at com.wimetro.acs.protocol.message.Message.decode(Message.java:130)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
-	at com.wimetro.acs.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:177)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:130)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:38)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:19)
 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
 	... 16 common frames omitted
 2023-03-23 16:16:01 INFO  SpringApplicationShutdownHook c.w.a.n.r.NettyUdpServer  服务关闭 
@@ -616,7 +616,7 @@ Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro
 2023-03-23 16:16:37 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 16:16:37 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 16:16:37 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2023-03-23 16:16:37 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 16:16:37 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 16:16:38 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 16:16:38 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 16:16:38 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
@@ -654,7 +654,7 @@ Caused by: java.lang.IllegalArgumentException: Can not set int field com.wimetro
 2023-03-23 16:20:16 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
 2023-03-23 16:20:16 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
 2023-03-23 16:20:16 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2023-03-23 16:20:16 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.acs]' package. Please check your configuration.
+2023-03-23 16:20:16 WARN  main o.m.s.m.ClassPathMapperScanner No MyBatis mapper was found in '[com.wimetro.cg]' package. Please check your configuration.
 2023-03-23 16:20:17 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9257 (http)
 2023-03-23 16:20:17 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9257"]
 2023-03-23 16:20:17 INFO  main o.a.c.c.StandardService Starting service [Tomcat]

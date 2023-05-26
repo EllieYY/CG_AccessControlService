@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wimetro.cg.db.mapper.DSchedulesGroupDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wimetro.cg.db.entity.DSchedulesGroupDetail">
+        <id column="schedules_group_id" property="schedulesGroupId" />
+        <id column="schedules_id" property="schedulesId" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        schedules_group_id, schedules_id, status, remark
+    </sql>
+
+    <resultMap id="ScheduleGroupInfoMap" type="com.wimetro.cg.model.card.ScheduleGroupInfo">
+        <result column="groupId" property="groupId" />
+        <collection property="scheduleList" ofType="com.wimetro.cg.model.card.ScheduleInfo">
+            <result column="schedules_id" property="schedules_id" />
+            <result column="begin_time" property="begin_time" />
+            <result column="end_time" property="end_time" />
+            <result column="mon_flag" property="mon_flag" />
+            <result column="tues_flag" property="tues_flag" />
+            <result column="wed_flag" property="wed_flag" />
+            <result column="thu_flag" property="thu_flag" />
+            <result column="fri_flag" property="fri_flag" />
+            <result column="sat_flag" property="sat_flag" />
+            <result column="sun_flag" property="sun_flag" />
+        </collection>
+    </resultMap>
+
+    <select id="selectAllBySchedulesGroupId" resultMap="ScheduleGroupInfoMap">
+        select
+        a.schedules_group_id as groupId,
+        a.schedules_id as schedules_id,
+        b.begin_time,
+        b.end_time,
+        b.mon_flag,
+        b.tues_flag,
+        b.wed_flag,
+        b.thu_flag,
+        b.fri_flag,
+        b.sat_flag,
+        b.sun_flag
+        from d_schedules_group_detail a
+        left join d_schedules b on b.schedules_id = a.schedules_id and b.status = '1'
+        where
+        a.schedules_group_id in
+        <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>

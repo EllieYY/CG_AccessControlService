@@ -3,9 +3,9 @@
 2023-04-14 11:02:06 ERROR http-nio-9251-exec-2 c.w.a.s.DeviceManageService {}
 java.util.concurrent.TimeoutException: null
 	at io.netty.util.concurrent.DefaultPromise.get(DefaultPromise.java:358)
-	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:290)
-	at com.wimetro.acs.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
-	at com.wimetro.acs.controller.DeviceManageController.deviceAdd(DeviceManageController.java:70)
+	at com.wimetro.cg.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:290)
+	at com.wimetro.cg.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
+	at com.wimetro.cg.controller.DeviceManageController.deviceAdd(DeviceManageController.java:70)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,9 +55,9 @@ java.util.concurrent.TimeoutException: null
 2023-04-14 11:03:21 ERROR boss-7-1 c.w.a.n.c.UdpDeviceDecoder [解析失败] /192.168.2.194:8101 => [30303030303030303030303030303030ffffffff0000ef3c01fe000000000220ee36]
 2023-04-14 11:09:28 ERROR http-nio-9251-exec-1 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
-	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:259)
-	at com.wimetro.acs.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
-	at com.wimetro.acs.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
+	at com.wimetro.cg.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:259)
+	at com.wimetro.cg.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
+	at com.wimetro.cg.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -105,9 +105,9 @@ java.lang.NullPointerException: null
 	at java.base/java.lang.Thread.run(Thread.java:834)
 2023-04-14 11:10:35 ERROR http-nio-9251-exec-3 o.a.c.c.C.[.[.[.[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
-	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:259)
-	at com.wimetro.acs.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
-	at com.wimetro.acs.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
+	at com.wimetro.cg.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:259)
+	at com.wimetro.cg.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
+	at com.wimetro.cg.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -156,9 +156,9 @@ java.lang.NullPointerException: null
 2023-04-14 11:12:20 ERROR http-nio-9251-exec-2 c.w.a.s.DeviceManageService {}
 java.util.concurrent.TimeoutException: null
 	at io.netty.util.concurrent.DefaultPromise.get(DefaultPromise.java:358)
-	at com.wimetro.acs.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:290)
-	at com.wimetro.acs.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
-	at com.wimetro.acs.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
+	at com.wimetro.cg.service.DeviceManageService.getDeviceInfo(DeviceManageService.java:290)
+	at com.wimetro.cg.service.DeviceManageService.deviceAdd(DeviceManageService.java:126)
+	at com.wimetro.cg.controller.DeviceManageController.deviceAdd(DeviceManageController.java:73)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
