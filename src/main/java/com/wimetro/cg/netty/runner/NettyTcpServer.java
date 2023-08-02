@@ -1,7 +1,12 @@
 package com.wimetro.cg.netty.runner;
 
+import com.wimetro.cg.common.Constants;
 import com.wimetro.cg.config.NettyConfig;
-import com.wimetro.cg.protocol.message.ServerMessage;
+import com.wimetro.cg.model.device.DeviceShadow;
+import com.wimetro.cg.protocol.TcpParamOperation;
+import com.wimetro.cg.protocol.message.*;
+import com.wimetro.cg.service.DeviceCenter;
+import com.wimetro.cg.util.IdUtil;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.epoll.EpollChannelOption;
@@ -13,6 +18,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.util.concurrent.DefaultThreadFactory;
+import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.UnorderedThreadPoolEventExecutor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -26,6 +32,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
+import java.net.InetSocketAddress;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @title: NettyTcpServer
@@ -132,6 +141,63 @@ public class NettyTcpServer implements ApplicationRunner, ApplicationListener<Co
 //            businessGroup.shutdownGracefully();
         }
     }
+
+
+    /**
+     * 获取设备信息
+     * @return
+     */
+    public OperationResult sendDeviceInfo(String sn, Operation body, int msgCode) {
+//        int msgCode = operationType.getReadCode();
+        // n - 查找设备ip | password | port
+        DeviceShadow deviceShadow = DeviceCenter.getDevice(sn);
+        if (Objects.isNull(deviceShadow)) {
+            log.info("设备 {} 不存在", sn);
+            return null;
+        }
+
+        TcpParamOperation tcpParam = deviceShadow.getTcpParam();
+        String ip = tcpParam.getIp();
+        String pwd = deviceShadow.getPassword();
+        int deviceTcpPort = tcpParam.getTcpPort();
+
+        // 报文头组装
+        MessageHeader header = new MessageHeader();
+        header.setMsgCode(msgCode);
+        header.setDeviceSN(sn);
+        header.setDevicePwd(pwd);
+        int streamId = IdUtil.randomRangeInt(0, 100000);
+        header.setStreamId(streamId);
+
+        // 报文组装
+        ServerMessage serverMessage = new ServerMessage(header, body);
+
+        // 消息发送和等待
+        Future<DeviceMessage> future = RequestPendingCenter.add(streamId);
+
+        // 查找设备channel
+        String key = ip + Constants.IP_PORT_SPLITTER + nettyConfig.getTcpServerPort();
+        Channel channel = ChannelManager.getChannel(key);
+        if (Objects.isNull(channel)) {
+            log.info("设备连接通道已断开 {} - {}", ip, sn);
+            return null;
+        }
+        InetSocketAddress remoteAddress = (InetSocketAddress) channel.remoteAddress();
+        serverMessage.setTargetAddress(remoteAddress);
+        tcpSend(serverMessage, channel);
+
+        try {
+            // 获取结果，超时时间3秒
+            DeviceMessage response = future.get(10, TimeUnit.SECONDS);
+            return response.getMessageBody();
+        } catch (Exception e) {
+            log.error("{}", e);
+        }
+
+        return null;
+    }
+
+
 
     /**
      * 发送消息

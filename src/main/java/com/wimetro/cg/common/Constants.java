@@ -7,9 +7,16 @@ public interface Constants {
     String ENCODER_TO_STR = "toStr";
     String IP_PORT_SPLITTER = ":";
 
+    int BATCH_CARD_DATA_COUNT = 10;
+
     int CODE_BROADCAST = 0x01FE00;
     int CODE_OK = 0x210100;
     int CODE_TCP_PARAM_READ = 0x010600;
+
+    int CODE_CARD_DELETE = 0x070500;
+    int CODE_SORT_CARD_START = 0x070700;
+    int CODE_SORT_CARD_END = 0x070702;
+
     int CODE_CARD_CAPACITY = 0x070100;
     int CODE_FUN_PARAM = 0x010AFF;
     int CODE_OPS_PARAM = 0x010900;

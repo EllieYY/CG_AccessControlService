@@ -408,6 +408,26 @@ public class ToolConvert {
         }
     }
 
+    /**
+     * 字符串补齐，
+     *
+     * @hex 参数
+     * @len 字节
+     * @sort 顺序，0表示末尾补齐，1 表示前面补齐
+     */
+    public static String fullHex(Integer sort, Integer len, String hex) {
+        int i = 2 * len - hex.length();
+        String s = "";
+        for (int j = 0; j < i; j++) {
+            s = s + "0";
+        }
+        if (sort == 0) {
+            return hex + s;
+        } else {
+            return s + hex;
+        }
+    }
+
     public static String fullHex(String hex, int len) {
         return fullHex(hex, len, 0);
     }
@@ -656,6 +676,7 @@ public class ToolConvert {
         return sb.toString();
     }
 
+
     public static String convertMsgRsq(String srcHex) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < (srcHex.length() / 2 - 1); i++) {
@@ -806,8 +827,7 @@ public class ToolConvert {
 
     public static String listToHexStr(Integer sort, Integer len, List<String> list) {
         String hexStr = String.join("", list);
-
-        return fullHex(hexStr, len, sort);
+        return hexStr;
     }
 
     public static String listObjectToHexStr(Integer sort, Integer len, List<Object> list) {
@@ -847,6 +867,35 @@ public class ToolConvert {
             stringBuilder.append(hv);
         }
         return stringBuilder.toString();
+    }
+
+    public static List<String> bytesToListCardStr(byte[] srcIn) {
+        String res = null;
+        try {
+            int pos = 0;
+            for (int i = 0; i < srcIn.length; i++) {
+                if (srcIn[i] != 0) {
+                    break;
+                }
+                pos++;
+            }
+            res = new String(srcIn, "GB2312").substring(pos);
+        } catch (UnsupportedEncodingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // String转list
+        List<String> cardList = new ArrayList<>();
+        int len = res.length();
+        int start = 0;
+        int end = start + 9;
+        for (int i = 0; i < len; i=i+9) {
+            cardList.add(res.substring(start, end));
+            start = i;
+        }
+        cardList.add(res.substring(start, len));
+        return cardList;
     }
 
     public static String bytesToMac(byte[] src) {

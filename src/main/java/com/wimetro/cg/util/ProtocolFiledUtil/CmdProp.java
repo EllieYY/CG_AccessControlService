@@ -25,8 +25,12 @@ public @interface CmdProp {
     // 0表示末尾补齐，1 表示前面补齐
     int sort() default 1;
 
+    // 编解码方法
     String deCodec() default Constants.ENCODER_TO_STR;
     String enCodec() default Constants.ENCODER_TO_STR;
+
+    // 长度（len）依赖
+    String len_rely() default "";
 
 
 }

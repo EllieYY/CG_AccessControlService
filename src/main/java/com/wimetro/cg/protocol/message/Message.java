@@ -4,6 +4,7 @@ import com.wimetro.cg.common.Constants;
 import com.wimetro.cg.util.ProtocolFiledUtil.CmdPropParam;
 import com.wimetro.cg.util.ProtocolFiledUtil.CmdProp;
 import com.wimetro.cg.util.ToolConvert;
+import com.wimetro.cg.util.ToolReflex;
 import io.netty.buffer.ByteBuf;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -166,13 +167,21 @@ public abstract class Message<T extends MessageBody> {
                 field.setAccessible(true);
                 try {
                     len = cmdProp.len();
+                    String getName;
+                    Method getMethod;
+                    if (!"".equals(cmdProp.len_rely())) {
+                        getName = ToolReflex.getMethodName(ToolReflex.MethodType.GET,cmdProp.len_rely());
+                        getMethod = bodyClazz.getDeclaredMethod(getName);
+                        len = len * (int) getMethod.invoke(this);
+                    }
+
                     byte[] src = ToolConvert.getSource(msgBodyData, start, len);
                     String codecMethod = cmdProp.deCodec();
                     Object val = codec(field, src, codecMethod, false, 0, 0);
 
                     field.set(body, val);
                     start += len;
-                } catch (IllegalAccessException e) {
+                } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
                     log.error("设置字段值失败: {}", field.getName());
                     return null;
                 }

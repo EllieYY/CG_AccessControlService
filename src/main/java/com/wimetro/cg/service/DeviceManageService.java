@@ -125,23 +125,23 @@ public class DeviceManageService {
 
         // 查询设备属性信息
         NoBodyOperation body = new NoBodyOperation();
-        CardCapacity cardCapacity = (CardCapacity) sendDeviceInfo(sn, body, OperationType.CARD_CAPACITY.getReadCode());
+        CardCapacity cardCapacity = (CardCapacity) tcpServer.sendDeviceInfo(sn, body, OperationType.CARD_CAPACITY.getReadCode());
 //        log.info("获取结果{}", cardCapacity);
-        OperatingParam operatingParam = (OperatingParam) sendDeviceInfo(sn, body, OperationType.OPERATING_PARAM.getReadCode());
+        OperatingParam operatingParam = (OperatingParam) tcpServer.sendDeviceInfo(sn, body, OperationType.OPERATING_PARAM.getReadCode());
 //        log.info("获取结果{}", operatingParam);
-        FuncationParam funcationParam = (FuncationParam) sendDeviceInfo(sn, body, OperationType.FUNCTION_PARAM.getReadCode());
+        FuncationParam funcationParam = (FuncationParam) tcpServer.sendDeviceInfo(sn, body, OperationType.FUNCTION_PARAM.getReadCode());
 //        log.info("{}", funcationParam);
-        TcpParamOperationResult tcpParam = (TcpParamOperationResult) sendDeviceInfo(sn, body, OperationType.TCP_PARAM.getReadCode());
+        TcpParamOperationResult tcpParam = (TcpParamOperationResult) tcpServer.sendDeviceInfo(sn, body, OperationType.TCP_PARAM.getReadCode());
 //        log.info("{}", tcpParam);
         // 版本号
-        DeviceVersion deviceVersion = (DeviceVersion) sendDeviceInfo(sn, body, OperationType.DEVICE_VERSION.getReadCode());
+        DeviceVersion deviceVersion = (DeviceVersion) tcpServer.sendDeviceInfo(sn, body, OperationType.DEVICE_VERSION.getReadCode());
         log.info("{}", deviceVersion);
         // 黑名单报警开关
-        BlacklistSW blacklistSW = (BlacklistSW) sendDeviceInfo(sn, body, OperationType.BL_SWITCH.getReadCode());
+        BlacklistSW blacklistSW = (BlacklistSW) tcpServer.sendDeviceInfo(sn, body, OperationType.BL_SWITCH.getReadCode());
         // 控制器防拆报警
-        TamperAlarmSW tamperAlarmSW = (TamperAlarmSW) sendDeviceInfo(sn, body, OperationType.TAMPER_ALARM_SWITCH.getReadCode());
+        TamperAlarmSW tamperAlarmSW = (TamperAlarmSW) tcpServer.sendDeviceInfo(sn, body, OperationType.TAMPER_ALARM_SWITCH.getReadCode());
         // 记录存储方式
-        RecodeSaveType recodeSaveType = (RecodeSaveType) sendDeviceInfo(sn, body, OperationType.RECORD_TYPE.getReadCode());
+        RecodeSaveType recodeSaveType = (RecodeSaveType) tcpServer.sendDeviceInfo(sn, body, OperationType.RECORD_TYPE.getReadCode());
 
 
         if (!Objects.isNull(tcpParam)) {
@@ -162,9 +162,9 @@ public class DeviceManageService {
 
     public List<CGPortInfo> getPortInfo(String sn) {
         NoBodyOperation body = new NoBodyOperation();
-        PortInfo portInfo = (PortInfo) sendDeviceInfo(sn, body, OperationType.PORT_INFO.getReadCode());
-        ReaderBytesInfo readerBytesInfo = (ReaderBytesInfo) sendDeviceInfo(sn, body, OperationType.READER_BYTES.getReadCode());
-        RelayOutMode relayOutMode = (RelayOutMode) sendDeviceInfo(sn, body, OperationType.RELAY_OUT_INFO.getReadCode());
+        PortInfo portInfo = (PortInfo) tcpServer.sendDeviceInfo(sn, body, OperationType.PORT_INFO.getReadCode());
+        ReaderBytesInfo readerBytesInfo = (ReaderBytesInfo) tcpServer.sendDeviceInfo(sn, body, OperationType.READER_BYTES.getReadCode());
+        RelayOutMode relayOutMode = (RelayOutMode) tcpServer.sendDeviceInfo(sn, body, OperationType.RELAY_OUT_INFO.getReadCode());
 
         log.info("{}", portInfo);
         log.info("{}", readerBytesInfo);
@@ -182,9 +182,9 @@ public class DeviceManageService {
             int port = cgPort.getPort();
             PortOperation portOperation = new PortOperation();
             portOperation.setPort(port);
-            ForcedInfo forcedInfo = (ForcedInfo) sendDeviceInfo(sn, portOperation, OperationType.FORCED_PWD_INFO.getReadCode());
-            HeldOnTime heldOnTime = (HeldOnTime) sendDeviceInfo(sn, portOperation, OperationType.HELD_ON_TIME.getReadCode());
-            HeldOnInfo heldOnInfo = (HeldOnInfo) sendDeviceInfo(sn, portOperation, OperationType.HELD_ON_INFO.getReadCode());
+            ForcedInfo forcedInfo = (ForcedInfo) tcpServer.sendDeviceInfo(sn, portOperation, OperationType.FORCED_PWD_INFO.getReadCode());
+            HeldOnTime heldOnTime = (HeldOnTime) tcpServer.sendDeviceInfo(sn, portOperation, OperationType.HELD_ON_TIME.getReadCode());
+            HeldOnInfo heldOnInfo = (HeldOnInfo) tcpServer.sendDeviceInfo(sn, portOperation, OperationType.HELD_ON_INFO.getReadCode());
 
             log.info("{}", forcedInfo);
 
@@ -257,60 +257,60 @@ public class DeviceManageService {
         return false;
     }
 
-    /**
-     * 获取设备信息
-     * @return
-     */
-    public OperationResult sendDeviceInfo(String sn, Operation body, int msgCode) {
-//        int msgCode = operationType.getReadCode();
-        // n - 查找设备ip | password | port
-        DeviceShadow deviceShadow = DeviceCenter.getDevice(sn);
-        if (Objects.isNull(deviceShadow)) {
-            log.info("设备 {} 不存在", sn);
-            // TODO:
+//    /**
+//     * 获取设备信息
+//     * @return
+//     */
+//    public OperationResult sendDeviceInfo(String sn, Operation body, int msgCode) {
+////        int msgCode = operationType.getReadCode();
+//        // n - 查找设备ip | password | port
+//        DeviceShadow deviceShadow = DeviceCenter.getDevice(sn);
+//        if (Objects.isNull(deviceShadow)) {
+//            log.info("设备 {} 不存在", sn);
+//            // TODO:
+////            return null;
+//        }
+//
+//        TcpParamOperation tcpParam = deviceShadow.getTcpParam();
+//        String ip = tcpParam.getIp();
+//        String pwd = deviceShadow.getPassword();
+//        int deviceTcpPort = tcpParam.getTcpPort();
+//
+//        // 报文头组装
+//        MessageHeader header = new MessageHeader();
+//        header.setMsgCode(msgCode);
+//        header.setDeviceSN(sn);
+//        header.setDevicePwd(pwd);
+//        int streamId = IdUtil.randomRangeInt(0, 100000);
+//        header.setStreamId(streamId);
+//
+//        // 报文组装
+//        ServerMessage serverMessage = new ServerMessage(header, body);
+//
+//        // 消息发送和等待
+//        Future<DeviceMessage> future = RequestPendingCenter.add(streamId);
+//
+//        // 查找设备channel
+//        String key = ip + Constants.IP_PORT_SPLITTER + nettyConfig.getTcpServerPort();
+//        Channel channel = ChannelManager.getChannel(key);
+//        if (Objects.isNull(channel)) {
+//            log.info("设备连接通道已断开 {} - {}", ip, sn);
 //            return null;
-        }
-
-        TcpParamOperation tcpParam = deviceShadow.getTcpParam();
-        String ip = tcpParam.getIp();
-        String pwd = deviceShadow.getPassword();
-        int deviceTcpPort = tcpParam.getTcpPort();
-
-        // 报文头组装
-        MessageHeader header = new MessageHeader();
-        header.setMsgCode(msgCode);
-        header.setDeviceSN(sn);
-        header.setDevicePwd(pwd);
-        int streamId = IdUtil.randomRangeInt(0, 100000);
-        header.setStreamId(streamId);
-
-        // 报文组装
-        ServerMessage serverMessage = new ServerMessage(header, body);
-
-        // 消息发送和等待
-        Future<DeviceMessage> future = RequestPendingCenter.add(streamId);
-
-        // 查找设备channel
-        String key = ip + Constants.IP_PORT_SPLITTER + nettyConfig.getTcpServerPort();
-        Channel channel = ChannelManager.getChannel(key);
-        if (Objects.isNull(channel)) {
-            log.info("设备连接通道已断开 {} - {}", ip, sn);
-            return null;
-        }
-        InetSocketAddress remoteAddress = (InetSocketAddress) channel.remoteAddress();
-        serverMessage.setTargetAddress(remoteAddress);
-        tcpServer.tcpSend(serverMessage, channel);
-
-        try {
-            // 获取结果，超时时间3秒
-            DeviceMessage response = future.get(10, TimeUnit.SECONDS);
-            return response.getMessageBody();
-        } catch (Exception e) {
-            log.error("{}", e);
-        }
-
-        return null;
-    }
+//        }
+//        InetSocketAddress remoteAddress = (InetSocketAddress) channel.remoteAddress();
+//        serverMessage.setTargetAddress(remoteAddress);
+//        tcpServer.tcpSend(serverMessage, channel);
+//
+//        try {
+//            // 获取结果，超时时间3秒
+//            DeviceMessage response = future.get(10, TimeUnit.SECONDS);
+//            return response.getMessageBody();
+//        } catch (Exception e) {
+//            log.error("{}", e);
+//        }
+//
+//        return null;
+//    }
 
 
 
@@ -380,7 +380,7 @@ public class DeviceManageService {
             TimeSetOperation operation = new TimeSetOperation(groupId, timeSlotOfDays);
             operationList.add(operation);
 
-            sendDeviceInfo(sn, operation, OperationType.TIME_SET.getSettingCode());
+            tcpServer.sendDeviceInfo(sn, operation, OperationType.TIME_SET.getSettingCode());
         }
         log.info("operation: {}", operationList);
     }
@@ -396,7 +396,7 @@ public class DeviceManageService {
         Operation operation = new NoBodyOperation();
         for (String sn:scpList) {
             // 清除所有开门时段
-            sendDeviceInfo(sn, operation, timeSetClearCode);
+            tcpServer.sendDeviceInfo(sn, operation, timeSetClearCode);
 
             // 查找控制器开门时段信息
             ScpTimeSetInfo scpTimeSetInfo = employeeDoorService.getScpTimeSetList(sn);

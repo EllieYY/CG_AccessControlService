@@ -41,4 +41,80 @@
         where device_sn = #{deviceSn,jdbcType=VARCHAR}
     </select>
 
+
+    <resultMap id="CardInfoMap" type="com.wimetro.cg.model.card.CardDbInfo">
+        <result column="cardNo" property="cardNo" />
+        <result column="validDate" property="validDate" />
+        <result column="state" property="state" />
+        <result column="pwd" property="pwd" />
+        <result column="doorCount" property="doorCount" />
+        <result column="holiday" property="holiday" />
+        <result column="deviceSn" property="deviceSn" />
+        <collection property="doorInfoList" ofType="com.wimetro.cg.model.card.CardDoorInfo">
+            <result column="doorNo" property="doorNo" />
+            <result column="timeSetId" property="timeSetId" />
+            <result column="permssion" property="specialPermssion" />
+            <result column="flag" property="inOutFlag" />
+        </collection>
+    </resultMap>
+
+    <select id="selectByCardNo" resultMap="CardInfoMap">
+        select
+            a.card_no as cardNo,
+            b.effect_end_time as validDate,
+            b.state as state,
+            'ffffffff' as pwd,
+            '65535' as doorCount,
+            0 as holiday,
+            a.device_sn as deviceSn,
+            a.door_no as doorNo,
+            a.schedules_group_id as timeSetId,
+            a.special_permssion as permssion,
+            a.in_out_flag as flag
+        from d_cgcg_employee_door a, c_card_info b
+        where b.card_no = a.card_no
+          and a.card_no in
+        <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="selectCardsByDeviceSn" resultMap="CardInfoMap">
+        select
+            a.card_no as cardNo,
+            b.effect_end_time as validDate,
+            b.state as state,
+            'ffffffff' as pwd,
+            '65535' as doorCount,
+            0 as holiday,
+            a.device_sn as deviceSn,
+            a.door_no as doorNo,
+            a.schedules_group_id as timeSetId,
+            a.special_permssion as permssion,
+            a.in_out_flag as flag
+        from d_cgcg_employee_door a, c_card_info b
+        where
+            a.device_sn = #{deviceSn,jdbcType=VARCHAR}
+    </select>
+
+    <resultMap id="ScpCardMap" type="com.wimetro.cg.model.card.ScpCardInfo">
+        <result column="device_sn" property="sn" />
+        <collection property="cardList" ofType="java.lang.String">
+            <result column="card_no" />
+        </collection>
+    </resultMap>
+
+    <select id="selectDeviceSnByCardNo" resultMap="ScpCardMap" parameterType="java.util.List">
+        select
+        distinct device_sn,
+            card_no
+        from d_cgcg_employee_door
+        where card_no in
+        <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+
+
 </mapper>

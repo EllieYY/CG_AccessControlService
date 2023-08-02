@@ -1,6 +1,9 @@
 package com.wimetro.cg.protocol.message;
 
 import com.wimetro.cg.protocol.TcpParamOperationResult;
+import com.wimetro.cg.protocol.card.CardInfo;
+import com.wimetro.cg.protocol.card.CardOperationInfo;
+import com.wimetro.cg.protocol.card.CardOperationResultInfo;
 import com.wimetro.cg.protocol.card.TimeSet;
 import com.wimetro.cg.protocol.common.*;
 import com.wimetro.cg.protocol.port.*;
@@ -40,7 +43,9 @@ public enum OperationType {
     /** 时间组信息 */
     TIME_SET(0x360200, 0x060200, 0x060300, TimeSet.class),
 
-
+    /** 卡片信息 */
+    CARD_ADD_UNSORT(0x3704FF, 0x070301, 0x070400, CardOperationResultInfo.class),
+    CARD_ADD_SORT(0x3707FF, 0x070301, 0x070701, CardOperationResultInfo.class),
 
     /** common 预定义命令 */
     CONNECT_CONFIRM(0x192300, 0x00, 0x00, ConnectConfirm.class),
