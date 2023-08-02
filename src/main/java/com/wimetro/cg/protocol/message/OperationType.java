@@ -6,6 +6,7 @@ import com.wimetro.cg.protocol.card.CardOperationInfo;
 import com.wimetro.cg.protocol.card.CardOperationResultInfo;
 import com.wimetro.cg.protocol.card.TimeSet;
 import com.wimetro.cg.protocol.common.*;
+import com.wimetro.cg.protocol.events.*;
 import com.wimetro.cg.protocol.port.*;
 import com.wimetro.cg.protocol.scp.*;
 
@@ -47,9 +48,17 @@ public enum OperationType {
     CARD_ADD_UNSORT(0x3704FF, 0x070301, 0x070400, CardOperationResultInfo.class),
     CARD_ADD_SORT(0x3707FF, 0x070301, 0x070701, CardOperationResultInfo.class),
 
+    /** 监控事件  */
+    EVENT_CARD_READ(0x190100, 0x00, 0x00, CardReadEvent.class),    // 读卡
+    EVENT_DOOR_OPEN(0x190200, 0x00, 0x00, DoorOpenEvent.class),    // 出门开关
+    EVENT_STRIKE_STATE(0x190300, 0x00, 0x00, StrikeStateEvent.class), // 门磁
+    EVENT_REMOTE_DOOR_OPEN(0x190400, 0x00, 0x00, RemoteDoorOpenEvent.class), // 远程开门
+    EVENT_ALARM(0x190500, 0x00, 0x00, AlarmEvent.class),    // 报警
+    EVENT_SYSTEM(0x190600, 0x00, 0x00, SystemEvent.class),   // 系统
+    CONNECT_CONFIRM(0x192300, 0x00, 0x00, ConnectConfirm.class),    // 连接确认
+    CONNECT_TEST(0x192200, 0x00, 0x00, ConnectTest.class),      // 连接测试
+
     /** common 预定义命令 */
-    CONNECT_CONFIRM(0x192300, 0x00, 0x00, ConnectConfirm.class),
-    CONNECT_TEST(0x192200, 0x00, 0x00, ConnectTest.class),
     RESP_OK(0x210100, 0x00, 0x00, OkMessage.class),
     RESP_PWD_ERR(0x210200, 0x00, 0x00, PwdErrorMessage.class),
     RESP_CHECK_ERR(0x210300, 0x00, 0x00, CheckErrorMessage.class),

@@ -5,6 +5,7 @@ import com.wimetro.cg.config.NettyConfig;
 import com.wimetro.cg.netty.runner.ChannelManager;
 import com.wimetro.cg.netty.runner.RequestPendingCenter;
 import com.wimetro.cg.protocol.NoBodyOperation;
+import com.wimetro.cg.protocol.events.DeviceEvent;
 import com.wimetro.cg.protocol.message.*;
 import io.netty.channel.*;
 import lombok.extern.slf4j.Slf4j;
@@ -44,6 +45,12 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
             ChannelManager.registry(ctx.channel());
         }
 
+        // 事件上传MQ
+        MessageBody body = deviceMessage.getMessageBody();
+        if (body instanceof DeviceEvent) {
+            ((DeviceEvent) body).sendMq(msgHeader.getDeviceSN());
+        }
+
         // 默认回复ok
 //        ServerMessage serverMessage = makeOkResp(msgHeader);
 
@@ -54,6 +61,8 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
             log.error("[发送目标未注册] - {}", key);
             return;
         }
+
+        // TODO：设备监控消息处理
 
         // 消息发送
 //        InetSocketAddress remoteAddress = (InetSocketAddress) ctx.channel().remoteAddress();

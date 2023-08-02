@@ -357,6 +357,20 @@ public class ToolConvert {
         return date;
     }
 
+    /**
+     * 时间格式 yyMMddHHmmss
+     */
+    public static Date bytesToBcdDate(byte[] bytes) {
+        if (bytes.length != 6) {
+            return new Date();
+        }
+
+        String dateStr = bytesToHexStr(bytes);
+
+        Date date = parseDate(dateStr, "yyMMddHHmmss");
+        return date;
+    }
+
 
     /**
      * 温度转换，双字节，第一位0负数，1正数
@@ -566,53 +580,59 @@ public class ToolConvert {
 
     public static void main(String[] args) {
 
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            list.add(String.valueOf(i));
-        }
+        byte [] src = {0x23, 0x08, 0x02, 0x17, 0x21, 0x55};
+        Date date = bytesToBcdDate(src);
 
-        System.out.println(String.join("", list));
-
-        String hexCmd2 = "30303030303030303030303030303030ffffffff00013e7e01fe00000000024a29";
-        String hexCmd =  "30303030303030303030303030303030ffffffff00013e7f020101fe00000000024a292d";
-
-        // 转码
-        if (hexCmd.contains("7f01") || hexCmd.contains("7f02")) {
-            hexCmd = ToolConvert.convertMsgRsq(hexCmd);
-        }
-
-        System.out.println("转码：" + hexCmd);
-
-        byte[] data = ToolConvert.hexStrToBytes(hexCmd);
-
-        // 校验
-        int length = data.length - 1;
-        byte checkFlag = data[length];
-        byte sumCheck = sumCheck(ToolConvert.getSource(data, 0, length));
-        if (sumCheck != checkFlag)  {
-            System.out.println("校验失败");
-        }
+        System.out.println(date.toString());
 
 
-        // 校验
-        byte[] msgBytes = ToolConvert.hexStrToBytes(hexCmd2);
-        byte flag2 = sumCheck(msgBytes);
-        hexCmd2 += ToolConvert.bytesToHexStr(new byte[]{flag2});
-
-        System.out.println("校验：" + hexCmd2);
-
-        // 转码 + 开始结束标志
-        hexCmd2 = ToolConvert.convertMsgReq(hexCmd2);
-
-        System.out.println("转码：" + hexCmd2);
-
-
-        //
-        String src = "7e010F";
-        String tar = ToolConvert.convertMsgReq(src);
-
-        System.out.println(src);
-        System.out.println(tar);
+//        List<String> list = new ArrayList<>();
+//        for (int i = 0; i < 5; i++) {
+//            list.add(String.valueOf(i));
+//        }
+//
+//        System.out.println(String.join("", list));
+//
+//        String hexCmd2 = "30303030303030303030303030303030ffffffff00013e7e01fe00000000024a29";
+//        String hexCmd =  "30303030303030303030303030303030ffffffff00013e7f020101fe00000000024a292d";
+//
+//        // 转码
+//        if (hexCmd.contains("7f01") || hexCmd.contains("7f02")) {
+//            hexCmd = ToolConvert.convertMsgRsq(hexCmd);
+//        }
+//
+//        System.out.println("转码：" + hexCmd);
+//
+//        byte[] data = ToolConvert.hexStrToBytes(hexCmd);
+//
+//        // 校验
+//        int length = data.length - 1;
+//        byte checkFlag = data[length];
+//        byte sumCheck = sumCheck(ToolConvert.getSource(data, 0, length));
+//        if (sumCheck != checkFlag)  {
+//            System.out.println("校验失败");
+//        }
+//
+//
+//        // 校验
+//        byte[] msgBytes = ToolConvert.hexStrToBytes(hexCmd2);
+//        byte flag2 = sumCheck(msgBytes);
+//        hexCmd2 += ToolConvert.bytesToHexStr(new byte[]{flag2});
+//
+//        System.out.println("校验：" + hexCmd2);
+//
+//        // 转码 + 开始结束标志
+//        hexCmd2 = ToolConvert.convertMsgReq(hexCmd2);
+//
+//        System.out.println("转码：" + hexCmd2);
+//
+//
+//        //
+//        String src = "7e010F";
+//        String tar = ToolConvert.convertMsgReq(src);
+//
+//        System.out.println(src);
+//        System.out.println(tar);
 
 //        System.out.println(bytesToBin(bytes)); //(1310-8)/2
     }

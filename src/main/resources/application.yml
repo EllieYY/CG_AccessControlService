@@ -70,18 +70,8 @@ spring:
       idle-timeout: 30000
     #队列名称
     queueName:
-      # 访问事件队列
-      accessQueue: accessQueue
-      # 告警事件队列
-      alarmQueue: alarmQueue
-      #日志事件队列
-      logQueue: logQueue
-      #设备状态队列
-      statusQueue: statusQueue
-      #控制器消息队列
-      scpSeqQueue: scpSeqQueue
-      #控制器MAC消息队列
-      scpMacQueue: scpMacQueue
+      # 事件队列
+      messageQueue: accessQueue
 
   jms:
     listener:
