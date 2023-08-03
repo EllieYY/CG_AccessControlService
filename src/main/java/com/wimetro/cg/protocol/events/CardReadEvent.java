@@ -1,6 +1,8 @@
 package com.wimetro.cg.protocol.events;
 
+import com.wimetro.cg.model.mq.MqMessage;
 import com.wimetro.cg.protocol.message.OperationResult;
+import com.wimetro.cg.service.QueueProducer;
 import com.wimetro.cg.util.ProtocolFiledUtil.CmdProp;
 import lombok.Data;
 
@@ -27,7 +29,8 @@ public class CardReadEvent extends OperationResult implements DeviceEvent {
     private int state;
 
     @Override
-    public void sendMq(String sn) {
-
+    public void sendMq(QueueProducer queueProducer, String sn) {
+        MqMessage message = new MqMessage(1, sn, doorNo, time, state, cardNo);
+        queueProducer.sendMessage(message);
     }
 }

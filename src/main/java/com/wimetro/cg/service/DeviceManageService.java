@@ -4,14 +4,11 @@ import com.wimetro.cg.common.Constants;
 import com.wimetro.cg.config.NettyConfig;
 import com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl;
 import com.wimetro.cg.db.service.impl.DSchedulesGroupDetailServiceImpl;
-import com.wimetro.cg.model.CGPortInfo;
+import com.wimetro.cg.model.device.*;
 import com.wimetro.cg.model.card.ScheduleGroupInfo;
 import com.wimetro.cg.model.card.ScpTimeSetAddParam;
 import com.wimetro.cg.model.card.ScpTimeSetInfo;
-import com.wimetro.cg.model.device.CGDeviceTcpInfo;
-import com.wimetro.cg.model.device.DeviceBasicInfo;
-import com.wimetro.cg.model.device.DeviceShadow;
-import com.wimetro.cg.netty.runner.ChannelManager;
+import com.wimetro.cg.model.response.DeviceResopnseType;
 import com.wimetro.cg.netty.runner.NettyTcpServer;
 import com.wimetro.cg.netty.runner.NettyUdpServer;
 import com.wimetro.cg.netty.runner.RequestPendingCenter;
@@ -23,8 +20,8 @@ import com.wimetro.cg.protocol.scp.*;
 import com.wimetro.cg.util.IdUtil;
 import com.wimetro.cg.util.NetUtil;
 import com.wimetro.cg.util.ToolConvert;
-import io.netty.channel.Channel;
 import io.netty.util.concurrent.Future;
+import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -125,25 +122,25 @@ public class DeviceManageService {
 
         // 查询设备属性信息
         NoBodyOperation body = new NoBodyOperation();
-        CardCapacity cardCapacity = (CardCapacity) tcpServer.sendDeviceInfo(sn, body, OperationType.CARD_CAPACITY.getReadCode());
+        CardCapacity cardCapacity = (CardCapacity) tcpServer.readDeviceInfo(sn, body, OperationType.CARD_CAPACITY);
 //        log.info("获取结果{}", cardCapacity);
-        OperatingParam operatingParam = (OperatingParam) tcpServer.sendDeviceInfo(sn, body, OperationType.OPERATING_PARAM.getReadCode());
+        OperatingParam operatingParam = (OperatingParam) tcpServer.readDeviceInfo(sn, body, OperationType.OPERATING_PARAM);
 //        log.info("获取结果{}", operatingParam);
-        FuncationParam funcationParam = (FuncationParam) tcpServer.sendDeviceInfo(sn, body, OperationType.FUNCTION_PARAM.getReadCode());
+        FuncationParam funcationParam = (FuncationParam) tcpServer.readDeviceInfo(sn, body, OperationType.FUNCTION_PARAM);
 //        log.info("{}", funcationParam);
-        TcpParamOperationResult tcpParam = (TcpParamOperationResult) tcpServer.sendDeviceInfo(sn, body, OperationType.TCP_PARAM.getReadCode());
+        TcpParamOperationResult tcpParam = (TcpParamOperationResult) tcpServer.readDeviceInfo(sn, body, OperationType.TCP_PARAM);
 //        log.info("{}", tcpParam);
         // 版本号
-        DeviceVersion deviceVersion = (DeviceVersion) tcpServer.sendDeviceInfo(sn, body, OperationType.DEVICE_VERSION.getReadCode());
+        DeviceVersion deviceVersion = (DeviceVersion) tcpServer.readDeviceInfo(sn, body, OperationType.DEVICE_VERSION);
         log.info("{}", deviceVersion);
         // 黑名单报警开关
-        BlacklistSW blacklistSW = (BlacklistSW) tcpServer.sendDeviceInfo(sn, body, OperationType.BL_SWITCH.getReadCode());
+        BlacklistSW blacklistSW = (BlacklistSW) tcpServer.readDeviceInfo(sn, body, OperationType.BL_SWITCH);
         // 控制器防拆报警
-        TamperAlarmSW tamperAlarmSW = (TamperAlarmSW) tcpServer.sendDeviceInfo(sn, body, OperationType.TAMPER_ALARM_SWITCH.getReadCode());
+        TamperAlarmSW tamperAlarmSW = (TamperAlarmSW) tcpServer.readDeviceInfo(sn, body, OperationType.TAMPER_ALARM_SWITCH);
         // 记录存储方式
-        RecodeSaveType recodeSaveType = (RecodeSaveType) tcpServer.sendDeviceInfo(sn, body, OperationType.RECORD_TYPE.getReadCode());
+        RecodeSaveType recodeSaveType = (RecodeSaveType) tcpServer.readDeviceInfo(sn, body, OperationType.RECORD_TYPE);
 
-
+        // 数据组装
         if (!Objects.isNull(tcpParam)) {
             DeviceShadow deviceShadow = DeviceCenter.getDevice(sn);
             String pwd = deviceShadow.getPassword();
@@ -160,11 +157,16 @@ public class DeviceManageService {
         return deviceBasicInfo;
     }
 
+    /**
+     * 获取端口信息
+     * @param sn
+     * @return
+     */
     public List<CGPortInfo> getPortInfo(String sn) {
         NoBodyOperation body = new NoBodyOperation();
-        PortInfo portInfo = (PortInfo) tcpServer.sendDeviceInfo(sn, body, OperationType.PORT_INFO.getReadCode());
-        ReaderBytesInfo readerBytesInfo = (ReaderBytesInfo) tcpServer.sendDeviceInfo(sn, body, OperationType.READER_BYTES.getReadCode());
-        RelayOutMode relayOutMode = (RelayOutMode) tcpServer.sendDeviceInfo(sn, body, OperationType.RELAY_OUT_INFO.getReadCode());
+        PortInfo portInfo = (PortInfo) tcpServer.readDeviceInfo(sn, body, OperationType.PORT_INFO);
+        ReaderBytesInfo readerBytesInfo = (ReaderBytesInfo) tcpServer.readDeviceInfo(sn, body, OperationType.READER_BYTES);
+        RelayOutMode relayOutMode = (RelayOutMode) tcpServer.readDeviceInfo(sn, body, OperationType.RELAY_OUT_INFO);
 
         log.info("{}", portInfo);
         log.info("{}", readerBytesInfo);
@@ -182,9 +184,9 @@ public class DeviceManageService {
             int port = cgPort.getPort();
             PortOperation portOperation = new PortOperation();
             portOperation.setPort(port);
-            ForcedInfo forcedInfo = (ForcedInfo) tcpServer.sendDeviceInfo(sn, portOperation, OperationType.FORCED_PWD_INFO.getReadCode());
-            HeldOnTime heldOnTime = (HeldOnTime) tcpServer.sendDeviceInfo(sn, portOperation, OperationType.HELD_ON_TIME.getReadCode());
-            HeldOnInfo heldOnInfo = (HeldOnInfo) tcpServer.sendDeviceInfo(sn, portOperation, OperationType.HELD_ON_INFO.getReadCode());
+            ForcedInfo forcedInfo = (ForcedInfo) tcpServer.readDeviceInfo(sn, portOperation, OperationType.FORCED_PWD_INFO);
+            HeldOnTime heldOnTime = (HeldOnTime) tcpServer.readDeviceInfo(sn, portOperation, OperationType.HELD_ON_TIME);
+            HeldOnInfo heldOnInfo = (HeldOnInfo) tcpServer.readDeviceInfo(sn, portOperation, OperationType.HELD_ON_INFO);
 
             log.info("{}", forcedInfo);
 
@@ -257,62 +259,6 @@ public class DeviceManageService {
         return false;
     }
 
-//    /**
-//     * 获取设备信息
-//     * @return
-//     */
-//    public OperationResult sendDeviceInfo(String sn, Operation body, int msgCode) {
-////        int msgCode = operationType.getReadCode();
-//        // n - 查找设备ip | password | port
-//        DeviceShadow deviceShadow = DeviceCenter.getDevice(sn);
-//        if (Objects.isNull(deviceShadow)) {
-//            log.info("设备 {} 不存在", sn);
-//            // TODO:
-////            return null;
-//        }
-//
-//        TcpParamOperation tcpParam = deviceShadow.getTcpParam();
-//        String ip = tcpParam.getIp();
-//        String pwd = deviceShadow.getPassword();
-//        int deviceTcpPort = tcpParam.getTcpPort();
-//
-//        // 报文头组装
-//        MessageHeader header = new MessageHeader();
-//        header.setMsgCode(msgCode);
-//        header.setDeviceSN(sn);
-//        header.setDevicePwd(pwd);
-//        int streamId = IdUtil.randomRangeInt(0, 100000);
-//        header.setStreamId(streamId);
-//
-//        // 报文组装
-//        ServerMessage serverMessage = new ServerMessage(header, body);
-//
-//        // 消息发送和等待
-//        Future<DeviceMessage> future = RequestPendingCenter.add(streamId);
-//
-//        // 查找设备channel
-//        String key = ip + Constants.IP_PORT_SPLITTER + nettyConfig.getTcpServerPort();
-//        Channel channel = ChannelManager.getChannel(key);
-//        if (Objects.isNull(channel)) {
-//            log.info("设备连接通道已断开 {} - {}", ip, sn);
-//            return null;
-//        }
-//        InetSocketAddress remoteAddress = (InetSocketAddress) channel.remoteAddress();
-//        serverMessage.setTargetAddress(remoteAddress);
-//        tcpServer.tcpSend(serverMessage, channel);
-//
-//        try {
-//            // 获取结果，超时时间3秒
-//            DeviceMessage response = future.get(10, TimeUnit.SECONDS);
-//            return response.getMessageBody();
-//        } catch (Exception e) {
-//            log.error("{}", e);
-//        }
-//
-//        return null;
-//    }
-
-
 
     // 可发送Udp查询
     public TcpParamOperationResult getTcpParam(String sn) {
@@ -367,7 +313,7 @@ public class DeviceManageService {
 
         // 获取数据
         List<ScheduleGroupInfo> groupInfoList = schedulesGroupDetailService.getScheduleGroupInfo(schduleGroupList);
-        log.info("时间组：{}", groupInfoList);
+        log.info("[时间组配置] {}", groupInfoList);
 
         // 组包发送
         List<TimeSetOperation> operationList = new ArrayList<>();
@@ -375,14 +321,15 @@ public class DeviceManageService {
             int groupId = groupInfo.getGroupId();
             List<TimeSlotOfDay> timeSlotOfDays = groupInfo.toDeviceInfo();
 
-            log.info("{} - {}", groupId, timeSlotOfDays);
+//            log.info("{} - {}", groupId, timeSlotOfDays);
 
             TimeSetOperation operation = new TimeSetOperation(groupId, timeSlotOfDays);
             operationList.add(operation);
 
-            tcpServer.sendDeviceInfo(sn, operation, OperationType.TIME_SET.getSettingCode());
+            DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, OperationType.TIME_SET.getSettingCode());
+            log.info("[时间组配置] - {}:{} - {}:{}", retCode.getCode(), retCode.getMsg(), groupId, timeSlotOfDays);
         }
-        log.info("operation: {}", operationList);
+//        log.info("operation: {}", operationList);
     }
 
 
@@ -392,11 +339,14 @@ public class DeviceManageService {
      *  - 增加时间组
      */
     public void timesetDelete(List<String> scpList) {
-        int timeSetClearCode = 0x060100;
         Operation operation = new NoBodyOperation();
         for (String sn:scpList) {
             // 清除所有开门时段
-            tcpServer.sendDeviceInfo(sn, operation, timeSetClearCode);
+            DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_TIMESET_CLEAR);
+            log.info("[时间组删除——清除所有开门时间段] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
+            if ((retCode != DeviceResopnseType.SUCCESS)) {
+                continue;
+            }
 
             // 查找控制器开门时段信息
             ScpTimeSetInfo scpTimeSetInfo = employeeDoorService.getScpTimeSetList(sn);
@@ -404,6 +354,57 @@ public class DeviceManageService {
             // 添加控制器开门时段
             sendScpTimeSet(scpTimeSetInfo);
         }
+    }
+
+
+    /**
+     * 设备初始化
+     * @param sn
+     */
+    public DeviceResopnseType deviceInit(String sn) {
+        Operation operation = new NoBodyOperation();
+
+        DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_DEVICE_INIT);
+        log.info("[设备初始化] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
+
+        return retCode;
+    }
+
+
+    /**
+     * 远程开关门
+     * @param param
+     * * @param openDoor: true-开门 false-关门
+     * @return
+     */
+    public DeviceResopnseType doorOperation(DoorOperationParam param, boolean openDoor) {
+        String sn = param.getSn();
+        if (param.getDoorList().size() == 0) {
+            return DeviceResopnseType.INVALID_PARAM;
+        }
+
+        DoorOpenCloseOperation operation = param.toOperation();
+        int msgCode = openDoor ? Constants.CODE_DOOR_OPEN : Constants.CODE_DOOR_CLOSE;
+        DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, msgCode);
+        log.info("[远程开关门操作] - {}:{}-{}", retCode.getCode(), retCode.getMsg(), param);
+
+        return retCode;
+    }
+
+    /**
+     * 参数配置
+     * @param sn
+     */
+    public void deviceSitting(String sn) {
+        // 时间组下载
+        ScpTimeSetInfo info = employeeDoorService.getScpTimeSetList(sn);
+        sendScpTimeSet(info);
+
+        // 监控开启
+        NoBodyOperation operation = new NoBodyOperation();
+        DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_MONITOR_ON);
+        log.info("[实时监控开启] - {}:{}", retCode.getCode(), retCode.getMsg());
+
     }
 
 }

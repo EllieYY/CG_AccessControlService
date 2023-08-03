@@ -1,10 +1,8 @@
 package com.wimetro.cg.controller;
 
-import com.wimetro.cg.model.CGPortInfo;
-import com.wimetro.cg.model.ScpInfo;
+import com.wimetro.cg.model.device.CGPortInfo;
 import com.wimetro.cg.model.ScpListInfo;
 import com.wimetro.cg.model.card.ScpTimeSetAddParam;
-import com.wimetro.cg.model.card.ScpTimeSetInfo;
 import com.wimetro.cg.model.device.CGDeviceTcpInfo;
 import com.wimetro.cg.model.device.DeviceAddParam;
 import com.wimetro.cg.model.device.DeviceBasicInfo;
@@ -45,14 +43,14 @@ public class DeviceManageController {
     }
 
 
-    @ApiOperation(value = "C/G设备搜索")
+    @ApiOperation(value = "CG设备搜索")
     @RequestMapping(value = "/search", method = {RequestMethod.POST})
     public ResultBean<List<CGDeviceTcpInfo>> deviceSearchRequest() {
         List<CGDeviceTcpInfo> deviceList = deviceManageService.deviceSearch();
         return ResultBeanUtil.makeOkResp(deviceList);
     }
 
-    @ApiOperation(value = "C/G设备添加")
+    @ApiOperation(value = "CG设备添加")
     @RequestMapping(value = "/add", method = {RequestMethod.POST})
     public ResultBean<DeviceBasicInfo> deviceAdd(@RequestBody DeviceAddParam deviceAddParam) {
         String ip = deviceAddParam.getIp();

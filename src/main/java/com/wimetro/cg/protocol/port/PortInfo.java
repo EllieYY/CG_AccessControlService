@@ -1,6 +1,6 @@
 package com.wimetro.cg.protocol.port;
 
-import com.wimetro.cg.model.CGPortInfo;
+import com.wimetro.cg.model.device.CGPortInfo;
 import com.wimetro.cg.protocol.message.OperationResult;
 import com.wimetro.cg.util.ProtocolFiledUtil.CmdProp;
 import lombok.Data;

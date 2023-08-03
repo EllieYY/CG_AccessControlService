@@ -48,4 +48,9 @@ public class DCgcgEmployeeDoorServiceImpl extends ServiceImpl<DCgcgEmployeeDoorM
         return this.baseMapper.selectCardsByDeviceSn(sn);
     }
 
+    // 查找控制器下所有时间组
+    public ScpTimeSetInfo getScpTimeset(String sn) {
+        return this.baseMapper.selectSchedulesGroupIdByDeviceSn(sn);
+    }
+
 }

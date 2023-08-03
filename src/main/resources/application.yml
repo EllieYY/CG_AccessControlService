@@ -59,9 +59,9 @@ spring:
 
   activemq:
     #    in-memory: true
-    broker-url: tcp://192.168.2.236:61616
+    broker-url: tcp://192.168.2.238:61616
     user: admin
-    password: zhdt@2022
+    password: zhdt@2023
     #    packages:
     #      trust-all: true
     pool:
@@ -71,7 +71,7 @@ spring:
     #队列名称
     queueName:
       # 事件队列
-      messageQueue: accessQueue
+      messageQueue: cgcgQueue
 
   jms:
     listener:

@@ -1,8 +1,6 @@
 package com.wimetro.cg.protocol.message;
 
 import com.wimetro.cg.protocol.TcpParamOperationResult;
-import com.wimetro.cg.protocol.card.CardInfo;
-import com.wimetro.cg.protocol.card.CardOperationInfo;
 import com.wimetro.cg.protocol.card.CardOperationResultInfo;
 import com.wimetro.cg.protocol.card.TimeSet;
 import com.wimetro.cg.protocol.common.*;
@@ -46,10 +44,11 @@ public enum OperationType {
 
     /** 卡片信息 */
     CARD_ADD_UNSORT(0x3704FF, 0x070301, 0x070400, CardOperationResultInfo.class),
+    CARD_READ_UNSORT(0x3703FF, 0x070301, 0x000000, CardOperationResultInfo.class),
     CARD_ADD_SORT(0x3707FF, 0x070301, 0x070701, CardOperationResultInfo.class),
 
     /** 监控事件  */
-    EVENT_CARD_READ(0x190100, 0x00, 0x00, CardReadEvent.class),    // 读卡
+    EVENT_CARD_READ(0x190100, 0x000000, 0x00, CardReadEvent.class),    // 读卡
     EVENT_DOOR_OPEN(0x190200, 0x00, 0x00, DoorOpenEvent.class),    // 出门开关
     EVENT_STRIKE_STATE(0x190300, 0x00, 0x00, StrikeStateEvent.class), // 门磁
     EVENT_REMOTE_DOOR_OPEN(0x190400, 0x00, 0x00, RemoteDoorOpenEvent.class), // 远程开门
@@ -64,20 +63,20 @@ public enum OperationType {
     RESP_CHECK_ERR(0x210300, 0x00, 0x00, CheckErrorMessage.class),
     RESP_IP_ERR(0x210400, 0x00, 0x00, IpErrorMessage.class);
 
-    private int opCode;
+    private int responseCode;
     private int readCode;
     private int settingCode;
     private Class<? extends OperationResult> operationClazz;
 
-    OperationType(int opCode, int readCode, int setCode, Class<? extends OperationResult> operationClazz) {
-        this.opCode = opCode;
+    OperationType(int responseCode, int readCode, int setCode, Class<? extends OperationResult> operationClazz) {
+        this.responseCode = responseCode;
         this.readCode = readCode;
         this.settingCode = setCode;
         this.operationClazz = operationClazz;
     }
 
-    public int getOpCode(){
-        return opCode;
+    public int getResponseCode(){
+        return responseCode;
     }
 
     public int getReadCode(){
@@ -93,7 +92,7 @@ public enum OperationType {
     }
 
     public static OperationType fromOpCode(int type) {
-        return getOperationType(requestType -> requestType.opCode == type);
+        return getOperationType(requestType -> requestType.responseCode == type);
     }
 
     public static OperationType fromOperation(OperationResult operation){
@@ -114,7 +113,7 @@ public enum OperationType {
     public static boolean isProtocolOpCode(int opCode) {
         OperationType[] values = values();
         for (OperationType operationType : values) {
-            if(operationType.opCode == opCode){
+            if(operationType.responseCode == opCode){
                 return true;
             }
         }

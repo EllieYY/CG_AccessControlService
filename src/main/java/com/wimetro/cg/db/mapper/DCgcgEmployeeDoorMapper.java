@@ -31,4 +31,5 @@ public interface DCgcgEmployeeDoorMapper extends BaseMapper<DCgcgEmployeeDoor> {
     // 根据控制器查找卡授权信息
     List<CardDbInfo> selectCardsByDeviceSn(@Param("deviceSn") String deviceSn);
 
+
 }

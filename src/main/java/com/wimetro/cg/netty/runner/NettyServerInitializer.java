@@ -3,6 +3,7 @@ package com.wimetro.cg.netty.runner;
 import com.wimetro.cg.config.NettyConfig;
 import com.wimetro.cg.netty.codec.*;
 import com.wimetro.cg.netty.handler.DeviceTcpHandler;
+import com.wimetro.cg.service.QueueProducer;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -20,10 +21,12 @@ import lombok.extern.slf4j.Slf4j;
 public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
     UnorderedThreadPoolEventExecutor businessGroup = null;
     private NettyConfig nettyConfig;
+    private QueueProducer queueProducer;
 
-    public NettyServerInitializer(UnorderedThreadPoolEventExecutor businessGroup, NettyConfig nettyConfig) {
+    public NettyServerInitializer(UnorderedThreadPoolEventExecutor businessGroup, NettyConfig nettyConfig, QueueProducer queueProducer) {
         this.businessGroup = businessGroup;
         this.nettyConfig = nettyConfig;
+        this.queueProducer = queueProducer;
     }
 
     @Override
@@ -40,6 +43,6 @@ public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast("deviceProtocolDecoder", new TcpProtocolDecoder());
         pipeline.addLast("deviceProtocolEncoder", new TcpProtocolEncoder());
 
-        pipeline.addLast(businessGroup,"processHandler", new DeviceTcpHandler(nettyConfig));
+        pipeline.addLast(businessGroup,"processHandler", new DeviceTcpHandler(nettyConfig, queueProducer));
     }
 }

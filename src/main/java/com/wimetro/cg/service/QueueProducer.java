@@ -42,7 +42,6 @@ public class QueueProducer {
         this.messageQueue = messageQueue;
     }
 
-
     public void sendMessage(MqMessage mqMessage) {
         String messageStr = JsonUtil.toJson(mqMessage);
         log.info("[{} - 设备事件] - {}", mqMessage.getSn(), messageStr);

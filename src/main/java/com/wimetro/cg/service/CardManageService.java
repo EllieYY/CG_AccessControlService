@@ -6,9 +6,12 @@ import com.wimetro.cg.model.card.CardDbInfo;
 import com.wimetro.cg.model.card.CardDoorInfo;
 import com.wimetro.cg.model.card.ScpCardInfo;
 import com.wimetro.cg.model.device.CGDeviceTcpInfo;
+import com.wimetro.cg.model.response.DeviceResopnseType;
+import com.wimetro.cg.model.response.DeviceResponse;
 import com.wimetro.cg.netty.runner.NettyTcpServer;
 import com.wimetro.cg.protocol.NoBodyOperation;
 import com.wimetro.cg.protocol.card.CardBatchOperationInfo;
+import com.wimetro.cg.protocol.card.CardClearOperation;
 import com.wimetro.cg.protocol.card.CardInfo;
 import com.wimetro.cg.protocol.card.CardOperationInfo;
 import com.wimetro.cg.protocol.message.Message;
@@ -39,7 +42,6 @@ public class CardManageService {
         this.tcpServer = tcpServer;
         this.employeeDoorService = employeeDoorService;
     }
-
 
     /** 单张卡片添加-存入非排序区
      */
@@ -86,8 +88,14 @@ public class CardManageService {
             operation.setCardList(cardMsg);
 
             index += cardMsg.size();
+
             // 发送
-            tcpServer.sendDeviceInfo(sn, operation, cardMsgCode);
+            int responseCode = OperationType.CARD_ADD_SORT.getResponseCode();
+            // TODO:授权失败结果查看
+            DeviceResponse response = tcpServer.sendDeviceInfo(sn, operation, cardMsgCode, responseCode);
+            if (response.getCode() == DeviceResopnseType.SUCCESS) {   // 成功读取到失败授权卡号
+                log.info("[授权失败卡号] - {}", response.getResult());
+            }
         } else {
             CardOperationInfo operation = new CardOperationInfo();
             operation.setLength(cardMsg.size());
@@ -95,19 +103,26 @@ public class CardManageService {
             log.info("加卡 operation: {}", operation);
 
             // 发送
-            tcpServer.sendDeviceInfo(sn, operation, cardMsgCode);
+            int responseCode = OperationType.CARD_ADD_UNSORT.getResponseCode();
+            // TODO:授权失败结果查看
+            DeviceResponse response = tcpServer.sendDeviceInfo(sn, operation, cardMsgCode, responseCode);
+            if (response.getCode() == DeviceResopnseType.SUCCESS) {   // 成功读取到失败授权卡号
+                log.info("[授权失败卡号] - {}", response.getResult());
+            }
         }
 
         return index;
     }
 
     /** 单张卡片删除-非排序区
+     * 返回删除失败卡号列表
      */
-    public void cardDelete(List<String> cardList) {
+    public List<ScpCardInfo> cardDelete(List<String> cardList) {
         // 按控制器做聚合
         List<ScpCardInfo> scpList = employeeDoorService.getScpListByCards(cardList);
         log.info("控制器授权卡信息：{}", scpList);
 
+        List<ScpCardInfo> failedCardList = new ArrayList<>();
         for (ScpCardInfo scpCardInfo:scpList) {
             String sn = scpCardInfo.getSn();
             List<String> cards = scpCardInfo.getCardList();
@@ -124,8 +139,14 @@ public class CardManageService {
             operation.setLength(reCards.size());
             operation.setCardList(reCards);
 
-            tcpServer.sendDeviceInfo(sn, operation, Constants.CODE_CARD_DELETE);
+            DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_CARD_DELETE);
+            if (retCode != DeviceResopnseType.SUCCESS) {
+                failedCardList.add(scpCardInfo);
+            }
+            log.info("[设备初始化] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
         }
+
+        return failedCardList;
     }
 
     /** 批量卡片添加-存入非排序区
@@ -138,7 +159,11 @@ public class CardManageService {
 
             // 开始写入
             NoBodyOperation noBodyOperation = new NoBodyOperation();
-            tcpServer.sendDeviceInfo(sn, noBodyOperation, Constants.CODE_SORT_CARD_START);
+            DeviceResopnseType retSatrtCode = tcpServer.deviceSetting(sn, noBodyOperation, Constants.CODE_SORT_CARD_START);
+            log.info("[排序区开始写卡] - {}:{}-{}", sn, retSatrtCode.getCode(), retSatrtCode.getMsg());
+            if (retSatrtCode != DeviceResopnseType.SUCCESS) {
+                continue;
+            }
 
             // 分批写入
             int index = 0;
@@ -149,10 +174,25 @@ public class CardManageService {
             }
 
             // 终止写入
-            tcpServer.sendDeviceInfo(sn, noBodyOperation, Constants.CODE_SORT_CARD_END);
+            DeviceResopnseType retStopCode = tcpServer.deviceSetting(sn, noBodyOperation, Constants.CODE_SORT_CARD_END);
+            log.info("[排序区终止写卡] - {}:{}-{}", sn, retSatrtCode.getCode(), retSatrtCode.getMsg());
         }
 
     }
+
+
+    /**
+     * 卡片清除，清除所有区域 = 3
+     * @param sn
+     * @return
+     */
+    public DeviceResopnseType cardClear(String sn) {
+        CardClearOperation operation = new CardClearOperation(3);
+        DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_CARD_CLEAR);
+        log.info("[清空所有区域授权卡] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
+        return retCode;
+    }
+
 
     /**
      * 读取授权卡信息
@@ -160,7 +200,6 @@ public class CardManageService {
      * @return
      */
     public List<String> cardRead(String sn) {
-
 
         return new ArrayList<>();
     }

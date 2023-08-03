@@ -7,9 +7,9 @@ import com.wimetro.cg.netty.runner.RequestPendingCenter;
 import com.wimetro.cg.protocol.NoBodyOperation;
 import com.wimetro.cg.protocol.events.DeviceEvent;
 import com.wimetro.cg.protocol.message.*;
+import com.wimetro.cg.service.QueueProducer;
 import io.netty.channel.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.InetSocketAddress;
 import java.util.Objects;
@@ -24,10 +24,12 @@ import java.util.Objects;
 @ChannelHandler.Sharable
 public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage> {
 
-    private final NettyConfig nettyConfig;
-    @Autowired
-    public DeviceTcpHandler(NettyConfig nettyConfig) {
+    private NettyConfig nettyConfig;
+    private QueueProducer queueProducer;
+
+    public DeviceTcpHandler(NettyConfig nettyConfig, QueueProducer queueProducer) {
         this.nettyConfig = nettyConfig;
+        this.queueProducer = queueProducer;
     }
 
 
@@ -41,14 +43,14 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
 
         // 设备连接确认
         int opCode = msgHeader.getMsgCode();
-        if (opCode == OperationType.CONNECT_CONFIRM.getOpCode()) {
+        if (opCode == OperationType.CONNECT_CONFIRM.getResponseCode()) {
             ChannelManager.registry(ctx.channel());
         }
 
         // 事件上传MQ
         MessageBody body = deviceMessage.getMessageBody();
         if (body instanceof DeviceEvent) {
-            ((DeviceEvent) body).sendMq(msgHeader.getDeviceSN());
+            ((DeviceEvent) body).sendMq(queueProducer, msgHeader.getDeviceSN());
         }
 
         // 默认回复ok
@@ -114,7 +116,7 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
         Channel ch = ctx.channel();
         log.info("[连接成功] <- {}", ch.remoteAddress().toString().substring(1));
         ChannelManager.addChannelToGroup(ch);
-//        ChannelManager.registry(ch);
+        ChannelManager.registry(ch);
     }
 
     @Override

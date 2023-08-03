@@ -1,4 +1,4 @@
-package com.wimetro.cg.model;
+package com.wimetro.cg.model.device;
 
 import com.wimetro.cg.protocol.port.*;
 import io.swagger.annotations.ApiModel;

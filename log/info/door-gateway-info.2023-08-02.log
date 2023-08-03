@@ -3393,3 +3393,55 @@ java.lang.NullPointerException: null
 2023-08-02 17:27:38 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192200, length=0(0x00)} - ConnectTest()
 2023-08-02 17:28:11 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19220000000000ab
 2023-08-02 17:28:11 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192200, length=0(0x00)} - ConnectTest()
+2023-08-02 18:16:01 INFO  main c.w.c.GatewayApplication Starting GatewayApplication using Java 11.0.10 on DESKTOP-SPKKHPB with PID 49592 (D:\11_CG\00_code\CG_AccessControlService\target\classes started by ansen in D:\11_CG\00_code\CG_AccessControlService)
+2023-08-02 18:16:01 INFO  background-preinit o.h.v.i.util.Version HV000001: Hibernate Validator 6.2.0.Final
+2023-08-02 18:16:01 INFO  main c.w.c.GatewayApplication The following profiles are active: dev
+2023-08-02 18:16:02 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-02 18:16:02 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-02 18:16:02 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
+2023-08-02 18:16:03 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9251 (http)
+2023-08-02 18:16:03 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9251"]
+2023-08-02 18:16:03 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
+2023-08-02 18:16:03 INFO  main o.a.c.c.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-08-02 18:16:03 INFO  main o.a.c.c.C.[.[.[/]    Initializing Spring embedded WebApplicationContext
+2023-08-02 18:16:03 INFO  main o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2269 ms
+2023-08-02 18:16:03 INFO  main c.a.d.s.b.a.DruidDataSourceAutoConfigure Init DruidDataSource
+2023-08-02 18:16:04 INFO  main c.a.d.p.DruidDataSource {dataSource-1} inited
+2023-08-02 18:16:05 WARN  main c.b.m.c.m.TableInfoHelper Can not find table primary key in Class: "com.wimetro.cg.db.entity.DSchedulesGroupDetail".
+2023-08-02 18:16:05 WARN  main c.b.m.c.i.DefaultSqlInjector class com.wimetro.cg.db.entity.DSchedulesGroupDetail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-02 18:16:06 INFO  main c.w.c.c.Swagger3Config Swagger3接口文档地址: http://192.168.2.29:9251/swagger-ui.html
+2023-08-02 18:16:06 INFO  main c.w.c.c.Swagger3Config Knife4j增强接口文档地址: http://192.168.2.29:9251/doc.html
+2023-08-02 18:16:07 INFO  main o.a.c.h.Http11NioProtocol Starting ProtocolHandler ["http-nio-9251"]
+2023-08-02 18:16:07 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 9251 (http) with context path ''
+2023-08-02 18:16:08 INFO  main c.w.c.GatewayApplication Started GatewayApplication in 7.733 seconds (JVM running for 9.596)
+2023-08-02 18:16:08 INFO  main c.w.c.n.r.NettyTcpServer  TcpServer 正在启动
+2023-08-02 18:16:08 INFO  main c.w.c.n.r.NettyTcpServer  TcpServer 使用nio模式
+2023-08-02 18:16:08 INFO  main c.w.c.n.r.NettyTcpServer tcp server listened on /0:0:0:0:0:0:0:0:8008
+2023-08-02 18:16:08 INFO  main c.w.c.n.r.NettyUdpServer  UdpServer 正在启动
+2023-08-02 18:16:08 INFO  main c.w.c.n.r.NettyUdpServer  UdpServer 使用nio模式
+2023-08-02 18:16:08 INFO  main c.w.c.n.r.NettyUdpServer udp server listened on /0:0:0:0:0:0:0:0:8101
+2023-08-02 18:16:09 INFO  business-6-1 c.w.c.n.h.DeviceTcpHandler [连接成功] <- 192.168.2.28:10000
+2023-08-02 18:16:09 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19230000000000ac
+2023-08-02 18:16:09 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192300, length=0(0x00)} - ConnectConfirm()
+2023-08-02 18:16:09 INFO  business-6-2 c.w.c.n.r.ChannelManager [注册] == 192.168.2.28:8008
+2023-08-02 18:16:41 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19220000000000ab
+2023-08-02 18:16:41 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192200, length=0(0x00)} - ConnectTest()
+2023-08-02 18:17:14 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19220000000000ab
+2023-08-02 18:17:14 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192200, length=0(0x00)} - ConnectTest()
+2023-08-02 18:17:22 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19010000000011000000000000ce6587230802181632020cf0
+2023-08-02 18:17:22 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x190100, length=17(0x11)} - CardReadEvent(cardNo=000000000000ce6587, time=Wed Aug 02 18:16:32 CST 2023, doorNo=2, state=12)
+2023-08-02 18:17:22 INFO  business-6-2 c.w.c.s.QueueProducer [MC-5924T22104523 - 设备事件] - {"recordType":1,"sn":"MC-5924T22104523","portNo":2,"eventTime":"2023-08-02 18:16:32","eventCode":12,"cardNo":"000000000000ce6587"}
+2023-08-02 18:17:55 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19220000000000ab
+2023-08-02 18:17:55 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192200, length=0(0x00)} - ConnectTest()
+2023-08-02 18:18:03 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19010000000011000000000000ce6587230802181712020cd1
+2023-08-02 18:18:03 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x190100, length=17(0x11)} - CardReadEvent(cardNo=000000000000ce6587, time=Wed Aug 02 18:17:12 CST 2023, doorNo=2, state=12)
+2023-08-02 18:18:03 INFO  business-6-7 c.w.c.s.QueueProducer [MC-5924T22104523 - 设备事件] - {"recordType":1,"sn":"MC-5924T22104523","portNo":2,"eventTime":"2023-08-02 18:17:12","eventCode":12,"cardNo":"000000000000ce6587"}
+2023-08-02 18:18:05 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19010000000011000000000000ce6587230802181714020cd3
+2023-08-02 18:18:05 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x190100, length=17(0x11)} - CardReadEvent(cardNo=000000000000ce6587, time=Wed Aug 02 18:17:14 CST 2023, doorNo=2, state=12)
+2023-08-02 18:18:05 INFO  business-6-5 c.w.c.s.QueueProducer [MC-5924T22104523 - 设备事件] - {"recordType":1,"sn":"MC-5924T22104523","portNo":2,"eventTime":"2023-08-02 18:17:14","eventCode":12,"cardNo":"000000000000ce6587"}
+2023-08-02 18:18:37 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19220000000000ab
+2023-08-02 18:18:37 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192200, length=0(0x00)} - ConnectTest()
+2023-08-02 18:19:10 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19220000000000ab
+2023-08-02 18:19:10 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192200, length=0(0x00)} - ConnectTest()
+2023-08-02 18:19:42 INFO  worker-5-1 c.w.c.n.c.TcpProtocolDecoder [device报文]ffffffff4d432d35393234543232313034353233ffffffff19220000000000ab
+2023-08-02 18:19:42 INFO  worker-5-1 c.w.c.p.m.Message    [decode] <= /192.168.2.28:10000 - MessageHeader{streamId=-1, deviceSN='MC-5924T22104523', devicePwd='ffffffff', msgCode=0x192200, length=0(0x00)} - ConnectTest()

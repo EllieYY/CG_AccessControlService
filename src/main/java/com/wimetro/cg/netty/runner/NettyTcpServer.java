@@ -2,10 +2,13 @@ package com.wimetro.cg.netty.runner;
 
 import com.wimetro.cg.common.Constants;
 import com.wimetro.cg.config.NettyConfig;
+import com.wimetro.cg.model.response.DeviceResopnseType;
+import com.wimetro.cg.model.response.DeviceResponse;
 import com.wimetro.cg.model.device.DeviceShadow;
 import com.wimetro.cg.protocol.TcpParamOperation;
 import com.wimetro.cg.protocol.message.*;
 import com.wimetro.cg.service.DeviceCenter;
+import com.wimetro.cg.service.QueueProducer;
 import com.wimetro.cg.util.IdUtil;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -58,8 +61,10 @@ public class NettyTcpServer implements ApplicationRunner, ApplicationListener<Co
     private ApplicationContext applicationContext;
 
     private final NettyConfig nettyConfig;
-    public NettyTcpServer(NettyConfig nettyConfig) {
+    private final QueueProducer queueProducer;
+    public NettyTcpServer(NettyConfig nettyConfig, QueueProducer queueProducer) {
         this.nettyConfig = nettyConfig;
+        this.queueProducer = queueProducer;
     }
 
 
@@ -113,7 +118,7 @@ public class NettyTcpServer implements ApplicationRunner, ApplicationListener<Co
                 .childOption(ChannelOption.SO_KEEPALIVE,true)
                 .childOption(ChannelOption.CONNECT_TIMEOUT_MILLIS, 60000)
 //                .handler(infoLogHandler)
-                .childHandler(new NettyServerInitializer(businessGroup, nettyConfig));
+                .childHandler(new NettyServerInitializer(businessGroup, nettyConfig, queueProducer));
 
         // 端口监听
         try {
@@ -142,18 +147,42 @@ public class NettyTcpServer implements ApplicationRunner, ApplicationListener<Co
         }
     }
 
+    /**
+     * 设备信息读取接口，不关心是否操作成功，操作失败接收空指针数据
+     * @param sn
+     * @param body
+     * @param operation
+     * @return
+     */
+    public OperationResult readDeviceInfo(String sn, Operation body, OperationType operation) {
+        DeviceResponse response = sendDeviceInfo(sn, body, operation.getReadCode(), operation.getResponseCode());
+        return response.getResult();
+    }
+
+    /**
+     * 下发设备命令，设备返回OK报文的，只关心成功与否
+     * @param sn
+     * @param body
+     * @param settingCode
+     * @return true-操作成功，false-操作失败
+     */
+    public DeviceResopnseType deviceSetting(String sn, Operation body, int settingCode) {
+        DeviceResponse response = sendDeviceInfo(sn, body, settingCode, Constants.CODE_OK);
+        return response.getCode();
+    }
+
 
     /**
      * 获取设备信息
      * @return
      */
-    public OperationResult sendDeviceInfo(String sn, Operation body, int msgCode) {
-//        int msgCode = operationType.getReadCode();
+    public DeviceResponse sendDeviceInfo(String sn, Operation body, int requestCode, int responseCode) {
+
         // n - 查找设备ip | password | port
         DeviceShadow deviceShadow = DeviceCenter.getDevice(sn);
         if (Objects.isNull(deviceShadow)) {
             log.info("设备 {} 不存在", sn);
-            return null;
+            return new DeviceResponse(DeviceResopnseType.INVALID_DEVICE, null);
         }
 
         TcpParamOperation tcpParam = deviceShadow.getTcpParam();
@@ -163,7 +192,7 @@ public class NettyTcpServer implements ApplicationRunner, ApplicationListener<Co
 
         // 报文头组装
         MessageHeader header = new MessageHeader();
-        header.setMsgCode(msgCode);
+        header.setMsgCode(requestCode);
         header.setDeviceSN(sn);
         header.setDevicePwd(pwd);
         int streamId = IdUtil.randomRangeInt(0, 100000);
@@ -180,7 +209,7 @@ public class NettyTcpServer implements ApplicationRunner, ApplicationListener<Co
         Channel channel = ChannelManager.getChannel(key);
         if (Objects.isNull(channel)) {
             log.info("设备连接通道已断开 {} - {}", ip, sn);
-            return null;
+            return new DeviceResponse(DeviceResopnseType.DEVICE_UNREACHABLE, null);
         }
         InetSocketAddress remoteAddress = (InetSocketAddress) channel.remoteAddress();
         serverMessage.setTargetAddress(remoteAddress);
@@ -189,12 +218,17 @@ public class NettyTcpServer implements ApplicationRunner, ApplicationListener<Co
         try {
             // 获取结果，超时时间3秒
             DeviceMessage response = future.get(10, TimeUnit.SECONDS);
-            return response.getMessageBody();
+            MessageHeader responseHeader = response.getMessageHeader();
+            if (responseHeader.getMsgCode() == responseCode) {
+                return new DeviceResponse(DeviceResopnseType.SUCCESS, response.getMessageBody());
+            }
+
+            return new DeviceResponse(DeviceResopnseType.INVALID_MSG, null);
         } catch (Exception e) {
             log.error("{}", e);
         }
 
-        return null;
+        return new DeviceResponse(DeviceResopnseType.DEVICE_UNREACHABLE, null);
     }
 
 
