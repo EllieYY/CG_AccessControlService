@@ -33,14 +33,16 @@ public class QueueProducer {
     private final JmsMessagingTemplate jmsMessagingTemplate;
     private final ThreadPoolTaskExecutor threadPoolTaskExecutor;
     private final Queue messageQueue;
+    private final Queue statusQueue;
 
 
     @Autowired
     public QueueProducer(JmsMessagingTemplate jmsMessagingTemplate, ThreadPoolTaskExecutor threadPoolTaskExecutor,
-                         Queue messageQueue) {
+                         Queue messageQueue, Queue statusQueue) {
         this.jmsMessagingTemplate = jmsMessagingTemplate;
         this.threadPoolTaskExecutor = threadPoolTaskExecutor;
         this.messageQueue = messageQueue;
+        this.statusQueue = statusQueue;
     }
 
     public void sendEventMessage(MqMessage mqMessage) {
@@ -51,8 +53,8 @@ public class QueueProducer {
 
     public void sendStatusMessage(DeviceStateMessage mqMessage) {
         String messageStr = JsonUtil.toJson(mqMessage);
-        log.info("[{} - 设备状态] - {}", mqMessage.getSn(), messageStr);
-        this.sendDeviceMessage(messageQueue, messageStr);
+        log.info("[{} - 设备状态] - {}", mqMessage.getIp(), messageStr);
+        this.sendDeviceMessage(statusQueue, messageStr);
     }
 
 
