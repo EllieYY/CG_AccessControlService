@@ -20,7 +20,7 @@ public class TimeSetOperation extends Operation {
     @CmdProp(index = 0, len = 1, enCodec = "intToHexStr")
     private int index;   // 序号
 
-    @CmdProp(index = 0, len = 0xE0, enCodec = "listToHexStr")
+    @CmdProp(index = 1, len = 0xE0, enCodec = "listToHexStr")
     private List<String> timesetList;
 
     public TimeSetOperation(int index, List<TimeSlotOfDay> dayList) {
@@ -31,5 +31,7 @@ public class TimeSetOperation extends Operation {
             String msg = Message.encodeMsgBody(day);
             timesetList.add(msg);
         }
+
+//        System.out.println(timesetList);
     }
 }

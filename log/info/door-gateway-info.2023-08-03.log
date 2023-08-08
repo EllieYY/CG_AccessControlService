@@ -239,3 +239,30 @@
 2023-08-03 18:42:05 INFO  main c.w.c.n.r.NettyUdpServer  UdpServer 正在启动
 2023-08-03 18:42:05 INFO  main c.w.c.n.r.NettyUdpServer  UdpServer 使用nio模式
 2023-08-03 18:42:05 INFO  main c.w.c.n.r.NettyUdpServer udp server listened on /0:0:0:0:0:0:0:0:8101
+2023-08-03 18:47:21 INFO  background-preinit o.h.v.i.util.Version HV000001: Hibernate Validator 6.2.0.Final
+2023-08-03 18:47:21 INFO  main c.w.c.GatewayApplication Starting GatewayApplication using Java 11.0.10 on DESKTOP-SPKKHPB with PID 23068 (D:\11_CG\00_code\CG_AccessControlService\target\classes started by ansen in D:\11_CG\00_code\CG_AccessControlService)
+2023-08-03 18:47:21 INFO  main c.w.c.GatewayApplication The following profiles are active: dev
+2023-08-03 18:47:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-08-03 18:47:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-03 18:47:23 INFO  main o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 53 ms. Found 0 Redis repository interfaces.
+2023-08-03 18:47:23 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 9251 (http)
+2023-08-03 18:47:23 INFO  main o.a.c.h.Http11NioProtocol Initializing ProtocolHandler ["http-nio-9251"]
+2023-08-03 18:47:23 INFO  main o.a.c.c.StandardService Starting service [Tomcat]
+2023-08-03 18:47:23 INFO  main o.a.c.c.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-08-03 18:47:24 INFO  main o.a.c.c.C.[.[.[/]    Initializing Spring embedded WebApplicationContext
+2023-08-03 18:47:24 INFO  main o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2739 ms
+2023-08-03 18:47:24 INFO  main c.a.d.s.b.a.DruidDataSourceAutoConfigure Init DruidDataSource
+2023-08-03 18:47:25 INFO  main c.a.d.p.DruidDataSource {dataSource-1} inited
+2023-08-03 18:47:25 WARN  main c.b.m.c.m.TableInfoHelper Can not find table primary key in Class: "com.wimetro.cg.db.entity.DSchedulesGroupDetail".
+2023-08-03 18:47:25 WARN  main c.b.m.c.i.DefaultSqlInjector class com.wimetro.cg.db.entity.DSchedulesGroupDetail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-03 18:47:26 INFO  main c.w.c.c.Swagger3Config Swagger3接口文档地址: http://192.168.2.29:9251/swagger-ui.html
+2023-08-03 18:47:26 INFO  main c.w.c.c.Swagger3Config Knife4j增强接口文档地址: http://192.168.2.29:9251/doc.html
+2023-08-03 18:47:28 INFO  main o.a.c.h.Http11NioProtocol Starting ProtocolHandler ["http-nio-9251"]
+2023-08-03 18:47:28 INFO  main o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 9251 (http) with context path ''
+2023-08-03 18:47:28 INFO  main c.w.c.GatewayApplication Started GatewayApplication in 8.834 seconds (JVM running for 10.669)
+2023-08-03 18:47:28 INFO  main c.w.c.n.r.NettyTcpServer  TcpServer 正在启动
+2023-08-03 18:47:28 INFO  main c.w.c.n.r.NettyTcpServer  TcpServer 使用nio模式
+2023-08-03 18:47:29 INFO  main c.w.c.n.r.NettyTcpServer tcp server listened on /0:0:0:0:0:0:0:0:8008
+2023-08-03 18:47:29 INFO  main c.w.c.n.r.NettyUdpServer  UdpServer 正在启动
+2023-08-03 18:47:29 INFO  main c.w.c.n.r.NettyUdpServer  UdpServer 使用nio模式
+2023-08-03 18:47:29 INFO  main c.w.c.n.r.NettyUdpServer udp server listened on /0:0:0:0:0:0:0:0:8101

@@ -1,0 +1,367 @@
+2023-08-07 10:06:09 ERROR http-nio-9251-exec-1 c.w.c.c.a.ResultBeanExceptionHandler 其他异常
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: java.sql.SQLException: sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?
+### The error may exist in file [D:\11_CG\00_code\CG_AccessControlService\target\classes\mapper\DCgcgEmployeeDoorMapper.xml]
+### The error may involve com.wimetro.cg.db.mapper.DCgcgEmployeeDoorMapper.selectSchedulesGroupIdByDeviceSn
+### The error occurred while executing a query
+### SQL: select             device_sn,             distinct schedules_group_id         from d_cgcg_employee_door         where device_sn = ?
+### Cause: java.sql.SQLException: sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?; nested exception is java.sql.SQLException: sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy96.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy97.selectSchedulesGroupIdByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpTimeSetList(DCgcgEmployeeDoorServiceImpl.java:26)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$4846b8b1.getScpTimeSetList(<generated>)
+	at com.wimetro.cg.service.DeviceManageService.deviceSitting(DeviceManageService.java:400)
+	at com.wimetro.cg.controller.MonitorController.deviceSetting(MonitorController.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.sql.SQLException: sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:843)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:286)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:568)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:341)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:351)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:86)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:87)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 58 common frames omitted
+Caused by: com.alibaba.druid.sql.parser.ParserException: ERROR. pos 50, line 3, column 14, token DISTINCT
+	at com.alibaba.druid.sql.parser.SQLExprParser.primary(SQLExprParser.java:1099)
+	at com.alibaba.druid.sql.dialect.sqlserver.parser.SQLServerExprParser.primary(SQLServerExprParser.java:90)
+	at com.alibaba.druid.sql.parser.SQLExprParser.expr(SQLExprParser.java:95)
+	at com.alibaba.druid.sql.dialect.sqlserver.parser.SQLServerExprParser.parseSelectItem(SQLServerExprParser.java:234)
+	at com.alibaba.druid.sql.parser.SQLSelectParser.parseSelectList(SQLSelectParser.java:973)
+	at com.alibaba.druid.sql.dialect.sqlserver.parser.SQLServerSelectParser.query(SQLServerSelectParser.java:151)
+	at com.alibaba.druid.sql.parser.SQLSelectParser.query(SQLSelectParser.java:368)
+	at com.alibaba.druid.sql.dialect.sqlserver.parser.SQLServerSelectParser.select(SQLServerSelectParser.java:48)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseSelect(SQLStatementParser.java:4112)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:204)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:124)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:629)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:583)
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:820)
+	... 80 common frames omitted
+2023-08-07 10:06:34 ERROR http-nio-9251-exec-2 c.w.c.c.a.ResultBeanExceptionHandler 其他异常
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: java.sql.SQLException: sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?
+### The error may exist in file [D:\11_CG\00_code\CG_AccessControlService\target\classes\mapper\DCgcgEmployeeDoorMapper.xml]
+### The error may involve com.wimetro.cg.db.mapper.DCgcgEmployeeDoorMapper.selectSchedulesGroupIdByDeviceSn
+### The error occurred while executing a query
+### SQL: select             device_sn,             distinct schedules_group_id         from d_cgcg_employee_door         where device_sn = ?
+### Cause: java.sql.SQLException: sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?; nested exception is java.sql.SQLException: sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy96.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy97.selectSchedulesGroupIdByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpTimeSetList(DCgcgEmployeeDoorServiceImpl.java:26)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$4846b8b1.getScpTimeSetList(<generated>)
+	at com.wimetro.cg.service.DeviceManageService.deviceSitting(DeviceManageService.java:400)
+	at com.wimetro.cg.controller.MonitorController.deviceSetting(MonitorController.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.sql.SQLException: sql injection violation, dbType sqlserver, , druid-version 1.2.1, syntax error: ERROR. pos 50, line 3, column 14, token DISTINCT : select
+            device_sn,
+            distinct schedules_group_id
+        from d_cgcg_employee_door
+        where device_sn = ?
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:843)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:286)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:568)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:341)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:351)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:86)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:87)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 58 common frames omitted
+Caused by: com.alibaba.druid.sql.parser.ParserException: ERROR. pos 50, line 3, column 14, token DISTINCT
+	at com.alibaba.druid.sql.parser.SQLExprParser.primary(SQLExprParser.java:1099)
+	at com.alibaba.druid.sql.dialect.sqlserver.parser.SQLServerExprParser.primary(SQLServerExprParser.java:90)
+	at com.alibaba.druid.sql.parser.SQLExprParser.expr(SQLExprParser.java:95)
+	at com.alibaba.druid.sql.dialect.sqlserver.parser.SQLServerExprParser.parseSelectItem(SQLServerExprParser.java:234)
+	at com.alibaba.druid.sql.parser.SQLSelectParser.parseSelectList(SQLSelectParser.java:973)
+	at com.alibaba.druid.sql.dialect.sqlserver.parser.SQLServerSelectParser.query(SQLServerSelectParser.java:151)
+	at com.alibaba.druid.sql.parser.SQLSelectParser.query(SQLSelectParser.java:368)
+	at com.alibaba.druid.sql.dialect.sqlserver.parser.SQLServerSelectParser.select(SQLServerSelectParser.java:48)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseSelect(SQLStatementParser.java:4112)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:204)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:124)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:629)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:583)
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:820)
+	... 80 common frames omitted
+2023-08-07 14:12:17 ERROR boss-7-1 c.w.c.n.c.UdpDeviceDecoder [解析失败] /192.168.2.238:8101 => [30303030303030303030303030303030ffffffff0000313601fe000000000281b499]
+2023-08-07 14:12:19 ERROR boss-7-1 c.w.c.n.c.UdpDeviceDecoder [解析失败] /192.168.2.238:8101 => [30303030303030303030303030303030ffffffff0000313601fe000000000281b499]
+2023-08-07 14:30:03 ERROR http-nio-9251-exec-3 c.w.c.c.DeviceManageController ping不通
+2023-08-07 15:20:16 ERROR boss-7-1 c.w.c.n.h.DeviceUdpHandler 出现异常
+java.lang.AssertionError: no found type
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:110)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:95)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:141)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:132)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:39)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:21)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioMessageChannel$NioMessageUnsafe.read(AbstractNioMessageChannel.java:93)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-08-07 15:20:17 ERROR boss-7-1 c.w.c.n.h.DeviceUdpHandler 出现异常
+java.lang.AssertionError: no found type
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:110)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:95)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:141)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:132)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:39)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:21)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioMessageChannel$NioMessageUnsafe.read(AbstractNioMessageChannel.java:93)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-08-07 15:21:44 ERROR boss-7-1 c.w.c.n.h.DeviceUdpHandler 出现异常
+java.lang.AssertionError: no found type
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:110)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:95)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:141)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:132)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:39)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:21)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioMessageChannel$NioMessageUnsafe.read(AbstractNioMessageChannel.java:93)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-08-07 15:21:44 ERROR boss-7-1 c.w.c.n.h.DeviceUdpHandler 出现异常
+java.lang.AssertionError: no found type
+	at com.wimetro.cg.protocol.message.OperationType.getOperationType(OperationType.java:110)
+	at com.wimetro.cg.protocol.message.OperationType.fromOpCode(OperationType.java:95)
+	at com.wimetro.cg.protocol.message.DeviceMessage.getMessageBodyDecodeClass(DeviceMessage.java:14)
+	at com.wimetro.cg.protocol.message.Message.decodeMsgBody(Message.java:141)
+	at com.wimetro.cg.protocol.message.Message.decode(Message.java:132)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:39)
+	at com.wimetro.cg.netty.codec.UdpDeviceDecoder.decode(UdpDeviceDecoder.java:21)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioMessageChannel$NioMessageUnsafe.read(AbstractNioMessageChannel.java:93)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)

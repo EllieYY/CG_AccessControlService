@@ -36,7 +36,7 @@
     <select id="selectSchedulesGroupIdByDeviceSn" resultMap="ScpScheduleGroupList">
         select
             device_sn,
-            distinct schedules_group_id
+            schedules_group_id
         from d_cgcg_employee_door
         where device_sn = #{deviceSn,jdbcType=VARCHAR}
     </select>

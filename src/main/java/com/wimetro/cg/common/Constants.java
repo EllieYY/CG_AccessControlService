@@ -28,6 +28,21 @@ public interface Constants {
     // 监控开启
     int CODE_MONITOR_ON = 0x010B00;
 
+    // 事件
+    /**1:读卡记录;
+     * 2：出门开关记录;
+     * 3:门磁记录;
+     * 4:软件操作记录;
+     * 5:报警记录;
+     * 6:系统记录
+     */
+    int EVENT_CARD = 1;
+    int EVENT_DOOR = 2;
+    int EVENT_STRIKE = 3;
+    int EVENT_OPERATION = 4;
+    int EVENT_ALARM = 5;
+    int EVENT_SYSTEM = 6;
+
     // 空闲检测参数
     int SERVER_READ_IDEL_TIME_OUT = 5;    // 空闲检测间隔，单位秒
     int SERVER_WRITE_IDEL_TIME_OUT = 0;

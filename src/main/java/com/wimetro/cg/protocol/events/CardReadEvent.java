@@ -1,5 +1,6 @@
 package com.wimetro.cg.protocol.events;
 
+import com.wimetro.cg.common.Constants;
 import com.wimetro.cg.model.mq.MqMessage;
 import com.wimetro.cg.protocol.message.OperationResult;
 import com.wimetro.cg.service.QueueProducer;
@@ -16,8 +17,8 @@ import java.util.Date;
  **/
 @Data
 public class CardReadEvent extends OperationResult implements DeviceEvent {
-    @CmdProp(index = 0, len = 9, deCodec = "bytesToHexStr")
-    private String cardNo;
+    @CmdProp(index = 0, len = 9, deCodec = "bytesToInt")
+    private int cardNo;
 
     @CmdProp(index = 1, len = 6, deCodec = "bytesToBcdDate")
     private Date time;
@@ -30,7 +31,7 @@ public class CardReadEvent extends OperationResult implements DeviceEvent {
 
     @Override
     public void sendMq(QueueProducer queueProducer, String sn) {
-        MqMessage message = new MqMessage(1, sn, doorNo, time, state, cardNo);
-        queueProducer.sendMessage(message);
+        MqMessage message = new MqMessage(Constants.EVENT_CARD, sn, doorNo, time, state, String.valueOf(cardNo));
+        queueProducer.sendEventMessage(message);
     }
 }

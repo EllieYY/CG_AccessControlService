@@ -22,7 +22,7 @@ public class MqMessage {
     private String sn;              // 控制器ID
     private int portNo;            // 端口号 | 门号
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date eventTime;         // 事件时间
+    private Date eventsTime;         // 事件时间
     private int eventCode;             // 设备事件码
     private String cardNo;             // 刷卡事件卡号
 }

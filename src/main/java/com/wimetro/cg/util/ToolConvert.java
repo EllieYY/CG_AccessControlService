@@ -787,7 +787,7 @@ public class ToolConvert {
     }
 
     public static String date2hmStr(Integer sort, Integer len, Date date) {
-        String str = DateUtil.dateFormat(date, "HH:mm");
+        String str = DateUtil.dateFormat(date, "HHmm");
         return fullHex(str, len, sort);
     }
 
@@ -832,6 +832,11 @@ public class ToolConvert {
     public static String binToHexStr(Integer sort, Integer len, String bin) {
         String hexStr = binToHex(bin);
         return fullHex(hexStr, len, sort);
+    }
+
+    public static String intStrToHexStr(Integer sort, Integer len, String intStr) {
+        int intNum = Integer.parseInt(intStr);
+        return intToHexStr(sort, len, intNum);
     }
 
     public static String gpsToHexStr(Integer sort, Integer len, double gps) {

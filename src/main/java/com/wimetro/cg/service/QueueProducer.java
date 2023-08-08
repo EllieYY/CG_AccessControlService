@@ -1,6 +1,7 @@
 package com.wimetro.cg.service;
 
 
+import com.wimetro.cg.model.mq.DeviceStateMessage;
 import com.wimetro.cg.model.mq.MqMessage;
 import com.wimetro.cg.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -42,22 +43,28 @@ public class QueueProducer {
         this.messageQueue = messageQueue;
     }
 
-    public void sendMessage(MqMessage mqMessage) {
+    public void sendEventMessage(MqMessage mqMessage) {
         String messageStr = JsonUtil.toJson(mqMessage);
         log.info("[{} - 设备事件] - {}", mqMessage.getSn(), messageStr);
-        this.sendMessage(messageQueue, messageStr);
+        this.sendDeviceMessage(messageQueue, messageStr);
+    }
+
+    public void sendStatusMessage(DeviceStateMessage mqMessage) {
+        String messageStr = JsonUtil.toJson(mqMessage);
+        log.info("[{} - 设备状态] - {}", mqMessage.getSn(), messageStr);
+        this.sendDeviceMessage(messageQueue, messageStr);
     }
 
 
-    public void sendMessage(Destination destination, String message) {
+    public void sendDeviceMessage(Destination destination, String message) {
         threadPoolTaskExecutor.submit(() -> {
             Date date = new Date();
             try {
-//                log.info("[mq][queue-->send]:activeCount={},queueCount={},completedTaskCount={},taskCount={}",
-//                        threadPoolTaskExecutor.getThreadPoolExecutor().getActiveCount(),
-//                        threadPoolTaskExecutor.getThreadPoolExecutor().getQueue().size(),
-//                        threadPoolTaskExecutor.getThreadPoolExecutor().getCompletedTaskCount(),
-//                        threadPoolTaskExecutor.getThreadPoolExecutor().getTaskCount());
+                log.info("[mq][queue-->send]:activeCount={},queueCount={},completedTaskCount={},taskCount={}",
+                        threadPoolTaskExecutor.getThreadPoolExecutor().getActiveCount(),
+                        threadPoolTaskExecutor.getThreadPoolExecutor().getQueue().size(),
+                        threadPoolTaskExecutor.getThreadPoolExecutor().getCompletedTaskCount(),
+                        threadPoolTaskExecutor.getThreadPoolExecutor().getTaskCount());
 
                 this.jmsMessagingTemplate.convertAndSend(destination, message);
             } catch (Throwable e) {

@@ -367,6 +367,10 @@ public class DeviceManageService {
         DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_DEVICE_INIT);
         log.info("[设备初始化] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
 
+        // 监控开启
+        DeviceResopnseType retCode1 = tcpServer.deviceSetting(sn, operation, Constants.CODE_MONITOR_ON);
+        log.info("[实时监控开启] - {}:{}", retCode1.getCode(), retCode1.getMsg());
+
         return retCode;
     }
 

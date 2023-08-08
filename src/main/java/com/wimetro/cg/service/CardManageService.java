@@ -132,8 +132,10 @@ public class CardManageService {
 
             // 卡号规整 - 9字节
             List<String> reCards = cards.stream().collect(ArrayList::new, (list, item) -> {
-                list.add(ToolConvert.fullHex(item, 9, 1));
+                list.add(ToolConvert.intStrToHexStr(1, 9, item));
             }, ArrayList::addAll);
+
+            log.info("[卡片删除] 卡号：{}", reCards);
 
             CardOperationInfo operation = new CardOperationInfo();
             operation.setLength(reCards.size());
@@ -143,7 +145,7 @@ public class CardManageService {
             if (retCode != DeviceResopnseType.SUCCESS) {
                 failedCardList.add(scpCardInfo);
             }
-            log.info("[设备初始化] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
+            log.info("[卡片删除] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
         }
 
         return failedCardList;

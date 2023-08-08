@@ -58,7 +58,7 @@ spring:
           result-set-log-enabled: false
 
   activemq:
-    #    in-memory: true
+#    in-memory: true
     broker-url: tcp://192.168.2.238:61616
     user: admin
     password: zhdt@2023
@@ -72,6 +72,8 @@ spring:
     queueName:
       # 事件队列
       messageQueue: cgcgQueue
+      # 状态队列
+      statusQueue: cgcgStatusQueue
 
   jms:
     listener:

@@ -36,13 +36,19 @@ public class JmsConfig {
     @Value("${spring.activemq.queueName.messageQueue}")
     private String messageQueue;
 
+    @Value("${spring.activemq.queueName.statusQueue}")
+    private String statusQueue;
+
 
     @Bean("messageQueue")
     public Queue messageQueue() {
         return new ActiveMQQueue(messageQueue);
     }
 
-
+    @Bean("statusQueue")
+    public Queue statusQueue() {
+        return new ActiveMQQueue(statusQueue);
+    }
 
 
     @Bean

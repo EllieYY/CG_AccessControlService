@@ -10,7 +10,7 @@ import java.util.Date;
  * @title: CardReadEvent
  * @author: Ellie
  * @date: 2023/06/02 16:45
- * @description: 读卡信息
+ * @description: 远程开关门信息
  **/
 @Data
 public class RemoteDoorOpenEvent extends OperationResult {

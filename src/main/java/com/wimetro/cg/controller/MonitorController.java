@@ -72,7 +72,7 @@ public class MonitorController {
     @ApiOperation(value = "参数下载")
     @RequestMapping(value = "/setting", method = {RequestMethod.POST})
     public ResultBean<String> deviceSetting(@RequestBody ScpInfo scpInfo) {
-        deviceManageService.deviceInit(scpInfo.getSn());
+        deviceManageService.deviceSitting(scpInfo.getSn());
         return ResultBeanUtil.makeOkResp("命令已下发");
     }
 

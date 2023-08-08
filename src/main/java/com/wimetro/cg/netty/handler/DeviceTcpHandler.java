@@ -2,6 +2,7 @@ package com.wimetro.cg.netty.handler;
 
 import com.wimetro.cg.common.*;
 import com.wimetro.cg.config.NettyConfig;
+import com.wimetro.cg.model.mq.DeviceStateMessage;
 import com.wimetro.cg.netty.runner.ChannelManager;
 import com.wimetro.cg.netty.runner.RequestPendingCenter;
 import com.wimetro.cg.protocol.NoBodyOperation;
@@ -12,6 +13,7 @@ import io.netty.channel.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetSocketAddress;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -117,6 +119,11 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
         log.info("[连接成功] <- {}", ch.remoteAddress().toString().substring(1));
         ChannelManager.addChannelToGroup(ch);
         ChannelManager.registry(ch);
+
+        // MQ事件推送
+        InetSocketAddress remoteAddress = (InetSocketAddress) ch.remoteAddress();
+        String ip = remoteAddress.getAddress().getHostAddress();
+        queueProducer.sendStatusMessage(new DeviceStateMessage(ip, new Date(), 1));
     }
 
     @Override
@@ -128,6 +135,11 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
         ChannelManager.logout(ch);
         ChannelManager.removeChannelFromGroup(ch);
         log.info("[断开连接] !- {}", ch.remoteAddress());
+
+        // MQ事件推送
+        InetSocketAddress remoteAddress = (InetSocketAddress) ch.remoteAddress();
+        String ip = remoteAddress.getAddress().getHostAddress();
+        queueProducer.sendStatusMessage(new DeviceStateMessage(ip, new Date(), 0));
 
         // 连接状态通知
         InetSocketAddress serverSocket = (InetSocketAddress)ch.localAddress();
@@ -147,6 +159,11 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
 
         ChannelManager.logout(ch);
         ChannelManager.removeChannelFromGroup(ch);
+
+        // MQ事件推送
+        InetSocketAddress remoteAddress = (InetSocketAddress) ch.remoteAddress();
+        String ip = remoteAddress.getAddress().getHostAddress();
+        queueProducer.sendStatusMessage(new DeviceStateMessage(ip, new Date(), 0));
 
         if (ch.isActive()) {
             ch.close();
