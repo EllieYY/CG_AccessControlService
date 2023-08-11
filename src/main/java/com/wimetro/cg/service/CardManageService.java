@@ -20,6 +20,7 @@ import com.wimetro.cg.protocol.message.OperationType;
 import com.wimetro.cg.util.StringUtil;
 import com.wimetro.cg.util.ToolConvert;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class CardManageService {
 
     /** 单张卡片添加-存入非排序区
      */
+    @Async
     public void cardAdd(List<String> cardList, String sn) {
 //        // 按控制器做聚合
 //        List<ScpCardInfo> scpList = employeeDoorService.getScpListByCards(cardList);
@@ -154,6 +156,7 @@ public class CardManageService {
 
     /** 批量卡片添加-存入排序区
      */
+    @Async
     public void cardListAdd(List<String> scpList, boolean clearAll) {
         for (String sn:scpList) {
             // 是否清除所有区域卡片
@@ -198,6 +201,7 @@ public class CardManageService {
      * @param sn
      * @return
      */
+//    @Async
     public DeviceResopnseType cardClear(String sn) {
         CardClearOperation operation = new CardClearOperation(3);
         DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_CARD_CLEAR);
