@@ -27,11 +27,11 @@ public class DCgcgEmployeeDoorServiceImpl extends ServiceImpl<DCgcgEmployeeDoorM
     }
 
     // 查找卡授权信息
-    public List<CardDbInfo> getCardInfoList(List<String> cardList) {
+    public List<CardDbInfo> getCardInfoList(List<String> cardList, String sn) {
         if (cardList.isEmpty()) {
             return new ArrayList<>();
         }
-        return this.baseMapper.selectByCardNo(cardList);
+        return this.baseMapper.selectByCardNo(cardList, sn);
     }
 
     // 根据控制器和卡号全集找卡号子集

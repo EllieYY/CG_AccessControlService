@@ -1,5 +1,6 @@
 package com.wimetro.cg.model.card;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * @description:
  **/
 @Data
+@AllArgsConstructor
 public class ScpCardInfo {
     private String sn;
     private List<String> cardList;

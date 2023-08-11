@@ -26,16 +26,16 @@ public class DoorOperationParam {
         DoorOpenCloseOperation operation = new DoorOpenCloseOperation();
         for (Integer doorNo:doorList) {
             switch (doorNo) {
-                case 1:
+                case 0:
                     operation.setPort1(1);
                     break;
-                case 2:
+                case 1:
                     operation.setPort2(1);
                     break;
-                case 3:
+                case 2:
                     operation.setPort3(1);
                     break;
-                case 4:
+                case 3:
                     operation.setPort4(1);
                     break;
                 default:

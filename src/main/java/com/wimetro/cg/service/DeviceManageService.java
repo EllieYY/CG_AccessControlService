@@ -158,6 +158,17 @@ public class DeviceManageService {
     }
 
     /**
+     * 获取设备卡容量信息
+     * @param sn
+     * @return
+     */
+    public CardCapacity getDeviceCardCapacity(String sn) {
+        NoBodyOperation body = new NoBodyOperation();
+        CardCapacity cardCapacity = (CardCapacity) tcpServer.readDeviceInfo(sn, body, OperationType.CARD_CAPACITY);
+        return cardCapacity;
+    }
+
+    /**
      * 获取端口信息
      * @param sn
      * @return
@@ -299,6 +310,10 @@ public class DeviceManageService {
         //
         List<ScpTimeSetInfo> scpTimeSetList = scpTimeSetAddParam.getList();
         for (ScpTimeSetInfo info:scpTimeSetList) {
+            if (Objects.isNull(info)) {
+                log.info("无时间组需要配置：{}");
+                continue;
+            }
             sendScpTimeSet(info);
         }
     }
@@ -308,6 +323,7 @@ public class DeviceManageService {
      * @param info
      */
     private void sendScpTimeSet(ScpTimeSetInfo info) {
+
         String sn = info.getSn();
         List<Integer> schduleGroupList = info.getTimeSetList();
 
@@ -388,6 +404,7 @@ public class DeviceManageService {
         }
 
         DoorOpenCloseOperation operation = param.toOperation();
+
         int msgCode = openDoor ? Constants.CODE_DOOR_OPEN : Constants.CODE_DOOR_CLOSE;
         DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, msgCode);
         log.info("[远程开关门操作] - {}:{}-{}", retCode.getCode(), retCode.getMsg(), param);
@@ -402,7 +419,11 @@ public class DeviceManageService {
     public void deviceSitting(String sn) {
         // 时间组下载
         ScpTimeSetInfo info = employeeDoorService.getScpTimeSetList(sn);
-        sendScpTimeSet(info);
+        if (Objects.isNull(info)) {
+            log.info("无时间组需要配置：{}");
+        } else {
+            sendScpTimeSet(info);
+        }
 
         // 监控开启
         NoBodyOperation operation = new NoBodyOperation();

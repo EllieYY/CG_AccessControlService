@@ -45,19 +45,19 @@ public class CardManageService {
 
     /** 单张卡片添加-存入非排序区
      */
-    public void cardAdd(List<String> cardList) {
-        // 按控制器做聚合
-        List<ScpCardInfo> scpList = employeeDoorService.getScpListByCards(cardList);
-        for (ScpCardInfo scpCardInfo:scpList) {
-            String sn = scpCardInfo.getSn();
-            List<String> scpCards = scpCardInfo.getCardList();
+    public void cardAdd(List<String> cardList, String sn) {
+//        // 按控制器做聚合
+//        List<ScpCardInfo> scpList = employeeDoorService.getScpListByCards(cardList);
+//        for (ScpCardInfo scpCardInfo:scpList) {
+//            String sn = scpCardInfo.getSn();
+//            List<String> scpCards = scpCardInfo.getCardList();
 
             //#1 根据卡号列表查找
-            List<CardDbInfo> cardDbInfoList = employeeDoorService.getCardInfoList(scpCards);
-            log.info("卡号信息 - {}", cardDbInfoList);
+            List<CardDbInfo> cardDbInfoList = employeeDoorService.getCardInfoList(cardList, sn);
+            log.info("非排序区授权卡号信息 - {}", cardDbInfoList);
 
             sendCards(sn, cardDbInfoList, OperationType.CARD_ADD_UNSORT.getSettingCode(), 0);
-        }
+//        }
     }
 
     // 授权卡信息发送
@@ -117,25 +117,26 @@ public class CardManageService {
     /** 单张卡片删除-非排序区
      * 返回删除失败卡号列表
      */
-    public List<ScpCardInfo> cardDelete(List<String> cardList) {
-        // 按控制器做聚合
-        List<ScpCardInfo> scpList = employeeDoorService.getScpListByCards(cardList);
-        log.info("控制器授权卡信息：{}", scpList);
+    public List<ScpCardInfo> cardDelete(List<String> cardList, String sn) {
+//        // 按控制器做聚合
+//        List<ScpCardInfo> scpList = employeeDoorService.getScpListByCards(cardList);
+//        log.info("控制器授权卡信息：{}", scpList);
 
         List<ScpCardInfo> failedCardList = new ArrayList<>();
-        for (ScpCardInfo scpCardInfo:scpList) {
-            String sn = scpCardInfo.getSn();
-            List<String> cards = scpCardInfo.getCardList();
-            if (cards.size() == 0) {
-                continue;
+//        for (ScpCardInfo scpCardInfo:scpList) {
+//            String sn = scpCardInfo.getSn();
+//            List<String> cards = scpCardInfo.getCardList();
+            if (cardList.size() == 0) {
+//                continue;
+                return failedCardList;
             }
 
             // 卡号规整 - 9字节
-            List<String> reCards = cards.stream().collect(ArrayList::new, (list, item) -> {
+            List<String> reCards = cardList.stream().collect(ArrayList::new, (list, item) -> {
                 list.add(ToolConvert.intStrToHexStr(1, 9, item));
             }, ArrayList::addAll);
 
-            log.info("[卡片删除] 卡号：{}", reCards);
+            log.info("[非排序区卡片删除] 卡号：{}", reCards);
 
             CardOperationInfo operation = new CardOperationInfo();
             operation.setLength(reCards.size());
@@ -143,21 +144,29 @@ public class CardManageService {
 
             DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_CARD_DELETE);
             if (retCode != DeviceResopnseType.SUCCESS) {
-                failedCardList.add(scpCardInfo);
+                failedCardList.add(new ScpCardInfo(sn, cardList));
             }
-            log.info("[卡片删除] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
-        }
+            log.info("[非排序区卡片删除] - {}:{}-{}", sn, retCode.getCode(), retCode.getMsg());
+//        }
 
         return failedCardList;
     }
 
-    /** 批量卡片添加-存入非排序区
+    /** 批量卡片添加-存入排序区
      */
-    public void cardListAdd(List<String> scpList) {
+    public void cardListAdd(List<String> scpList, boolean clearAll) {
         for (String sn:scpList) {
+            // 是否清除所有区域卡片
+            if (clearAll) {
+                cardClear(sn);
+            }
+
             // 查找控制器所有卡片
             List<CardDbInfo> cardDbInfoList = employeeDoorService.getScpCardInfoList(sn);
             log.info("卡号信息 - {}", cardDbInfoList);
+            if (cardDbInfoList.size() == 0) {
+                continue;
+            }
 
             // 开始写入
             NoBodyOperation noBodyOperation = new NoBodyOperation();
@@ -181,6 +190,7 @@ public class CardManageService {
         }
 
     }
+
 
 
     /**

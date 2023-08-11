@@ -6,6 +6,7 @@ public enum RespCode {
     FAIL(9009, "未知错误"),
     CMD_DOWNLOAD_FAIL(2001, "命令下发失败"),
     COMM_SERVICE_FAIL(2002, "通信服务报错"),
+    PARAM_GET_FAIL(3001, "参数获取失败"),
     INVALID_PARAM(1001, "无效参数"),
     ERROR_PARAM(1002, "错误参数"),
     INNER_ERR(9001, "服务内部错误");

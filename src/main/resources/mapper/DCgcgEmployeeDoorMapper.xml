@@ -60,20 +60,23 @@
 
     <select id="selectByCardNo" resultMap="CardInfoMap">
         select
-            a.card_no as cardNo,
+            b.card_no as cardNo,
             b.effect_end_time as validDate,
             b.state as state,
             'ffffffff' as pwd,
             '65535' as doorCount,
             0 as holiday,
-            a.device_sn as deviceSn,
+            #{sn,jdbcType=VARCHAR} as deviceSn,
             a.door_no as doorNo,
             a.schedules_group_id as timeSetId,
             a.special_permssion as permssion,
             a.in_out_flag as flag
-        from d_cgcg_employee_door a, c_card_info b
-        where b.card_no = a.card_no
-          and a.card_no in
+        from c_card_info b
+        left join d_cgcg_employee_door a
+        on b.card_no = a.card_no
+            and a.status = '0'
+            and a.device_sn = #{sn,jdbcType=VARCHAR}
+        where b.card_no in
         <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
             #{id}
         </foreach>
@@ -81,20 +84,38 @@
 
     <select id="selectCardsByDeviceSn" resultMap="CardInfoMap">
         select
-            a.card_no as cardNo,
+            b.card_no as cardNo,
             b.effect_end_time as validDate,
             b.state as state,
             'ffffffff' as pwd,
             '65535' as doorCount,
             0 as holiday,
-            a.device_sn as deviceSn,
+            #{sn,jdbcType=VARCHAR} as deviceSn,
             a.door_no as doorNo,
             a.schedules_group_id as timeSetId,
             a.special_permssion as permssion,
             a.in_out_flag as flag
-        from d_cgcg_employee_door a, c_card_info b
-        where
-            a.device_sn = #{deviceSn,jdbcType=VARCHAR}
+        from c_card_info b
+        left join d_cgcg_employee_door a
+        on b.card_no = a.card_no
+            and a.status = '0'
+            and a.device_sn = #{sn,jdbcType=VARCHAR}
+
+--         select
+--             a.card_no as cardNo,
+--             b.effect_end_time as validDate,
+--             b.state as state,
+--             'ffffffff' as pwd,
+--             '65535' as doorCount,
+--             0 as holiday,
+--             #{deviceSn,jdbcType=VARCHAR} as deviceSn,
+--             a.door_no as doorNo,
+--             a.schedules_group_id as timeSetId,
+--             a.special_permssion as permssion,
+--             a.in_out_flag as flag
+--         from d_cgcg_employee_door a, c_card_info b
+--         where
+--             a.device_sn = #{deviceSn,jdbcType=VARCHAR}
     </select>
 
     <resultMap id="ScpCardMap" type="com.wimetro.cg.model.card.ScpCardInfo">

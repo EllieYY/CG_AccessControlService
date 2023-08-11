@@ -41,7 +41,7 @@ public class Swagger3Config {
         Docket docket = new Docket(DocumentationType.OAS_30)
                 // 非生产环境才开启swagger
 //                .enable(!active.equalsIgnoreCase(Constant.SPRING_PROFILES_ACTIVE_PRO))
-                .groupName("测试分组")
+                .groupName("分组")
                 .apiInfo(apiInfo())
                 // 设置自定义返回消息体
                 .globalResponses(HttpMethod.GET, globalResponse())
@@ -64,7 +64,7 @@ public class Swagger3Config {
 
 
     private ApiInfo apiInfo(){
-        String title = "门禁业务系统";
+        String title = "CG门禁业务系统";
         String description = "API接口文档";
         String version = "1.0.0";
         String license = "";

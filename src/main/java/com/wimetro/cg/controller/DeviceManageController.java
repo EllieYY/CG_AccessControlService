@@ -1,16 +1,15 @@
 package com.wimetro.cg.controller;
 
-import com.wimetro.cg.model.device.CGPortInfo;
+import com.wimetro.cg.model.ScpInfo;
+import com.wimetro.cg.model.device.*;
 import com.wimetro.cg.model.ScpListInfo;
 import com.wimetro.cg.model.card.ScpTimeSetAddParam;
-import com.wimetro.cg.model.device.CGDeviceTcpInfo;
-import com.wimetro.cg.model.device.DeviceAddParam;
-import com.wimetro.cg.model.device.DeviceBasicInfo;
-import com.wimetro.cg.model.device.ParamRead;
+import com.wimetro.cg.model.result.RespCode;
 import com.wimetro.cg.model.result.ResultBean;
 import com.wimetro.cg.model.result.ResultBeanUtil;
 import com.wimetro.cg.netty.runner.NettyUdpServer;
 import com.wimetro.cg.protocol.TcpParamOperationResult;
+import com.wimetro.cg.protocol.scp.CardCapacity;
 import com.wimetro.cg.service.DeviceManageService;
 import com.wimetro.cg.util.NetUtil;
 import io.swagger.annotations.Api;
@@ -99,6 +98,18 @@ public class DeviceManageController {
     public ResultBean<String> timesetDelete(@RequestBody ScpListInfo scpList) {
         deviceManageService.timesetDelete(scpList.getSnList());
         return ResultBeanUtil.makeOkResp();
+    }
+
+
+    @ApiOperation(value = "设备卡容量查询")
+    @RequestMapping(value = "/card/capacity", method = {RequestMethod.POST})
+    public ResultBean<CardCapacity> cardCapacity(@RequestBody ScpInfo scpInfo) {
+        // 需清空所有区域
+        CardCapacity cardCapacity = deviceManageService.getDeviceCardCapacity(scpInfo.getSn());
+        if (cardCapacity == null) {
+            return ResultBeanUtil.makeResp(RespCode.PARAM_GET_FAIL, null);
+        }
+        return ResultBeanUtil.makeOkResp(cardCapacity);
     }
 
 

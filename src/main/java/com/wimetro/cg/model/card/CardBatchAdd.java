@@ -18,7 +18,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(value = "批量加卡参数")
+@ApiModel(value = "排序区授权参数")
 public class CardBatchAdd {
     @ApiModelProperty(value = "控制器sn列表")
     private List<String> snList;

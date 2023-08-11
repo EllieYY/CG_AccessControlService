@@ -76,7 +76,7 @@ public class MonitorController {
         return ResultBeanUtil.makeOkResp("命令已下发");
     }
 
-    @ApiOperation(value = "取消卡片")
+    @ApiOperation(value = "取消卡片-清空所有区域卡片")
     @RequestMapping(value = "/card/clear", method = {RequestMethod.POST})
     public ResultBean<String> cardClear(@RequestBody ScpInfo scpInfo) {
         DeviceResopnseType result = cardManageService.cardClear(scpInfo.getSn());
@@ -84,11 +84,11 @@ public class MonitorController {
     }
 
 
-    @ApiOperation(value = "下载卡片")
+    @ApiOperation(value = "下载卡片-下载到排序区，不清空非排序区")
     @RequestMapping(value = "/card/add", method = {RequestMethod.POST})
     public ResultBean<String> cardAdd(@RequestBody ScpInfo scpInfo) {
 
-        cardManageService.cardListAdd(Arrays.asList(scpInfo.getSn()));
+        cardManageService.cardListAdd(Arrays.asList(scpInfo.getSn()), false);
 
         return ResultBeanUtil.makeOkResp("命令下发中");
     }

@@ -1,5 +1,6 @@
 package com.wimetro.cg.controller;
 
+import com.wimetro.cg.model.ScpInfo;
 import com.wimetro.cg.model.card.CardAdd;
 import com.wimetro.cg.model.card.CardBatchAdd;
 import com.wimetro.cg.model.result.ResultBean;
@@ -30,26 +31,29 @@ public class CardManagerController {
         this.cardManageService = cardManageService;
     }
 
-    @ApiOperation(value = "C/G个人授权-非排序区")
+    @ApiOperation(value = "非排序区授权")
     @RequestMapping(value = "/add/person", method = {RequestMethod.POST})
     public ResultBean<String> cardAdd(@RequestBody CardAdd card) {
-        cardManageService.cardAdd(card.getCardNoList());
+        cardManageService.cardAdd(card.getCardNoList(), card.getSn());
         return ResultBeanUtil.makeOkResp();
     }
 
-    @ApiOperation(value = "C/G单张卡删除")
+    @ApiOperation(value = "非排序区卡片删除")
     @RequestMapping(value = "/delete/person", method = {RequestMethod.POST})
     public ResultBean<String> cardDelete(@RequestBody CardAdd card) {
-        cardManageService.cardDelete(card.getCardNoList());
+        cardManageService.cardDelete(card.getCardNoList(), card.getSn());
         return ResultBeanUtil.makeOkResp();
     }
 
-    @ApiOperation(value = "C/G批量授权或删除-排序区")
+    @ApiOperation(value = "排序区授权-清空所有区域+授权")
     @RequestMapping(value = "/add/batch", method = {RequestMethod.POST})
     public ResultBean<String> cardListAdd(@RequestBody CardBatchAdd cardBatchAdd) {
-        cardManageService.cardListAdd(cardBatchAdd.getSnList());
+        // 需清空所有区域
+        cardManageService.cardListAdd(cardBatchAdd.getSnList(), true);
         return ResultBeanUtil.makeOkResp();
     }
+
+
 
 
 }

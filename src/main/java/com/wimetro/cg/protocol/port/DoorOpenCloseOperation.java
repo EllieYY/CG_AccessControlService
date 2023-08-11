@@ -12,16 +12,16 @@ import lombok.Data;
  **/
 @Data
 public class DoorOpenCloseOperation extends Operation {
-    @CmdProp(index = 0, len = 1, deCodec = "bytesToInt")
+    @CmdProp(index = 0, len = 1, enCodec = "intToHexStr", deCodec = "bytesToInt")
     private int port1 = 0;
 
-    @CmdProp(index = 1, len = 1, deCodec = "bytesToInt")
+    @CmdProp(index = 1, len = 1, enCodec = "intToHexStr", deCodec = "bytesToInt")
     private int port2 = 0;
 
-    @CmdProp(index = 2, len = 1, deCodec = "bytesToInt")
+    @CmdProp(index = 2, len = 1, enCodec = "intToHexStr", deCodec = "bytesToInt")
     private int port3 = 0;
 
-    @CmdProp(index = 3, len = 1, deCodec = "bytesToInt")
+    @CmdProp(index = 3, len = 1, enCodec = "intToHexStr", deCodec = "bytesToInt")
     private int port4 = 0;
 
 }

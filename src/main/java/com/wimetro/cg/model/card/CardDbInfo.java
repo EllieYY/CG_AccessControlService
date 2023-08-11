@@ -56,6 +56,7 @@ public class CardDbInfo {
         int expAlvl = 0;
         int inoutFlag = 0;
         int tzId = 0;
+        String validFlag = "";
         int weight = 1;    // 按位计算权值
         for (CardDoorInfo doorInfo:doorInfoList) {
             int doorNo = doorInfo.getDoorNo();
@@ -66,11 +67,15 @@ public class CardDbInfo {
             }
             inoutFlag += weight * doorInfo.getInOutFlag();
 
-            int validFlag = 16 * weight * (doorInfo.isDoorValid() ? 1 : 0);
-            expAlvl += validFlag + weight * doorInfo.getSpecialPermssion();
+            // 有效性是从右至左，依次为1~4门
+            validFlag += (doorInfo.isDoorValid() ? "1" : "0");
+            expAlvl += weight * doorInfo.getSpecialPermssion();
 
             weight = weight * 2;
         }
+
+        int doorValid = ToolConvert.binToInt(validFlag);
+        expAlvl += ((doorValid & 0x0F) << 4);
 
         result.setInoutFlag(inoutFlag);
         result.setTimeTz(tzId);

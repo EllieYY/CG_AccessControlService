@@ -49,6 +49,13 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
             ChannelManager.registry(ctx.channel());
         }
 
+        if (opCode == OperationType.CONNECT_TEST.getResponseCode()) {
+            // MQ事件推送
+            InetSocketAddress remoteAddress = (InetSocketAddress) ctx.channel().remoteAddress();
+            String ip = remoteAddress.getAddress().getHostAddress();
+            queueProducer.sendStatusMessage(new DeviceStateMessage(ip, new Date(), 1));
+        }
+
         // 事件上传MQ
         MessageBody body = deviceMessage.getMessageBody();
         if (body instanceof DeviceEvent) {

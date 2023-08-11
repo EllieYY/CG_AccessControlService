@@ -62,11 +62,11 @@ public class QueueProducer {
         threadPoolTaskExecutor.submit(() -> {
             Date date = new Date();
             try {
-                log.info("[mq][queue-->send]:activeCount={},queueCount={},completedTaskCount={},taskCount={}",
-                        threadPoolTaskExecutor.getThreadPoolExecutor().getActiveCount(),
-                        threadPoolTaskExecutor.getThreadPoolExecutor().getQueue().size(),
-                        threadPoolTaskExecutor.getThreadPoolExecutor().getCompletedTaskCount(),
-                        threadPoolTaskExecutor.getThreadPoolExecutor().getTaskCount());
+//                log.info("[mq][queue-->send]:activeCount={},queueCount={},completedTaskCount={},taskCount={}",
+//                        threadPoolTaskExecutor.getThreadPoolExecutor().getActiveCount(),
+//                        threadPoolTaskExecutor.getThreadPoolExecutor().getQueue().size(),
+//                        threadPoolTaskExecutor.getThreadPoolExecutor().getCompletedTaskCount(),
+//                        threadPoolTaskExecutor.getThreadPoolExecutor().getTaskCount());
 
                 this.jmsMessagingTemplate.convertAndSend(destination, message);
             } catch (Throwable e) {

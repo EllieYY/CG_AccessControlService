@@ -17,8 +17,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(value = "个人授权参数")
+@ApiModel(value = "授权参数")
 public class CardAdd {
     @ApiModelProperty(value = "卡号列表")
     private List<String> cardNoList;
+
+    @ApiModelProperty(value = "设备sn")
+    private String sn;
 }
