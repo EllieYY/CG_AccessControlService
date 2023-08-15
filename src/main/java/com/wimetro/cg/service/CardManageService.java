@@ -25,6 +25,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -171,6 +172,9 @@ public class CardManageService {
                 continue;
             }
 
+            // 按卡号升序排序
+            Collections.sort(cardDbInfoList);
+
             // 开始写入
             NoBodyOperation noBodyOperation = new NoBodyOperation();
             DeviceResopnseType retSatrtCode = tcpServer.deviceSetting(sn, noBodyOperation, Constants.CODE_SORT_CARD_START);
@@ -179,8 +183,8 @@ public class CardManageService {
                 continue;
             }
 
-            // 分批写入
-            int index = 0;
+            // 分批写入 —— 不能从0开始
+            int index = 1;
             List<List<CardDbInfo>> batchCardDbInfo =
                     StringUtil.fixedGrouping(cardDbInfoList, Constants.BATCH_CARD_DATA_COUNT);
             for (List<CardDbInfo> batchCard : batchCardDbInfo) {

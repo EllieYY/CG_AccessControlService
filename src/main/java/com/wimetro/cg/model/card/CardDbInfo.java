@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
  **/
 @Slf4j
 @Data
-public class CardDbInfo {
+public class CardDbInfo implements Comparable<CardDbInfo> {
     private String cardNo;      // 卡号
     private Date validDate;     // 有效期
     private int state;          // 卡状态
@@ -127,4 +127,9 @@ public class CardDbInfo {
     }
 
 
+    // 卡号升序
+    @Override
+    public int compareTo(CardDbInfo o) {
+        return Integer.valueOf(this.cardNo) - Integer.valueOf(o.cardNo);
+    }
 }
