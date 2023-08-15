@@ -1,6 +1,7 @@
 package com.wimetro.cg.netty.handler;
 
 import com.wimetro.cg.common.*;
+import com.wimetro.cg.common.device.CommonOperationResult;
 import com.wimetro.cg.config.NettyConfig;
 import com.wimetro.cg.model.mq.DeviceStateMessage;
 import com.wimetro.cg.netty.runner.ChannelManager;
@@ -10,6 +11,8 @@ import com.wimetro.cg.protocol.events.DeviceEvent;
 import com.wimetro.cg.protocol.message.*;
 import com.wimetro.cg.service.QueueProducer;
 import io.netty.channel.*;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetSocketAddress;
@@ -34,6 +37,27 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
         this.queueProducer = queueProducer;
     }
 
+    @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        Channel channel = ctx.channel();
+        InetSocketAddress clientSocket = (InetSocketAddress)channel.remoteAddress();
+        String clientIp = clientSocket.getAddress().getHostAddress();
+
+        if (evt instanceof IdleStateEvent) {
+            IdleStateEvent event = (IdleStateEvent) evt;
+            IdleState state = event.state();
+            if (state == IdleState.READER_IDLE) {
+                log.info("[读空闲检测] - {}断开连接", clientIp);
+//                ctx.channel().close();
+
+                // 状态事件推送
+//                queueProducer.sendStatusMessage(new DeviceStateMessage(clientIp, new Date(), 1));
+
+            } else {
+                super.userEventTriggered(ctx, evt);
+            }
+        }
+    }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, DeviceMessage deviceMessage) throws Exception {

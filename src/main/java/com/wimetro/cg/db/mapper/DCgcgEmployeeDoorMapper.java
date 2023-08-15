@@ -23,7 +23,7 @@ public interface DCgcgEmployeeDoorMapper extends BaseMapper<DCgcgEmployeeDoor> {
     ScpTimeSetInfo selectSchedulesGroupIdByDeviceSn(@Param("deviceSn") String deviceSn);
 
     // 根据卡号查找卡授权信息
-    List<CardDbInfo> selectByCardNo(@Param("list") List<String> cardList, @Param("sn") String sn);
+    List<CardDbInfo> selectByCardNo(@Param("list") List<String> cardList, @Param("deviceSn") String deviceSn);
 
     // 根据卡号找卡所在的控制器
     List<ScpCardInfo> selectDeviceSnByCardNo(@Param("list") List<String> cardList);

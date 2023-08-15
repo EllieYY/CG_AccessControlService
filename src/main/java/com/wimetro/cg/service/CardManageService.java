@@ -46,7 +46,7 @@ public class CardManageService {
 
     /** 单张卡片添加-存入非排序区
      */
-    @Async
+//    @Async
     public void cardAdd(List<String> cardList, String sn) {
 //        // 按控制器做聚合
 //        List<ScpCardInfo> scpList = employeeDoorService.getScpListByCards(cardList);
@@ -156,7 +156,7 @@ public class CardManageService {
 
     /** 批量卡片添加-存入排序区
      */
-    @Async
+//    @Async
     public void cardListAdd(List<String> scpList, boolean clearAll) {
         for (String sn:scpList) {
             // 是否清除所有区域卡片

@@ -66,7 +66,7 @@
             'ffffffff' as pwd,
             '65535' as doorCount,
             0 as holiday,
-            #{sn,jdbcType=VARCHAR} as deviceSn,
+            #{deviceSn,jdbcType=VARCHAR} as deviceSn,
             a.door_no as doorNo,
             a.schedules_group_id as timeSetId,
             a.special_permssion as permssion,
@@ -75,7 +75,7 @@
         left join d_cgcg_employee_door a
         on b.card_no = a.card_no
             and a.status = '0'
-            and a.device_sn = #{sn,jdbcType=VARCHAR}
+            and a.device_sn = #{deviceSn,jdbcType=VARCHAR}
         where b.card_no in
         <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
             #{id}
@@ -90,7 +90,7 @@
             'ffffffff' as pwd,
             '65535' as doorCount,
             0 as holiday,
-            #{sn,jdbcType=VARCHAR} as deviceSn,
+            #{deviceSn,jdbcType=VARCHAR} as deviceSn,
             a.door_no as doorNo,
             a.schedules_group_id as timeSetId,
             a.special_permssion as permssion,
@@ -99,23 +99,7 @@
         left join d_cgcg_employee_door a
         on b.card_no = a.card_no
             and a.status = '0'
-            and a.device_sn = #{sn,jdbcType=VARCHAR}
-
---         select
---             a.card_no as cardNo,
---             b.effect_end_time as validDate,
---             b.state as state,
---             'ffffffff' as pwd,
---             '65535' as doorCount,
---             0 as holiday,
---             #{deviceSn,jdbcType=VARCHAR} as deviceSn,
---             a.door_no as doorNo,
---             a.schedules_group_id as timeSetId,
---             a.special_permssion as permssion,
---             a.in_out_flag as flag
---         from d_cgcg_employee_door a, c_card_info b
---         where
---             a.device_sn = #{deviceSn,jdbcType=VARCHAR}
+            and a.device_sn = #{deviceSn,jdbcType=VARCHAR}
     </select>
 
     <resultMap id="ScpCardMap" type="com.wimetro.cg.model.card.ScpCardInfo">

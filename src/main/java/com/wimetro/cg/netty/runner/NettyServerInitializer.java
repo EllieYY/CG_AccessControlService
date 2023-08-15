@@ -8,8 +8,11 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.concurrent.UnorderedThreadPoolEventExecutor;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * @title: NettyServerInitializer
@@ -43,6 +46,7 @@ public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast("deviceProtocolDecoder", new TcpProtocolDecoder());
         pipeline.addLast("deviceProtocolEncoder", new TcpProtocolEncoder());
 
+        pipeline.addLast("idleCheck", new IdleStateHandler(60, 0, 0, TimeUnit.SECONDS));
         pipeline.addLast(businessGroup,"processHandler", new DeviceTcpHandler(nettyConfig, queueProducer));
     }
 }

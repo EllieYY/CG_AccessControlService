@@ -1,0 +1,612 @@
+2023-08-15 09:01:00 ERROR task-24 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'sn' not found. Available parameters are [deviceSn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$eaaf8523.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'sn' not found. Available parameters are [deviceSn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted
+2023-08-15 09:02:21 ERROR task-2 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$7e45ff25.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted
+2023-08-15 09:04:10 ERROR task-2 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$ecc29adf.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted
+2023-08-15 09:09:22 ERROR task-8 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$3a1454b7.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted
+2023-08-15 09:11:32 ERROR task-13 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$3a1454b7.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted
+2023-08-15 09:28:15 ERROR task-20 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$2ec7822f.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted
+2023-08-15 09:31:01 ERROR task-1 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$f381dda7.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted
+2023-08-15 09:32:26 ERROR task-1 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$b3eec1b8.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted
+2023-08-15 09:34:16 ERROR task-1 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$52901b89.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'deviceSn' not found. Available parameters are [sn, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:212)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:45)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219)
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 24 common frames omitted
+2023-08-15 09:38:53 ERROR task-2 o.s.a.i.SimpleAsyncUncaughtExceptionHandler Unexpected exception occurred invoking async method: public void com.wimetro.cg.service.CardManageService.cardListAdd(java.util.List,boolean)
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: java.sql.SQLException: sql injection violation, dbType sqlserver, druid-version 1.2.1, comment not allow : select
+            b.card_no as cardNo,
+            b.effect_end_time as validDate,
+            b.state as state,
+            'ffffffff' as pwd,
+            '65535' as doorCount,
+            0 as holiday,
+            ? as deviceSn,
+            a.door_no as doorNo,
+            a.schedules_group_id as timeSetId,
+            a.special_permssion as permssion,
+            a.in_out_flag as flag
+        from c_card_info b
+        left join d_cgcg_employee_door a
+        on b.card_no = a.card_no
+            and a.status = '0'
+            and a.device_sn = ?
+
+--         select
+--             a.card_no as cardNo,
+--             b.effect_end_time as validDate,
+--             b.state as state,
+--             'ffffffff' as pwd,
+--             '65535' as doorCount,
+--             0 as holiday,
+--             ? as deviceSn,
+--             a.door_no as doorNo,
+--             a.schedules_group_id as timeSetId,
+--             a.special_permssion as permssion,
+--             a.in_out_flag as flag
+--         from d_cgcg_employee_door a, c_card_info b
+--         where
+--             a.device_sn = ?
+### The error may exist in file [D:\11_CG\00_code\CG_AccessControlService\target\classes\mapper\DCgcgEmployeeDoorMapper.xml]
+### The error may involve com.wimetro.cg.db.mapper.DCgcgEmployeeDoorMapper.selectCardsByDeviceSn
+### The error occurred while executing a query
+### SQL: select             b.card_no as cardNo,             b.effect_end_time as validDate,             b.state as state,             'ffffffff' as pwd,             '65535' as doorCount,             0 as holiday,             ? as deviceSn,             a.door_no as doorNo,             a.schedules_group_id as timeSetId,             a.special_permssion as permssion,             a.in_out_flag as flag         from c_card_info b         left join d_cgcg_employee_door a         on b.card_no = a.card_no             and a.status = '0'             and a.device_sn = ?  --         select --             a.card_no as cardNo, --             b.effect_end_time as validDate, --             b.state as state, --             'ffffffff' as pwd, --             '65535' as doorCount, --             0 as holiday, --             ? as deviceSn, --             a.door_no as doorNo, --             a.schedules_group_id as timeSetId, --             a.special_permssion as permssion, --             a.in_out_flag as flag --         from d_cgcg_employee_door a, c_card_info b --         where --             a.device_sn = ?
+### Cause: java.sql.SQLException: sql injection violation, dbType sqlserver, druid-version 1.2.1, comment not allow : select
+            b.card_no as cardNo,
+            b.effect_end_time as validDate,
+            b.state as state,
+            'ffffffff' as pwd,
+            '65535' as doorCount,
+            0 as holiday,
+            ? as deviceSn,
+            a.door_no as doorNo,
+            a.schedules_group_id as timeSetId,
+            a.special_permssion as permssion,
+            a.in_out_flag as flag
+        from c_card_info b
+        left join d_cgcg_employee_door a
+        on b.card_no = a.card_no
+            and a.status = '0'
+            and a.device_sn = ?
+
+--         select
+--             a.card_no as cardNo,
+--             b.effect_end_time as validDate,
+--             b.state as state,
+--             'ffffffff' as pwd,
+--             '65535' as doorCount,
+--             0 as holiday,
+--             ? as deviceSn,
+--             a.door_no as doorNo,
+--             a.schedules_group_id as timeSetId,
+--             a.special_permssion as permssion,
+--             a.in_out_flag as flag
+--         from d_cgcg_employee_door a, c_card_info b
+--         where
+--             a.device_sn = ?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, dbType sqlserver, druid-version 1.2.1, comment not allow : select
+            b.card_no as cardNo,
+            b.effect_end_time as validDate,
+            b.state as state,
+            'ffffffff' as pwd,
+            '65535' as doorCount,
+            0 as holiday,
+            ? as deviceSn,
+            a.door_no as doorNo,
+            a.schedules_group_id as timeSetId,
+            a.special_permssion as permssion,
+            a.in_out_flag as flag
+        from c_card_info b
+        left join d_cgcg_employee_door a
+        on b.card_no = a.card_no
+            and a.status = '0'
+            and a.device_sn = ?
+
+--         select
+--             a.card_no as cardNo,
+--             b.effect_end_time as validDate,
+--             b.state as state,
+--             'ffffffff' as pwd,
+--             '65535' as doorCount,
+--             0 as holiday,
+--             ? as deviceSn,
+--             a.door_no as doorNo,
+--             a.schedules_group_id as timeSetId,
+--             a.special_permssion as permssion,
+--             a.in_out_flag as flag
+--         from d_cgcg_employee_door a, c_card_info b
+--         where
+--             a.device_sn = ?; nested exception is java.sql.SQLException: sql injection violation, dbType sqlserver, druid-version 1.2.1, comment not allow : select
+            b.card_no as cardNo,
+            b.effect_end_time as validDate,
+            b.state as state,
+            'ffffffff' as pwd,
+            '65535' as doorCount,
+            0 as holiday,
+            ? as deviceSn,
+            a.door_no as doorNo,
+            a.schedules_group_id as timeSetId,
+            a.special_permssion as permssion,
+            a.in_out_flag as flag
+        from c_card_info b
+        left join d_cgcg_employee_door a
+        on b.card_no = a.card_no
+            and a.status = '0'
+            and a.device_sn = ?
+
+--         select
+--             a.card_no as cardNo,
+--             b.effect_end_time as validDate,
+--             b.state as state,
+--             'ffffffff' as pwd,
+--             '65535' as doorCount,
+--             0 as holiday,
+--             ? as deviceSn,
+--             a.door_no as doorNo,
+--             a.schedules_group_id as timeSetId,
+--             a.special_permssion as permssion,
+--             a.in_out_flag as flag
+--         from d_cgcg_employee_door a, c_card_info b
+--         where
+--             a.device_sn = ?
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.selectCardsByDeviceSn(Unknown Source)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl.getScpCardInfoList(DCgcgEmployeeDoorServiceImpl.java:48)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$FastClassBySpringCGLIB$$9057a1a8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl$$EnhancerBySpringCGLIB$$37bbede2.getScpCardInfoList(<generated>)
+	at com.wimetro.cg.service.CardManageService.cardListAdd(CardManageService.java:168)
+	at com.wimetro.cg.service.CardManageService$$FastClassBySpringCGLIB$$880cfb91.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.sql.SQLException: sql injection violation, dbType sqlserver, druid-version 1.2.1, comment not allow : select
+            b.card_no as cardNo,
+            b.effect_end_time as validDate,
+            b.state as state,
+            'ffffffff' as pwd,
+            '65535' as doorCount,
+            0 as holiday,
+            ? as deviceSn,
+            a.door_no as doorNo,
+            a.schedules_group_id as timeSetId,
+            a.special_permssion as permssion,
+            a.in_out_flag as flag
+        from c_card_info b
+        left join d_cgcg_employee_door a
+        on b.card_no = a.card_no
+            and a.status = '0'
+            and a.device_sn = ?
+
+--         select
+--             a.card_no as cardNo,
+--             b.effect_end_time as validDate,
+--             b.state as state,
+--             'ffffffff' as pwd,
+--             '65535' as doorCount,
+--             0 as holiday,
+--             ? as deviceSn,
+--             a.door_no as doorNo,
+--             a.schedules_group_id as timeSetId,
+--             a.special_permssion as permssion,
+--             a.in_out_flag as flag
+--         from d_cgcg_employee_door a, c_card_info b
+--         where
+--             a.device_sn = ?
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:850)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:286)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:568)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:341)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:351)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:55)
+	at com.sun.proxy.$Proxy127.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:86)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:87)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 23 common frames omitted

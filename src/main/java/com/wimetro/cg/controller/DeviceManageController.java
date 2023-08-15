@@ -69,7 +69,6 @@ public class DeviceManageController {
 
         DeviceBasicInfo deviceBasicInfo = deviceManageService.deviceAdd(sn, ip, mac);
 
-        // TODO:
         return ResultBeanUtil.makeOkResp(deviceBasicInfo);
     }
 
