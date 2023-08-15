@@ -417,6 +417,15 @@ public class DeviceManageService {
      * @param sn
      */
     public void deviceSitting(String sn) {
+        // 监控开启
+        NoBodyOperation operation = new NoBodyOperation();
+        DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_MONITOR_ON);
+        log.info("[实时监控开启] - {}:{}", retCode.getCode(), retCode.getMsg());
+
+        // 设置心跳间隔和重连间隔
+
+
+
         // 时间组下载
         ScpTimeSetInfo info = employeeDoorService.getScpTimeSetList(sn);
         if (Objects.isNull(info)) {
@@ -424,12 +433,6 @@ public class DeviceManageService {
         } else {
             sendScpTimeSet(info);
         }
-
-        // 监控开启
-        NoBodyOperation operation = new NoBodyOperation();
-        DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_MONITOR_ON);
-        log.info("[实时监控开启] - {}:{}", retCode.getCode(), retCode.getMsg());
-
     }
 
 }
