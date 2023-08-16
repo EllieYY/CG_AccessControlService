@@ -47,7 +47,7 @@ public class DeviceTcpHandler extends SimpleChannelInboundHandler<DeviceMessage>
             IdleStateEvent event = (IdleStateEvent) evt;
             IdleState state = event.state();
             if (state == IdleState.READER_IDLE) {
-                log.info("[读空闲检测] - {}断开连接", clientIp);
+                log.info("[读空闲检测] - {}", clientIp);
                 ctx.channel().close();
 
             } else {

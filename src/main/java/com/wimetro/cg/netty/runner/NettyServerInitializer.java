@@ -46,7 +46,7 @@ public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast("deviceProtocolDecoder", new TcpProtocolDecoder());
         pipeline.addLast("deviceProtocolEncoder", new TcpProtocolEncoder());
 
-        pipeline.addLast("idleCheck", new IdleStateHandler(60, 0, 0, TimeUnit.SECONDS));
+        pipeline.addLast("idleCheck", new IdleStateHandler(120, 0, 0, TimeUnit.SECONDS));
         pipeline.addLast(businessGroup,"processHandler", new DeviceTcpHandler(nettyConfig, queueProducer));
     }
 }

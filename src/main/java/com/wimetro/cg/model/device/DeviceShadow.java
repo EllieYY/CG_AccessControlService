@@ -3,6 +3,7 @@ package com.wimetro.cg.model.device;
 import com.wimetro.cg.protocol.TcpParamOperation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @title: DeviceShadow
@@ -12,6 +13,7 @@ import lombok.Data;
  **/
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class DeviceShadow {
     private String sn;         // 设备sn
     private String password;

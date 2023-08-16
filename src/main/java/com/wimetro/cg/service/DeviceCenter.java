@@ -67,6 +67,16 @@ public class DeviceCenter {
         log.info("[device map] register - 设备 {} 注册成功", sn);
     }
 
+
+    public static void registerDevice(DeviceShadow deviceShadow, int tcpPort) {
+        String sn = deviceShadow.getSn();
+        String pwd = deviceShadow.getPassword();
+        TcpParamOperation operation = deviceShadow.getTcpParam();
+        operation.setTcpPort(tcpPort);
+
+        registerDevice(sn, pwd, operation);
+    }
+
     public static void deleteDevice(String sn) {
         // TODO:连接断开
 

@@ -2,6 +2,7 @@ package com.wimetro.cg.service;
 
 import com.wimetro.cg.common.Constants;
 import com.wimetro.cg.config.NettyConfig;
+import com.wimetro.cg.db.service.impl.CgcgControllerServiceImpl;
 import com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl;
 import com.wimetro.cg.db.service.impl.DSchedulesGroupDetailServiceImpl;
 import com.wimetro.cg.model.device.*;
@@ -21,10 +22,10 @@ import com.wimetro.cg.util.IdUtil;
 import com.wimetro.cg.util.NetUtil;
 import com.wimetro.cg.util.ToolConvert;
 import io.netty.util.concurrent.Future;
-import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,15 +47,33 @@ public class DeviceManageService {
     private final NettyConfig nettyConfig;
     private final DSchedulesGroupDetailServiceImpl schedulesGroupDetailService;
     private final DCgcgEmployeeDoorServiceImpl employeeDoorService;
+    private final CgcgControllerServiceImpl cgcgControllerService;
     public DeviceManageService(NettyUdpServer udpServer, NettyTcpServer tcpServer, IdUtil idUtil, NettyConfig nettyConfig,
                                DSchedulesGroupDetailServiceImpl schedulesGroupDetailService,
-                               DCgcgEmployeeDoorServiceImpl employeeDoorService) {
+                               DCgcgEmployeeDoorServiceImpl employeeDoorService,
+                               CgcgControllerServiceImpl cgcgControllerService) {
         this.udpServer = udpServer;
         this.tcpServer = tcpServer;
         this.idUtil = idUtil;
         this.nettyConfig = nettyConfig;
         this.schedulesGroupDetailService = schedulesGroupDetailService;
         this.employeeDoorService = employeeDoorService;
+        this.cgcgControllerService = cgcgControllerService;
+    }
+
+    /**
+     * 程序启动后，对数据库中设备进行自动认证
+     */
+    @PostConstruct
+    public void deivceRegisted() {
+        // 查询设备数据
+        List<DeviceShadow> deviceShadowList = cgcgControllerService.getValidDevice();
+        log.info("[设备认证] - {}", deviceShadowList);
+
+        // 组装认证
+        for (DeviceShadow device:deviceShadowList) {
+            DeviceCenter.registerDevice(device, nettyConfig.getTcpDevicePort());
+        }
     }
 
 

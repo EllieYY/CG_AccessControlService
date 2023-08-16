@@ -31,24 +31,27 @@ public class CardManagerController {
         this.cardManageService = cardManageService;
     }
 
-    @ApiOperation(value = "非排序区授权")
+    @ApiOperation(value = "非排序区授权--需要先进行数据操作")
     @RequestMapping(value = "/add/person", method = {RequestMethod.POST})
     public ResultBean<String> cardAdd(@RequestBody CardAdd card) {
+        log.info("非排序区授权 - {}", card);
         cardManageService.cardAdd(card.getCardNoList(), card.getSn());
         return ResultBeanUtil.makeOkResp();
     }
 
-    @ApiOperation(value = "非排序区卡片删除")
+    @ApiOperation(value = "非排序区卡片删除--不需要查数据库")
     @RequestMapping(value = "/delete/person", method = {RequestMethod.POST})
     public ResultBean<String> cardDelete(@RequestBody CardAdd card) {
+        log.info("非排序区卡片删除 - {}", card);
         cardManageService.cardDelete(card.getCardNoList(), card.getSn());
         return ResultBeanUtil.makeOkResp();
     }
 
-    @ApiOperation(value = "排序区授权-清空所有区域+授权")
+    @ApiOperation(value = "排序区授权-清空所有区域+授权--需要先进行数据操作")
     @RequestMapping(value = "/add/batch", method = {RequestMethod.POST})
     public ResultBean<String> cardListAdd(@RequestBody CardBatchAdd cardBatchAdd) {
         // 需清空所有区域
+        log.info("排序区授权 - {}", cardBatchAdd);
         cardManageService.cardListAdd(cardBatchAdd.getSnList(), true);
         return ResultBeanUtil.makeOkResp();
     }

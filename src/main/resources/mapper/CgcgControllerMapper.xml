@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wimetro.cg.db.mapper.CgcgControllerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wimetro.cg.db.entity.CgcgController">
+        <id column="all_id" property="allId" />
+        <result column="device_type_id" property="deviceTypeId" />
+        <result column="device_scope_id" property="deviceScopeId" />
+        <result column="device_name" property="deviceName" />
+        <result column="device_ip" property="deviceIp" />
+        <result column="subnet_mask" property="subnetMask" />
+        <result column="gateway" property="gateway" />
+        <result column="device_port" property="devicePort" />
+        <result column="device_mac" property="deviceMac" />
+        <result column="device_sn" property="deviceSn" />
+        <result column="conn_password" property="connPassword" />
+        <result column="firmware_version" property="firmwareVersion" />
+        <result column="fix_address" property="fixAddress" />
+        <result column="product_type" property="productType" />
+        <result column="record_save_mode" property="recordSaveMode" />
+        <result column="fire_alarm_par" property="fireAlarmPar" />
+        <result column="bandit_alarm_par" property="banditAlarmPar" />
+        <result column="reader_interval" property="readerInterval" />
+        <result column="data_check_type" property="dataCheckType" />
+        <result column="buzzer_flag" property="buzzerFlag" />
+        <result column="smoke_alarm_type" property="smokeAlarmType" />
+        <result column="apb_type" property="apbType" />
+        <result column="card_expiration_prompt_flag" property="cardExpirationPromptFlag" />
+        <result column="card_count" property="cardCount" />
+        <result column="sequence_card" property="sequenceCard" />
+        <result column="card_count_online" property="cardCountOnline" />
+        <result column="sequence_card_online" property="sequenceCardOnline" />
+        <result column="balck_alarm_flag" property="balckAlarmFlag" />
+        <result column="controller_demolish_flag" property="controllerDemolishFlag" />
+        <result column="police_alarm_status" property="policeAlarmStatus" />
+        <result column="steal_alarm_status" property="stealAlarmStatus" />
+        <result column="fire_alarm_status" property="fireAlarmStatus" />
+        <result column="smog_alarm_status" property="smogAlarmStatus" />
+        <result column="controller_demolish_alarm_status" property="controllerDemolishAlarmStatus" />
+        <result column="server_id" property="serverId" />
+        <result column="server_ip" property="serverIp" />
+        <result column="con_status" property="conStatus" />
+        <result column="last_time" property="lastTime" />
+        <result column="status" property="status" />
+        <result column="device_operation_days" property="deviceOperationDays" />
+        <result column="formatting_times" property="formattingTimes" />
+        <result column="watchdog_reset_times" property="watchdogResetTimes" />
+        <result column="power_supply_type" property="powerSupplyType" />
+        <result column="device_temperature" property="deviceTemperature" />
+        <result column="poweron_time" property="poweronTime" />
+        <result column="voltage" property="voltage" />
+        <result column="protocol_type" property="protocolType" />
+        <result column="reg_flag" property="regFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        all_id, device_type_id, device_scope_id, device_name, device_ip, subnet_mask, gateway, device_port, device_mac, device_sn, conn_password, firmware_version, fix_address, product_type, record_save_mode, fire_alarm_par, bandit_alarm_par, reader_interval, data_check_type, buzzer_flag, smoke_alarm_type, apb_type, card_expiration_prompt_flag, card_count, sequence_card, card_count_online, sequence_card_online, balck_alarm_flag, controller_demolish_flag, police_alarm_status, steal_alarm_status, fire_alarm_status, smog_alarm_status, controller_demolish_alarm_status, server_id, server_ip, con_status, last_time, status, device_operation_days, formatting_times, watchdog_reset_times, power_supply_type, device_temperature, poweron_time, voltage, protocol_type, reg_flag
+    </sql>
+
+
+    <resultMap id="DeviceShadowMap" type="com.wimetro.cg.model.device.DeviceShadow">
+        <result column="device_sn" property="sn" />
+        <result column="conn_password" property="password" />
+        <collection property="tcpParam" ofType="com.wimetro.cg.protocol.TcpParamOperation">
+            <result column="device_mac" property="mac" />
+            <result column="device_ip" property="ip" />
+        </collection>
+    </resultMap>
+    <select id="selectValidDevice" resultMap="DeviceShadowMap">
+        select
+            device_sn,
+            conn_password,
+            device_ip,
+            device_mac
+        from cgcg_controller
+        where
+            reg_flag = 1
+    </select>
+
+</mapper>
