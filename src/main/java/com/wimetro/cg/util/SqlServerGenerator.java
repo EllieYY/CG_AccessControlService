@@ -29,7 +29,7 @@ public class SqlServerGenerator {
 
     public static void main(String[] args) {
         List<String> tables = new ArrayList<>();
-        tables.add("cgcg_controller");
+        tables.add("cgcg_port");
 //        tables.add("d_schedules");
 //        tables.add("d_schedules_group_detail");
 //        tables.add("dev_output_detail");

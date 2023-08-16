@@ -13,14 +13,14 @@ import lombok.Data;
 @Data
 public class ReaderBytesInfo extends OperationResult {
     @CmdProp(index = 0, len = 1, deCodec = "bytesToInt")
-    private int reader0Byte;
+    private int reader0Byte = 2;
 
     @CmdProp(index = 1, len = 1, deCodec = "bytesToInt")
-    private int reader1Byte;
+    private int reader1Byte = 2;
 
     @CmdProp(index = 2, len = 1, deCodec = "bytesToInt")
-    private int reader2Byte;
+    private int reader2Byte = 2;
 
     @CmdProp(index = 3, len = 1, deCodec = "bytesToInt")
-    private int reader3Byte;
+    private int reader3Byte = 2;
 }

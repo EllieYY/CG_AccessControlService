@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wimetro.cg.db.mapper.CgcgPortMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wimetro.cg.db.entity.CgcgPort">
+        <id column="all_id" property="allId" />
+        <result column="device_type_id" property="deviceTypeId" />
+        <result column="device_scope_id" property="deviceScopeId" />
+        <result column="device_name" property="deviceName" />
+        <result column="controller_id" property="controllerId" />
+        <result column="port_no" property="portNo" />
+        <result column="open_5_flag" property="open5Flag" />
+        <result column="open_door_time" property="openDoorTime" />
+        <result column="phy_relay_status" property="phyRelayStatus" />
+        <result column="door_open_type" property="doorOpenType" />
+        <result column="gate_magnet_open" property="gateMagnetOpen" />
+        <result column="illegal_card_alarm" property="illegalCardAlarm" />
+        <result column="gate_magnet_alarm" property="gateMagnetAlarm" />
+        <result column="force_alarm" property="forceAlarm" />
+        <result column="open_over_time" property="openOverTime" />
+        <result column="black_card_alarm" property="blackCardAlarm" />
+        <result column="reader_tamper_alarm" property="readerTamperAlarm" />
+        <result column="door_lock" property="doorLock" />
+        <result column="force_alarm_used_flag" property="forceAlarmUsedFlag" />
+        <result column="force_alarm_model" property="forceAlarmModel" />
+        <result column="force_alarm_password" property="forceAlarmPassword" />
+        <result column="illegal_card_flag" property="illegalCardFlag" />
+        <result column="check_in_out_state" property="checkInOutState" />
+        <result column="server_id" property="serverId" />
+        <result column="server_ip" property="serverIp" />
+        <result column="con_status" property="conStatus" />
+        <result column="kq_flag" property="kqFlag" />
+        <result column="reader_byte" property="readerByte" />
+        <result column="relay_type" property="relayType" />
+        <result column="status" property="status" />
+        <result column="open_direction" property="openDirection" />
+        <result column="device_sn" property="deviceSn" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        all_id, device_type_id, device_scope_id, device_name, controller_id, port_no, open_5_flag, open_door_time, phy_relay_status, door_open_type, gate_magnet_open, illegal_card_alarm, gate_magnet_alarm, force_alarm, open_over_time, black_card_alarm, reader_tamper_alarm, door_lock, force_alarm_used_flag, force_alarm_model, force_alarm_password, illegal_card_flag, check_in_out_state, server_id, server_ip, con_status, kq_flag, reader_byte, relay_type, status, open_direction, device_sn
+    </sql>
+
+
+    <resultMap id="PortConfigInfoMap" type="com.wimetro.cg.model.device.PortConfigInfo">
+        <result column="port_no" property="portNo" />
+        <result column="reader_byte" property="readerByte" />
+    </resultMap>
+    <select id="selectReaderByteByDeviceSn" resultMap="PortConfigInfoMap">
+        select
+        port_no,
+        reader_byte
+        from cgcg_port
+        where
+        device_sn = #{deviceSn,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

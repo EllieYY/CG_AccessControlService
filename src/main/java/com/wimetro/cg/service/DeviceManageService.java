@@ -3,6 +3,7 @@ package com.wimetro.cg.service;
 import com.wimetro.cg.common.Constants;
 import com.wimetro.cg.config.NettyConfig;
 import com.wimetro.cg.db.service.impl.CgcgControllerServiceImpl;
+import com.wimetro.cg.db.service.impl.CgcgPortServiceImpl;
 import com.wimetro.cg.db.service.impl.DCgcgEmployeeDoorServiceImpl;
 import com.wimetro.cg.db.service.impl.DSchedulesGroupDetailServiceImpl;
 import com.wimetro.cg.model.device.*;
@@ -48,10 +49,12 @@ public class DeviceManageService {
     private final DSchedulesGroupDetailServiceImpl schedulesGroupDetailService;
     private final DCgcgEmployeeDoorServiceImpl employeeDoorService;
     private final CgcgControllerServiceImpl cgcgControllerService;
+    private final CgcgPortServiceImpl portService;
     public DeviceManageService(NettyUdpServer udpServer, NettyTcpServer tcpServer, IdUtil idUtil, NettyConfig nettyConfig,
                                DSchedulesGroupDetailServiceImpl schedulesGroupDetailService,
                                DCgcgEmployeeDoorServiceImpl employeeDoorService,
-                               CgcgControllerServiceImpl cgcgControllerService) {
+                               CgcgControllerServiceImpl cgcgControllerService,
+                               CgcgPortServiceImpl portService) {
         this.udpServer = udpServer;
         this.tcpServer = tcpServer;
         this.idUtil = idUtil;
@@ -59,6 +62,7 @@ public class DeviceManageService {
         this.schedulesGroupDetailService = schedulesGroupDetailService;
         this.employeeDoorService = employeeDoorService;
         this.cgcgControllerService = cgcgControllerService;
+        this.portService = portService;
     }
 
     /**
@@ -441,8 +445,34 @@ public class DeviceManageService {
         DeviceResopnseType retCode = tcpServer.deviceSetting(sn, operation, Constants.CODE_MONITOR_ON);
         log.info("[实时监控开启] - {}:{}", retCode.getCode(), retCode.getMsg());
 
-        // 设置心跳间隔和重连间隔
+        // 设置读卡器字节数
+        List<PortConfigInfo> portConfigInfos = portService.getReaderBytes(sn);
+        log.info("[读卡器配置信息] - {}", portConfigInfos);
+        ReaderByteOperation readerByteOperation = new ReaderByteOperation();
+        for (PortConfigInfo port:portConfigInfos) {
+            int doorNo = port.getPortNo();
+            int readerByte = port.getReaderByte();
+            switch (doorNo) {
+                case 0:
+                    readerByteOperation.setPort1(readerByte);
+                    break;
+                case 1:
+                    readerByteOperation.setPort2(readerByte);
+                    break;
+                case 2:
+                    readerByteOperation.setPort3(readerByte);
+                    break;
+                case 3:
+                    readerByteOperation.setPort4(readerByte);
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        DeviceResopnseType retCode1 =
+                tcpServer.deviceSetting(sn, readerByteOperation, OperationType.READER_BYTES.getSettingCode());
+        log.info("[端口读卡器字节数配置] - {}:{}", retCode1.getCode(), retCode1.getMsg());
 
 
         // 时间组下载

@@ -141,14 +141,14 @@ public class PortInfo extends OperationResult {
         setReaderAlarm(readerAlarm3, port3);
         port3.setLockState(lockState3);
 
-        if (Objects.isNull(readerBytesInfo)) {
+        if (Objects.nonNull(readerBytesInfo)) {
             port0.setReaderBytes(readerBytesInfo.getReader0Byte());
             port1.setReaderBytes(readerBytesInfo.getReader1Byte());
             port2.setReaderBytes(readerBytesInfo.getReader2Byte());
             port3.setReaderBytes(readerBytesInfo.getReader3Byte());
         }
 
-        if (Objects.isNull(relayOutMode)) {
+        if (Objects.nonNull(relayOutMode)) {
             port0.setRelayMode(relayOutMode.getMode0());
             port1.setRelayMode(relayOutMode.getMode1());
             port2.setRelayMode(relayOutMode.getMode2());
