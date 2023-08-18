@@ -25,4 +25,11 @@ public class CgcgControllerServiceImpl extends ServiceImpl<CgcgControllerMapper,
         return this.baseMapper.selectValidDevice();
     }
 
+    // 门禁设备：根据设备类型查找门数量。 电梯设备不同
+    public int getDoorCountByDeviceType(String deviceType) {
+        int count = this.baseMapper.selectDoorCountByDeviceType(deviceType);
+        count = count < 0 ? 0 : count;
+        count = count > 4 ? 4 : count;
+        return count;
+    }
 }

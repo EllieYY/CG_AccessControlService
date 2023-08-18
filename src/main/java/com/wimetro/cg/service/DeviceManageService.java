@@ -209,7 +209,11 @@ public class DeviceManageService {
         if (Objects.isNull(portInfo)) {
             return new ArrayList<>();
         }
-        List<CGPortInfo> portInfoList = portInfo.toCGPortInfo(readerBytesInfo, relayOutMode);
+
+        // 判断门数量
+        String deviceType = sn.substring(0, 8);
+        int doorCount = cgcgControllerService.getDoorCountByDeviceType(deviceType);
+        List<CGPortInfo> portInfoList = portInfo.toCGPortInfo(doorCount, readerBytesInfo, relayOutMode);
 
         log.info("{}", portInfoList);
 

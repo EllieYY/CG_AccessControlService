@@ -19,4 +19,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface CgcgControllerMapper extends BaseMapper<CgcgController> {
     List<DeviceShadow> selectValidDevice();
+
+    // 根据设备类型查找门数量
+    int selectDoorCountByDeviceType(@Param("deviceType") String deviceType);
 }

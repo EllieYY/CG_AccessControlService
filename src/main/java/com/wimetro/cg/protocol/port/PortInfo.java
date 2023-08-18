@@ -107,59 +107,87 @@ public class PortInfo extends OperationResult {
     @CmdProp(index = 50, deCodec = "bytesToInt")
     private int guardState;
 
-    public List<CGPortInfo> toCGPortInfo(ReaderBytesInfo readerBytesInfo, RelayOutMode relayOutMode) {
-
-        CGPortInfo port0 = new CGPortInfo();
-        port0.setPort(0);
-        port0.setRelayState(relayState0);
-        port0.setMode(mode0);
-        port0.setStrikeState(strikeState0);
-        setReaderAlarm(readerAlarm0, port0);
-        port0.setLockState(lockState0);
-
-        CGPortInfo port1 = new CGPortInfo();
-        port1.setPort(1);
-        port1.setRelayState(relayState1);
-        port1.setMode(mode1);
-        port1.setStrikeState(strikeState1);
-        setReaderAlarm(readerAlarm1, port1);
-        port1.setLockState(lockState1);
-
-        CGPortInfo port2 = new CGPortInfo();
-        port2.setPort(2);
-        port2.setRelayState(relayState2);
-        port2.setMode(mode2);
-        port2.setStrikeState(strikeState2);
-        setReaderAlarm(readerAlarm2, port2);
-        port2.setLockState(lockState2);
-
-        CGPortInfo port3 = new CGPortInfo();
-        port3.setPort(3);
-        port3.setRelayState(relayState3);
-        port3.setMode(mode3);
-        port3.setStrikeState(strikeState3);
-        setReaderAlarm(readerAlarm3, port3);
-        port3.setLockState(lockState3);
-
-        if (Objects.nonNull(readerBytesInfo)) {
-            port0.setReaderBytes(readerBytesInfo.getReader0Byte());
-            port1.setReaderBytes(readerBytesInfo.getReader1Byte());
-            port2.setReaderBytes(readerBytesInfo.getReader2Byte());
-            port3.setReaderBytes(readerBytesInfo.getReader3Byte());
-        }
-
-        if (Objects.nonNull(relayOutMode)) {
-            port0.setRelayMode(relayOutMode.getMode0());
-            port1.setRelayMode(relayOutMode.getMode1());
-            port2.setRelayMode(relayOutMode.getMode2());
-            port3.setRelayMode(relayOutMode.getMode3());
-        }
-
+    public List<CGPortInfo> toCGPortInfo(int doorCount, ReaderBytesInfo readerBytesInfo, RelayOutMode relayOutMode) {
         List<CGPortInfo> portInfoList = new ArrayList<>();
-        portInfoList.add(port0);
-        portInfoList.add(port1);
-        portInfoList.add(port2);
-        portInfoList.add(port3);
+        if (doorCount > 0) {
+            CGPortInfo port0 = new CGPortInfo();
+            port0.setPort(0);
+            port0.setRelayState(relayState0);
+            port0.setMode(mode0);
+            port0.setStrikeState(strikeState0);
+            setReaderAlarm(readerAlarm0, port0);
+            port0.setLockState(lockState0);
+
+            if (Objects.nonNull(readerBytesInfo)) {
+                port0.setReaderBytes(readerBytesInfo.getReader0Byte());
+            }
+            if (Objects.nonNull(relayOutMode)) {
+                port0.setRelayMode(relayOutMode.getMode0());
+            }
+
+            portInfoList.add(port0);
+
+        }
+
+        if (doorCount > 1) {
+            CGPortInfo port1 = new CGPortInfo();
+            port1.setPort(1);
+            port1.setRelayState(relayState1);
+            port1.setMode(mode1);
+            port1.setStrikeState(strikeState1);
+            setReaderAlarm(readerAlarm1, port1);
+            port1.setLockState(lockState1);
+
+            if (Objects.nonNull(readerBytesInfo)) {
+                port1.setReaderBytes(readerBytesInfo.getReader1Byte());
+            }
+            if (Objects.nonNull(relayOutMode)) {
+                port1.setRelayMode(relayOutMode.getMode1());
+            }
+
+            portInfoList.add(port1);
+
+        }
+
+        if (doorCount > 2) {
+            CGPortInfo port2 = new CGPortInfo();
+            port2.setPort(2);
+            port2.setRelayState(relayState2);
+            port2.setMode(mode2);
+            port2.setStrikeState(strikeState2);
+            setReaderAlarm(readerAlarm2, port2);
+            port2.setLockState(lockState2);
+
+            if (Objects.nonNull(readerBytesInfo)) {
+                port2.setReaderBytes(readerBytesInfo.getReader2Byte());
+            }
+            if (Objects.nonNull(relayOutMode)) {
+                port2.setRelayMode(relayOutMode.getMode2());
+            }
+
+            portInfoList.add(port2);
+
+        }
+
+        if (doorCount > 3) {
+            CGPortInfo port3 = new CGPortInfo();
+            port3.setPort(3);
+            port3.setRelayState(relayState3);
+            port3.setMode(mode3);
+            port3.setStrikeState(strikeState3);
+            setReaderAlarm(readerAlarm3, port3);
+            port3.setLockState(lockState3);
+
+            if (Objects.nonNull(readerBytesInfo)) {
+                port3.setReaderBytes(readerBytesInfo.getReader3Byte());
+            }
+            if (Objects.nonNull(relayOutMode)) {
+                port3.setRelayMode(relayOutMode.getMode3());
+            }
+
+            portInfoList.add(port3);
+        }
+
         return portInfoList;
     }
 
